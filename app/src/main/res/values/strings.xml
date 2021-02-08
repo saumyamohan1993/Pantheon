@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Pantheon</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Login Screen entries-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="remember_me">REMEMBER ME</string>
+    <string name="or">or</string>
+    <string name="request_trial">REQUEST TRIAL</string>
+
+    <!-- Login Screen validations -->
+    <string name="eemail_required">Please enter your email</string>
+    <string name="einvalid_email">Enter a valid email address</string>
+    <string name="epassword_required">Please enter your password</string>
+    <string name="epassword_short">Password must be of minimum 6 characters</string>
+    <string name="title_activity_region_select">Select Region</string>
+
+    <!-- Select Region Fragment entries-->
+    <string name="tvus_text">UNITED STATES</string>
+    <string name="tveurozone_text">EUROZONE</string>
+    <string name="tvlatinamerica_text">LATIN AMERICA</string>
+    <string name="tvuk_text">UNITED KINGDOM</string>
+    <string name="txt_category_asia_monitor">ASIA ECONOMIC MONITOR</string>
+
+    <string name="menu_icon">menu</string>
+    <string name="download">Download</string>
+    <string name="region_search">search</string>
+    <string name="title_activity_uspublications">U.S. Publications</string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+
+    <!-- Forgot Password Activity entries -->
+    <string name="forgot"><![CDATA[Forgot your password? Enter the <font color="#006A81"> email address </font>of your account to reset your password,]]></string>
+    <string name="etemailid_hint">Enter your email id</string>
+    <string name="btnreset_text">RESET PASSWORD</string>
+
+    <string name="title_activity_navigation_fragment">NavigationFragment</string>
+
+    <string name="title_activity_mainactivity">Select Region</string>
+
+    <string name="title_activity_contactus">Contact Us</string>
+
+    <string name="logging_text">Please wait...</string>
+
+    <!-- Navigation Drawer entries -->
+    <string name="tvMyFavourites_text">My \nFavourites</string>
+    <string name="tvOfflineMode_text">Offline Mode</string>
+    <string name="tvContactUs_text">Contact Us</string>
+    <string name="tvMyAccount_text">My Account</string>
+    <string name="tvLogout_text">Logout</string>
+
+    <string name="menu">menu item</string>
+
+    <string name="draweropen"></string>
+    <string name="drawerclose"></string>
+
+    <!-- Publication Article Layout -->
+    <string name="tvOffline_text">View full Report</string>
+    <string name="tvCategory_text">Category:</string>
+    <string name="btnrequest_text">Request a Complimentary Trial</string>
+
+    <!-- Publication Article Activity -->
+    <string name="article_alreadysaved">Article already in offline publication list</string>
+    <string name="to_save_article">Are you sure you want to save this article for offline viewing.</string>
+    <string name="article_sucessfully_saved">You have sucessfully saved article for offline viewing.</string>
+    <string name="request_complimentary_trial">Please request a complimentary trial first.</string>
+    <string name="receiver_email">info@pantheonmacro.com</string>
+    <string name="sender_subject">Complimentary Trial Requested (From App)</string>
+    <string name="sender_email">Email: </string>
+
+    <!-- Inflate Publication Layout entries -->
+    <string name="category_text">Category:</string>
+    <string name="favourite_text">Mark as Favourite</string>
+    <string name="rawdata">Abc action bar home subtitle description Format abc action bar home subtitle</string>
+
+    <!-- Contact Us Activity -->
+    <string name="tvGeneral_text">GENERAL ENQUIRIES</string>
+    <string name="tvGeneral_Phoneno">+19146103830</string>
+    <string name="tvGeneral_mail">info@pantheonmacro.com</string>
+    <string name="tvGeneral_tweet">\@PantheonMacro</string>
+
+    <string name="tvIan_text">IAN SHEPHERDSON</string>
+    <string name="tvIan_subtext">(Chief U.S. Economist)</string>
+    <string name="tvIan_Phoneno">+19146103835</string>
+    <string name="tvIan_mail">ian@pantheonmacro.com</string>
+    <string name="tvIan_tweet">\@IanShepherdson</string>
+
+    <string name="tvClaus_text">CLAUS VISTESEN</string>
+    <string name="tvClaus_subtext">(Chief Eurozone Economist)</string>
+    <string name="tvClaus_Phoneno">+441912600308</string>
+    <string name="tvClaus_mail">claus@pantheonmacro.com</string>
+    <string name="tvClaus_tweet">\@ClausVistesen</string>
+
+    <string name="tvAndres_text">ANDRES ABADIA</string>
+    <string name="tvAndres_subtext">(Senior International Economist)</string>
+    <string name="tvAndres_Phoneno">+441912600309</string>
+    <string name="tvAndres_mail">andres@pantheonmacro.com</string>
+    <string name="tvAndres_tweet">\@Andres__Abadia</string>
+
+    <string name="tvFreya_text">Freya Beamish</string>
+    <string name="tvFreya_subtext">(Chief Asia Economist)</string>
+    <string name="tvFreya_Phoneno">Not Available</string>
+    <string name="tvFreya_mail">freya@pantheonmacro.com</string>
+    <string name="tvFreya_tweet">\@freyabeamish</string>
+
+    <string name="tvGenrelEnquiries_text">GENERAL ENQUIRIES</string>
+    <string name="tvGenrelEnquirie_Phoneno">+19146103830</string>
+    <string name="tvGenrelEnquirie_mail">info@pantheonmacro.com</string>
+    <string name="tvGenrelEnquirie">\@PantheonMacro</string>
+
+    <string name="tvSamuel_text">SAMUEL TOMBS</string>
+    <string name="tvSamuel_subtext">(Senior U.K. Economist)</string>
+    <string name="tvSamuel_Phoneno">+442037447430</string>
+    <string name="tvSamuel_mail">samuel@pantheonmacro.com</string>
+    <string name="tvSamuel_tweet">\@samuelTombs</string>
+
+    <string name="twitter_parse">twitter://user?screen_name=</string>
+    <string name="http_parse">https://twitter.com/#!/</string>
+
+    <string name="title_activity_publication_article">Publication Article</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
+
+    <string name="title_activity_complimentary_trial">ComplimentaryTrial</string>
+    <string name="title_offline_data">Offline Documents</string>
+
+    <!-- Complimentary Trial Layout -->
+    <string name="firstpara_text">Pantheon\'s services are available by annual subscription, and research is delivered in a variety of forms depending on each client\'s subscription package.</string>
+    <string name="secondpara_text">To receive a complimentary trial please fill out our enquiry form below.</string>
+    <string name="thirdpara_text">PLEASE NOTE: All Fields marked * are mandatory.</string>
+
+    <string name="etName">Name*</string>
+    <string name="etCompany">Company*</string>
+    <string name="etEmailAddress">Email Address*</string>
+
+    <string name="cbUsEconomy_text">US Economy</string>
+    <string name="cbLatAmEconomy_text">LatAm Economy</string>
+    <string name="cbEuroEconomy_text">Euro Economy</string>
+    <string name="cbUk_text">UK Economy</string>
+    <string name="cbAll_text">All</string>
+
+    <!-- Complimentary trial Activity -->
+    <string name="ename_required">Please enter your name</string>
+    <string name="ecompany_required">Please enter your name</string>
+    <string name="erroremail_required">Please enter your email</string>
+    <string name="errorinvalid_email">Enter a valid email address</string>
+    <string name="user_interest">Please select your interest</string>
+    <string name="receive_email">info@pantheonmacro.com</string>
+    <string name="send_subject">Complimentary Trial Requested (From App)</string>
+
+
+    <string name="title_activity_splash_screen">Pantheon</string>
+    <string name="title_activity_pdf_viewer">Publication Article</string>
+
+    <!-- Offline Publication List Activity -->
+    <string name="articlelist_empty">You did not selected any article for offline viewing.</string>
+
+    <string name="search_hint">Search</string>
+    <string name="search_by">Search by :-</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title">Title</string>
+
+    <string name="author">Author</string>
+    <string name="date1">Date(YYYY)</string>
+    <string name="tag">Tag</string>
+    <string name="date2">Date(DD/MM)</string>
+    <string name="date3">Date(DD/MM/YYYY)</string>
+
+
+</resources>

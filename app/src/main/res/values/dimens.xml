@@ -1,0 +1,181 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Pantheon Macro logo dimentions -->
+    <dimen name="ivloginlogo_top_margin">-30dp</dimen>
+
+    <!-- Email and Password dimentions -->
+    <dimen name="llfields_top_margin">30dp</dimen>
+    <dimen name="llfields_left_margin">35dp</dimen>
+    <dimen name="llfields_right_margin">35dp</dimen>
+    <dimen name="tvloginemail_textsize">20dp</dimen>
+    <dimen name="tvloginpassword_textsize">20dp</dimen>
+
+    <!-- Sign In button dimentions -->
+    <dimen name="btnsignin_top_margin">15dp</dimen>
+    <dimen name="btnsignin_left_margin">35dp</dimen>
+    <dimen name="btnsignin_right_margin">35dp</dimen>
+    <dimen name="btnsignin_textsize">20dp</dimen>
+
+    <dimen name="rlotherfields_top_margin">10dp</dimen>
+    <dimen name="rlotherfields_left_margin">35dp</dimen>
+    <dimen name="rlotherfields_right_margin">35dp</dimen>
+
+    <dimen name="ivor_top_margin">15dp</dimen>
+    <dimen name="ivor_left_margin">35dp</dimen>
+    <dimen name="ivor_right_margin">35dp</dimen>
+
+    <!-- Request Trail button dimentions -->
+    <dimen name="btnrequesttrail_top_margin">15dp</dimen>
+    <dimen name="btnrequesttrail_bottom_margin">20dp</dimen>
+    <dimen name="btnrequesttrail_left_margin">35dp</dimen>
+    <dimen name="btnrequesttrail_right_margin">35dp</dimen>
+    <dimen name="btnrequesttrail_textsize">20dp</dimen>
+
+    <!-- Forgot Password Activity dimentions -->
+    <dimen name="tvfp_statement">18dp</dimen>
+    <dimen name="tvfp_statement_margintop">50dp</dimen>
+    <dimen name="tvfp_statement_marginright">35dp</dimen>
+    <dimen name="tvfp_statement_marginleft">35dp</dimen>
+    <dimen name="tvfp_statement_linespacing">8dp</dimen>
+    <dimen name="etemailid_margintop">60dp</dimen>
+    <dimen name="etemailid_marginright">35dp</dimen>
+    <dimen name="etemailid_marginleft">35dp</dimen>
+    <dimen name="btnreset_textsize">20dp</dimen>
+    <dimen name="btnreset_margintop">40dp</dimen>
+    <dimen name="btnreset_marginright">35dp</dimen>
+    <dimen name="btnreset_marginleft">35dp</dimen>
+
+    <!-- Select Region Fragment dimentions -->
+    <dimen name="tvus_textsize">20dp</dimen>
+    <dimen name="tveurozone_textsize">20dp</dimen>
+    <dimen name="tvlatinamerica_textsize">20dp</dimen>
+    <dimen name="tvuk_textsize">20dp</dimen>
+
+    <!-- Navigation Drawer dimentions -->
+    <dimen name="drawer_width">160dp</dimen>
+    <dimen name="addtoOffline_margintop">30dp</dimen>
+    <dimen name="myfav_marginbottom">10dp</dimen>
+    <dimen name="ivmargin_bottom">10dp</dimen>
+    <dimen name="tvtext_size">20dp</dimen>
+
+    <!-- Publication List Activity -->
+    <dimen name="publicationlist_marginleft">10dp</dimen>
+    <dimen name="publicationlist_marginright">10dp</dimen>
+
+    <!-- Inflate Publication Layout -->
+    <dimen name="publicationlayout_margin">10dp</dimen>
+    <dimen name="articleheading_marginright">5dp</dimen>
+    <dimen name="articleheading_margintop">10dp</dimen>
+    <dimen name="articleheading_marginbottom">10dp</dimen>
+    <dimen name="articleheading_textsize">16dp</dimen>
+    <dimen name="line_marginbottom">10dp</dimen>
+    <dimen name="articleauthor_marginleft">5dp</dimen>
+    <dimen name="articleauthor_marginright">5dp</dimen>
+    <dimen name="articlebrief_margintop">20dp</dimen>
+    <dimen name="articlebrief_marginright">5dp</dimen>
+    <dimen name="articlebrief_linespacing">5dp</dimen>
+    <dimen name="category_margintop">10dp</dimen>
+    <dimen name="downloadinfo_marginleft">5dp</dimen>
+    <dimen name="articlefavourite_marginbottom">10dp</dimen>
+    <dimen name="ivfavourite_width">25dp</dimen>
+    <dimen name="ivfavourite_height">25dp</dimen>
+    <dimen name="markasfavourite_marginleft">5dp</dimen>
+
+    <!-- Publication Article Layout dimentions -->
+    <dimen name="articleheading_margin">10dp</dimen>
+    <dimen name="tvarticleheading_textsize">18dp</dimen>
+    <dimen name="underline_margintop">10dp</dimen>
+    <dimen name="underline_marginleft">10dp</dimen>
+    <dimen name="underline_marginright">10dp</dimen>
+    <dimen name="addto_offline_margin">10dp</dimen>
+    <dimen name="ivoffline_width">25dp</dimen>
+    <dimen name="ivoffline_height">25dp</dimen>
+    <dimen name="tvoffline_marginleft">5dp</dimen>
+    <dimen name="tvarticle_marginleft">5dp</dimen>
+    <dimen name="tvarticle_marginright">10dp</dimen>
+    <dimen name="tvarticlebrief_margintop">20dp</dimen>
+    <dimen name="tvarticlebrief_margin">10dp</dimen>
+    <dimen name="tvarticlebrief_linespacing">5dp</dimen>
+    <dimen name="article_category_margintop">10dp</dimen>
+    <dimen name="category_marginleft">10dp</dimen>
+    <dimen name="category_marginright">10dp</dimen>
+    <dimen name="llcategory_marginleft">10dp</dimen>
+    <dimen name="tvDownloadInfo_marginleft">5dp</dimen>
+    <dimen name="llDownloadstatus_margintop">10dp</dimen>
+    <dimen name="rlDownloadstatus_marginleft">15dp</dimen>
+    <dimen name="rlDownloadstatus_marginright">15dp</dimen>
+    <dimen name="rlDownloadstatus_margintop">20dp</dimen>
+    <dimen name="rlDownloadstatus_marginbottom">20dp</dimen>
+    <dimen name="tvDownloadstatus_margin">10dp</dimen>
+    <dimen name="btnRequest_marginleft">15dp</dimen>
+    <dimen name="btnRequest_marginright">15dp</dimen>
+    <dimen name="btnRequest_bottom">20dp</dimen>
+    <dimen name="btnRequest_textsize">20dp</dimen>
+
+
+    <!-- Contact Us dimentions -->
+    <dimen name="general_textsize">25dp</dimen>
+    <dimen name="general_subtextsize">11dp</dimen>
+    <dimen name="general_margintop">8dp</dimen>
+    <dimen name="general_marginbottom">5dp</dimen>
+    <dimen name="general_marginleft">5dp</dimen>
+    <dimen name="general_marginright">2dp</dimen>
+
+    <dimen name="ian_textsize">17dp</dimen>
+    <dimen name="ian_subtextsize">11dp</dimen>
+    <dimen name="ian_margintop">5dp</dimen>
+    <dimen name="ian_marginleft">5dp</dimen>
+    <dimen name="ian_marginright">2dp</dimen>
+
+    <dimen name="clause_textsize">17dp</dimen>
+    <dimen name="clause_subtextsize">11dp</dimen>
+    <dimen name="clause_marginleft">5dp</dimen>
+    <dimen name="clause_marginright">2dp</dimen>
+    <dimen name="clause_margintop">5dp</dimen>
+
+    <dimen name="andres_textsize">17dp</dimen>
+    <dimen name="andres_subtextsize">11dp</dimen>
+    <dimen name="andres_marginleft">5dp</dimen>
+    <dimen name="andres_marginright">2dp</dimen>
+    <dimen name="andres_margintop">5dp</dimen>
+
+    <dimen name="samuel_textsize">17dp</dimen>
+    <dimen name="samuel_subtextsize">11dp</dimen>
+    <dimen name="samuel_marginright">2dp</dimen>
+    <dimen name="samuel_marginleft">5dp</dimen>
+    <dimen name="samuel_margintop">5dp</dimen>
+
+
+    <!-- Complimentary Trial dimentions -->
+    <dimen name="layout_margintop">15dp</dimen>
+    <dimen name="layout_marginleft">10dp</dimen>
+    <dimen name="layout_marginright">10dp</dimen>
+    <dimen name="firstpara_textsize">16dp</dimen>
+    <dimen name="firstpara_marginbottom">20dp</dimen>
+    <dimen name="firstpara_linespacing">5dp</dimen>
+
+    <dimen name="secondpara_textsize">16dp</dimen>
+    <dimen name="secondpara_marginbottom">20dp</dimen>
+
+    <dimen name="thirdpara_textsize">15dp</dimen>
+    <dimen name="thirdpara_marginbottom">10dp</dimen>
+
+    <dimen name="form_marginleft">15dp</dimen>
+    <dimen name="form_marginright">15dp</dimen>
+
+    <dimen name="checkbox_margintop">20dp</dimen>
+    <dimen name="checkbox_marginleft">15dp</dimen>
+    <dimen name="checkbox_marginright">15dp</dimen>
+
+    <dimen name="btn_margin">15dp</dimen>
+    <dimen name="btn_textsize">20dp</dimen>
+
+    <!-- Inflate Offline Publication Layout -->
+    <dimen name="btnDelete_width">60dp</dimen>
+    <dimen name="btnDelete_height">30dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

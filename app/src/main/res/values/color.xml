@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+
+    <color name="rlus_color">#D5E7E6</color>
+    <color name="rleurozone_color">#EAEAEA</color>
+    <color name="rluk_color">#EAEAEA</color>
+    <color name="rllatinamerica_color">#D5E7E6</color>
+
+    <color name="general_color">#E0E4E5</color>
+
+    <color name="menu_color">#006A81</color>
+    <color name="red">#006A81</color>
+
+    <!-- Navigation Drawer color -->
+    <color name="tvtext_color">#006880</color>
+    <color name="left_drawer_backgroundcolor">#97BDC5</color>
+
+    <!-- Contact us Activity -->
+    <color name="text_headingcolor">#006A81</color>
+
+    <color name="downloadStatus_color">#E9E9E9</color>
+
+</resources>

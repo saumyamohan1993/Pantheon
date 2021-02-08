@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@color/white"
+        android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvArticleHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/articleheading_margin"
+            android:textSize="@dimen/tvarticleheading_textsize"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1sp"
+            android:background="@color/menu_color"
+            android:layout_marginTop="@dimen/underline_margintop"
+            android:layout_marginLeft="@dimen/underline_marginleft"
+            android:layout_marginRight="@dimen/underline_marginright"/>
+
+        <RelativeLayout
+            android:id="@+id/rltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/addto_offline_margin">
+
+            <RelativeLayout
+                android:id="@+id/viewfullreport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivOffline"
+                    android:layout_width="@dimen/ivoffline_width"
+                    android:layout_height="@dimen/ivoffline_height"
+                    android:src="@drawable/offline"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/tvOffline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvOffline_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/tvoffline_marginleft"
+                    android:textColor="@color/menu_color"
+                    android:layout_toRightOf="@+id/ivOffline" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/ivIconDoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icondoc"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/tvArticleAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ivIconDoc"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/tvarticle_marginleft"
+                    android:layout_marginRight="@dimen/tvarticle_marginright"
+                    android:textColor="@color/menu_color"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvArticleBrief"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tvarticlebrief_margintop"
+            android:textAlignment="center"
+            android:layout_margin="@dimen/tvarticlebrief_margin"
+            android:lineSpacingExtra="@dimen/tvarticlebrief_linespacing"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvCategory_text"
+            android:textColor="@color/menu_color"
+            android:layout_marginTop="@dimen/article_category_margintop"
+            android:layout_marginLeft="@dimen/category_marginleft"
+            android:layout_marginRight="@dimen/category_marginright"/>
+
+            <LinearLayout
+                android:id="@+id/llcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/llcategory_marginleft">
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvDownloadInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tvDownloadInfo_marginleft"/>
+
+            </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/llOfflineStatus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/llDownloadstatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/downloadStatus_color"
+        android:layout_marginTop="@dimen/llDownloadstatus_margintop">
+
+        <RelativeLayout
+            android:id="@+id/rlDownloadstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title"
+            android:layout_marginLeft="@dimen/rlDownloadstatus_marginleft"
+            android:layout_marginRight="@dimen/rlDownloadstatus_marginright"
+            android:layout_marginTop="@dimen/rlDownloadstatus_margintop"
+            android:layout_marginBottom="@dimen/rlDownloadstatus_marginbottom">
+
+            <TextView
+                android:id="@+id/tvDownloadStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/tvDownloadstatus_margin"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_blue"
+            android:layout_marginLeft="@dimen/btnRequest_marginleft"
+            android:layout_marginRight="@dimen/btnRequest_marginright"
+            android:layout_marginBottom="@dimen/btnRequest_bottom"
+            android:text="@string/btnrequest_text"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/btnRequest_textsize"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</LinearLayout>
+
+  </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

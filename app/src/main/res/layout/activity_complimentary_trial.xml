@@ -1,0 +1,150 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.pantheon.android.ui.ComplimentaryTrial">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_marginleft"
+            android:layout_marginRight="@dimen/layout_marginright"
+            android:layout_marginTop="@dimen/layout_margintop"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/firstpara_text"
+                android:textSize="@dimen/firstpara_textsize"
+                android:layout_marginBottom="@dimen/firstpara_marginbottom"
+                android:lineSpacingExtra="@dimen/firstpara_linespacing"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondpara_text"
+                android:textSize="@dimen/secondpara_textsize"
+                android:textColor="@color/menu_color"
+                android:layout_marginBottom="@dimen/secondpara_marginbottom"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thirdpara_text"
+                android:textSize="@dimen/thirdpara_textsize"
+                android:textStyle="italic"
+                android:textColor="@color/menu_color"
+                android:layout_marginBottom="@dimen/thirdpara_marginbottom"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/form_marginleft"
+                android:layout_marginRight="@dimen/form_marginright">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/etName"/>
+
+                <EditText
+                    android:id="@+id/etCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/etCompany" />
+
+                <EditText
+                    android:id="@+id/etEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/etEmailAddress"
+                    android:inputType="textEmailAddress"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/checkbox_margintop"
+                android:layout_marginLeft="@dimen/checkbox_marginleft"
+                android:layout_marginRight="@dimen/checkbox_marginright">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbUsEconomy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cbUsEconomy_text"/>
+
+                    <CheckBox
+                        android:id="@+id/cbLatAmEconomy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cbLatAmEconomy_text"/>
+
+                    <CheckBox
+                        android:id="@+id/cbAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cbAll_text"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbEuroEconomy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cbEuroEconomy_text"/>
+
+                    <CheckBox
+                        android:id="@+id/cbUkEconomy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cbUk_text"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnActivateFreeTrail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Activate Free Trail"
+                android:background="@drawable/btn_blue"
+                android:layout_margin="@dimen/btn_margin"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btn_textsize"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pantheon.android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.SplashScreenActivity"
+            android:label="@string/title_activity_splash_screen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.PublicationsListActivity"
+            android:label="@string/title_activity_uspublications"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.ContactusActivity"
+            android:label="@string/title_activity_contactus"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.HomeScreenActivity"
+            android:label="@string/title_activity_mainactivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@layout/searchable" />
+        </activity>
+        <activity
+            android:name=".ui.PublicationArticleActivity"
+            android:label="@string/title_activity_publication_article"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.ComplimentaryTrial"
+            android:label="@string/title_activity_complimentary_trial"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.OfflinePublicationListActivity"
+            android:label="@string/title_offline_data"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.PdfViewerActivity"
+            android:label="@string/title_activity_pdf_viewer"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.SearchActivity"
+            android:label="@string/search_hint"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

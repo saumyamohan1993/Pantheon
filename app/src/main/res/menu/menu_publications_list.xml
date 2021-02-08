@@ -1,0 +1,14 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pantheon.android.ui.PublicationsListActivity">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search"
+        android:title="@string/region_search"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+</menu>
