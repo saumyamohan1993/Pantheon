@@ -1,8 +1,8 @@
 /**
- @Module Name/Class		:	OfflinePublicationListActivity
- @Author Name			:	Sombir Singh Bisht
- @Date					:	July 15, 2015
- @Purpose				:	This page/functionality is used to provide Offline Publication List.
+ * @Module Name/Class		:	OfflinePublicationListActivity
+ * @Author Name            :	Sombir Singh Bisht
+ * @Date                    :	July 15, 2015
+ * @Purpose                :	This page/functionality is used to provide Offline Publication List.
  */
 package com.pantheon.android.ui;
 
@@ -12,15 +12,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
-import com.pantheon.android.utility.DataBaseHelper;
+import android.widget.Toast;
+
 import com.pantheon.android.R;
 import com.pantheon.android.adapter.OfflinePublicationAdapter;
 import com.pantheon.android.bean.PublicationData;
+import com.pantheon.android.utility.DataBaseHelper;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -30,19 +35,21 @@ import java.util.ArrayList;
 public class OfflinePublicationListActivity extends AppCompatActivity {
     private ListView lvPublication;
     private OfflinePublicationAdapter adapter;
-    private ArrayList <PublicationData> publicationList;
+    private ArrayList<PublicationData> publicationList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publications_list);
 
-        lvPublication=(ListView)findViewById(R.id.lvPublications);
-        publicationList=new ArrayList<PublicationData>();
+        lvPublication = (ListView) findViewById(R.id.lvPublications);
+        publicationList = new ArrayList<PublicationData>();
 
         getOfflineList();
         initAdapter();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
     }
 
     @Override
@@ -50,23 +57,23 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if(id == R.id.home){
+        if (id == R.id.home) {
             NavUtils.navigateUpFromSameTask(this);
         }
-        if(id == android.R.id.home){
+        if (id == android.R.id.home) {
             finish();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void getOfflineList(){
+    public void getOfflineList() {
 
         publicationList.clear();
         DataBaseHelper mydatabase = new DataBaseHelper(this);
         mydatabase.getAllRecords(publicationList);
-        System.out.println("Publication List Size"+publicationList.size());
+        System.out.println("Publication List Size" + publicationList.size());
 
-        if(publicationList.size() == 0){
+        if (publicationList.size() == 0) {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(OfflinePublicationListActivity.this);
             alertDialogBuilder.setMessage(getString(R.string.articlelist_empty));
@@ -82,37 +89,58 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
         }
     }
 
-    public void deletePublication(int id){
+    public void deletePublication(int id) {
 
         DataBaseHelper mydatabase = new DataBaseHelper(this);
-        int i=mydatabase.deleteRow(id);
+        int i = mydatabase.deleteRow(id);
         System.out.println("Deleted item :::;" + i);
         getOfflineList();
         adapter.notifyDataSetChanged();
     }
 
-    public void initAdapter(){
+    public void initAdapter() {
 
         adapter = new OfflinePublicationAdapter(this, publicationList, lvPublication);
         lvPublication.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
 
-    public void downloadOfflineurl(String info_download){
+    public void downloadOfflineurl(String info_download) {
+        //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), "http://www.orimi.com/pdf-test" + ".pdf");
+        File file = new File("/storage/emulated/0/Download" + Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download + ".pdf");
+        Log.e("file1", "downloadOfflineurl file: " + file);
 
-        File file = new File(Environment.getExternalStorageDirectory() +"/"+ getString(R.string.app_name), info_download+".pdf");
+        if (file.exists()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            Uri uri = Uri.fromFile(file);
+            intent.setDataAndType(uri, "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        System.out.println("Downloaded File........." + file);
+            try {
 
-        Intent target = new Intent(Intent.ACTION_VIEW);
-        target.setDataAndType(Uri.fromFile(file),"application/pdf");
-        target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Log.e("file1", "exist3: ");
 
-        Intent intent = Intent.createChooser(target, "Open File");
-        try {
-            startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            // Instruct the user to install a PDF reader here, or something
+                Toast.makeText(this, "No Application available to view pdf", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(this, "No Application available to view pdf", Toast.LENGTH_LONG).show();
+
         }
+
+
+//
+//        Intent target = new Intent(Intent.ACTION_VIEW);
+//        target.setDataAndType(Uri.fromFile(file),"application/pdf");
+//        target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//
+//        Intent intent = Intent.createChooser(target, "Open File");
+//        try {
+//            startActivity(intent);
+//        } catch (ActivityNotFoundException e) {
+//            // Instruct the user to install a PDF reader here, or something
+//        }
     }
 }
+

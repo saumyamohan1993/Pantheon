@@ -168,8 +168,7 @@ public class LoginActivity extends Activity implements BaseListener{
         public void onWebServiceComplete(Object baseObject) {
             Login loginBean=(Login)baseObject;
 
-            System.out.println("Result2"+loginBean.result);
-            Log.e("login", "loginresult: "+loginBean );
+            Log.e("login", "loginresult: "+loginBean);
 
             if(loginBean.result == true){
                 Intent intent= new Intent(LoginActivity.this,HomeScreenActivity.class);

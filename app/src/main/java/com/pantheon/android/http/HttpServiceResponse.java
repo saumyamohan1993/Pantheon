@@ -29,7 +29,7 @@ public class HttpServiceResponse {
             beanObject.statusCode = -100;
             return beanObject;
         }*/
-
+        Log.e(TAG, "getResponse: "+type );
         try {
             switch (type) {
 
@@ -112,13 +112,14 @@ public class HttpServiceResponse {
 
     private static BaseBean getResponse(Context context, PublicationRegion beanObject, String result) {
         try {
-            App.showLog(TAG, "PublicationResponse .. " + result);
-
+         //  App.showLog(TAG, "PublicationResponse .. " + result);
             JSONObject jsonObject = new JSONObject(result);
 
-            App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
+         //   App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
+//            Log.e(TAG, "getResponse:publicationss2 "+jsonObject.toString() );
 
             beanObject.result = jsonObject.getBoolean("result");
+          //  Log.e(TAG, "getResponse:publicationss3 "+  beanObject.result);
 
             //beanObject.statusMsg = jsonObject.getString("message");
             //beanObject.statusCode = jsonObject.getInt("status");
@@ -180,7 +181,7 @@ public class HttpServiceResponse {
             App.showLog(TAG, "PublicationResponse .. " + result);
 
             JSONObject jsonObject = new JSONObject(result);
-
+           Log.e(TAG, "getResponse:searchresult "+jsonObject.toString() );
             App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
 
             beanObject.result = jsonObject.getBoolean("result");

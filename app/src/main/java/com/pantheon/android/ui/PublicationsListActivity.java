@@ -23,6 +23,7 @@ import android.widget.ListView;
 import com.pantheon.android.R;
 import com.pantheon.android.adapter.PublicationAdapter;
 import com.pantheon.android.bean.BaseBean;
+import com.pantheon.android.bean.Login;
 import com.pantheon.android.bean.PublicationData;
 import com.pantheon.android.bean.PublicationRegion;
 import com.pantheon.android.http.BaseListener;
@@ -171,13 +172,13 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
         USbean.setTags(TAGS);
         USbean.setCustom1(CUSTOM1);
         USbean.setProgressEnable(true);
-        Log.e("response", "AppToken "+USbean.getAppToken());
-        Log.e("response", "source "+USbean.getSource());
-        Log.e("response", "UNAME "+USbean.getUName());
-        Log.e("response", "UID "+USbean.getUId());
-        Log.e("response", "UTOKEN "+USbean.getUToken());
-        Log.e("response", "catID "+USbean.getCatID());
-        Log.e("response", "ModPubList "+MODPUBLIST);
+//        Log.e("response", "AppToken "+USbean.getAppToken());
+//        Log.e("response", "source "+USbean.getSource());
+//        Log.e("response", "UNAME "+USbean.getUName());
+//        Log.e("response", "UID "+USbean.getUId());
+//        Log.e("response", "UTOKEN "+USbean.getUToken());
+//        Log.e("response", "catID "+USbean.getCatID());
+//        Log.e("response", "ModPubList "+MODPUBLIST);
         HttpConnectionUtil.callWebService(USbean, this, WebserviceType.USMONITOR,onWebServiceCompleteListener);
     }
 
@@ -190,11 +191,12 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     };
 
     private void refreshAdapter(BaseBean baseObject){
+      //  Login loginBean=(Login)baseObject;
 
         PublicationRegion USbean=(PublicationRegion)baseObject;
         publicationList=((PublicationRegion) baseObject).getPublicationDataArrayList();
 
-       // Log.e("login1", "publication: "+USbean.result );
+        //Log.e("login1", "publication: "+USbean.result );
 
 
        // Log.e("on responselogin :", new Gson().toJson(USbean.toString())+"");

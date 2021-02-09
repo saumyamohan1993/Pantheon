@@ -161,6 +161,7 @@
     <string name="search_by">Search by :-</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title">Title</string>
+    <string name="filenotfound">File not found.</string>
 
     <string name="author">Author</string>
     <string name="date1">Date(YYYY)</string>

@@ -66,12 +66,15 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
 			if(mNameValuePairs != null){
 				httppost.setEntity(new UrlEncodedFormEntity(mNameValuePairs));
 			}
-            Log.e("Connectionresponse ","url is  " + mObject.URL);
+		Log.e("response ","url is  " + mNameValuePairs);
+
+			//Log.e("Connectionresponse ","url is  " + mObject.URL);
             HttpResponse response = httpclient.execute(httppost);
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
 				InputStream instream = entity.getContent();
 				String result = convertStreamToString(instream);
+
                 mObject = HttpServiceResponse.getResponse(mContext, mObject, mType, result);
 			}
 			
