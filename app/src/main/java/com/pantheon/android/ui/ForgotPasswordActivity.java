@@ -6,8 +6,9 @@
  */
 package com.pantheon.android.ui;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -17,6 +18,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.pantheon.android.R;
 import com.pantheon.android.bean.Reset;
 import com.pantheon.android.http.BaseListener;

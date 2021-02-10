@@ -1,11 +1,9 @@
 package com.pantheon.android.ui;
 
-import android.app.AlertDialog;
+
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -17,6 +15,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.SearchView;
+
 import com.pantheon.android.R;
 import com.pantheon.android.adapter.PublicationAdapter;
 import com.pantheon.android.bean.BaseBean;
@@ -27,7 +28,7 @@ import com.pantheon.android.http.HttpConnectionUtil;
 import com.pantheon.android.http.HttpConstant;
 import com.pantheon.android.http.WebserviceType;
 import com.pantheon.android.utility.SharedPreferenceManager;
-
+import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -464,7 +465,7 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         }
         else
         {
-            android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(SearchActivity.this);
+       AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SearchActivity.this);
             alertDialogBuilder.setMessage("No publication found based on search criteria.");
             alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -476,7 +477,7 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
                 }
             });
 
-            final android.support.v7.app.AlertDialog alertDialog = alertDialogBuilder.create();
+            AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
 
         }

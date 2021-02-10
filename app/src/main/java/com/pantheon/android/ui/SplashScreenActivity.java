@@ -11,12 +11,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.pantheon.android.R;
 import com.pantheon.android.utility.SharedPreferenceManager;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SplashScreenActivity extends Activity {
+public class SplashScreenActivity extends AppCompatActivity {
     private static final int SPLASH_TIME_OUT = 1000;
 
     @Override

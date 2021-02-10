@@ -19,6 +19,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.pantheon.android.R;
 import com.pantheon.android.bean.Login;
 import com.pantheon.android.http.BaseListener;
@@ -30,7 +33,7 @@ import com.pantheon.android.utility.EmailValidator;
 import com.pantheon.android.utility.SharedPreferenceManager;
 
 
-public class LoginActivity extends Activity implements BaseListener{
+public class LoginActivity extends AppCompatActivity implements BaseListener{
     private EditText etEmailAddress,etPassword;
     private Button btnSignIn,btnRequestTrail;
     private TextView tvForgotPassword;
