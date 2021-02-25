@@ -82,19 +82,19 @@
     <string name="tvGeneral_mail">info@pantheonmacro.com</string>
     <string name="tvGeneral_tweet">\@PantheonMacro</string>
 
-    <string name="tvIan_text">IAN SHEPHERDSON</string>
+    <string name="tvIan_text">Ian Shepherdson</string>
     <string name="tvIan_subtext">(Chief U.S. Economist)</string>
     <string name="tvIan_Phoneno">+19146103835</string>
     <string name="tvIan_mail">ian@pantheonmacro.com</string>
     <string name="tvIan_tweet">\@IanShepherdson</string>
 
-    <string name="tvClaus_text">CLAUS VISTESEN</string>
+    <string name="tvClaus_text">Claus Vistesen</string>
     <string name="tvClaus_subtext">(Chief Eurozone Economist)</string>
     <string name="tvClaus_Phoneno">+441912600308</string>
     <string name="tvClaus_mail">claus@pantheonmacro.com</string>
     <string name="tvClaus_tweet">\@ClausVistesen</string>
 
-    <string name="tvAndres_text">ANDRES ABADIA</string>
+    <string name="tvAndres_text">Andres Abadia</string>
     <string name="tvAndres_subtext">(Senior International Economist)</string>
     <string name="tvAndres_Phoneno">+441912600309</string>
     <string name="tvAndres_mail">andres@pantheonmacro.com</string>
@@ -102,7 +102,7 @@
 
     <string name="tvFreya_text">Freya Beamish</string>
     <string name="tvFreya_subtext">(Chief Asia Economist)</string>
-    <string name="tvFreya_Phoneno">Not Available</string>
+    <string name="tvFreya_Phoneno"> +441912499209</string>
     <string name="tvFreya_mail">freya@pantheonmacro.com</string>
     <string name="tvFreya_tweet">\@freyabeamish</string>
 
@@ -111,11 +111,18 @@
     <string name="tvGenrelEnquirie_mail">info@pantheonmacro.com</string>
     <string name="tvGenrelEnquirie">\@PantheonMacro</string>
 
-    <string name="tvSamuel_text">SAMUEL TOMBS</string>
+    <string name="tvSamuel_text">Samuel Tombs</string>
     <string name="tvSamuel_subtext">(Senior U.K. Economist)</string>
     <string name="tvSamuel_Phoneno">+442037447430</string>
     <string name="tvSamuel_mail">samuel@pantheonmacro.com</string>
     <string name="tvSamuel_tweet">\@samuelTombs</string>
+
+    <string name="tvMiguel">Miguel Chanco</string>
+    <string name="tvMiguel_subtext">(Senior Asia Economist)</string>
+    <string name="tvMiguel_Phoneno">+441912499274</string>
+    <string name="tvMiguel_mail">miguel@pantheonmacro.com</string>
+    <string name="tvMiguel_tweet">\@mc_economist</string>
+
 
     <string name="twitter_parse">twitter://user?screen_name=</string>
     <string name="http_parse">https://twitter.com/#!/</string>

@@ -11,6 +11,7 @@ import com.pantheon.android.bean.Reset;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +24,15 @@ public class HttpNameValuePair {
 
 	public static List<NameValuePair> getLoginNameValuePair(BaseBean baseBean){
 		Login login = (Login)baseBean;
+
+
 		List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 		pairs.add(new BasicNameValuePair("UNAME", login.getUname()));
 		pairs.add(new BasicNameValuePair("UPASS", login.getUpass()));
 		pairs.add(new BasicNameValuePair("AppToken", login.getAppToken()));
 		pairs.add(new BasicNameValuePair("DoLogin","true"));
 		pairs.add(new BasicNameValuePair("source", login.getSource()));
-        Log.v("", "Login values " + pairs.toString());
+        Log.e("", "Login values " + pairs.toString());
 		return pairs;
 
 //        user_email,user_password

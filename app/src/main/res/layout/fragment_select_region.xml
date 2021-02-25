@@ -5,200 +5,207 @@
     tools:context="com.pantheon.android.fragments.SelectRegionFragment"
     android:orientation="vertical">
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="4">
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-        <LinearLayout
-            android:id="@+id/llUsMonitor"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:weightSum="4">-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/us"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llUsMonitor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_weight="1">-->
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/rlus_color">
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/us"/>-->
 
-                <TextView
-                    android:id="@+id/tvUS"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvus_text"
-                    android:textSize="@dimen/tvus_textsize"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/rlus_color">-->
 
-            </RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvUS"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/tvus_text"-->
+<!--                    android:textSize="@dimen/tvus_textsize"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:gravity="center"/>-->
 
-        </LinearLayout>
+<!--            </RelativeLayout>-->
 
-        <LinearLayout
-            android:id="@+id/llEurozone"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+<!--        </LinearLayout>-->
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/rleurozone_color">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llEurozone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2">-->
 
-                <TextView
-                    android:id="@+id/tvEurozone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tveurozone_text"
-                    android:textSize="@dimen/tveurozone_textsize"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/rleurozone_color">-->
 
-            </RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvEurozone"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/tveurozone_text"-->
+<!--                    android:textSize="@dimen/tveurozone_textsize"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:gravity="center"/>-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/euro"/>
+<!--            </RelativeLayout>-->
 
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/euro"/>-->
 
-        <LinearLayout
-            android:id="@+id/llLatinAmerica"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+<!--        </LinearLayout>-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/lad"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llLatinAmerica"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2">-->
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/rllatinamerica_color">
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/lad"/>-->
 
-                <TextView
-                    android:id="@+id/tvLatinAmerica"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvlatinamerica_text"
-                    android:textSize="@dimen/tvlatinamerica_textsize"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/rllatinamerica_color">-->
 
-            </RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvLatinAmerica"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/tvlatinamerica_text"-->
+<!--                    android:textSize="@dimen/tvlatinamerica_textsize"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:gravity="center"/>-->
 
-        </LinearLayout>
+<!--            </RelativeLayout>-->
 
-        <LinearLayout
-            android:id="@+id/llUk"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+<!--        </LinearLayout>-->
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/rluk_color">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llUk"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2">-->
 
-                <TextView
-                    android:id="@+id/tvUk"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvuk_text"
-                    android:textSize="@dimen/tvuk_textsize"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/rluk_color">-->
 
-            </RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvUk"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/tvuk_text"-->
+<!--                    android:textSize="@dimen/tvuk_textsize"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:gravity="center"/>-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ukeconomic"/>
+<!--            </RelativeLayout>-->
 
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/ukeconomic"/>-->
+
+<!--        </LinearLayout>-->
 
 
 
 
 
-        <LinearLayout
-            android:id="@+id/llAsiaMonitor"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llAsiaMonitor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2">-->
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/asia"/>
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/asia"/>-->
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/rllatinamerica_color">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/rllatinamerica_color">-->
 
-                <TextView
-                    android:id="@+id/tvAsiaMonitor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_category_asia_monitor"
-                    android:textSize="@dimen/tvlatinamerica_textsize"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvAsiaMonitor"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/txt_category_asia_monitor"-->
+<!--                    android:textSize="@dimen/tvlatinamerica_textsize"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:gravity="center"/>-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-        </LinearLayout>
-        </LinearLayout>
+<!--        </LinearLayout>-->
+<!--        </LinearLayout>-->
 
-    </ScrollView>
+<!--    </ScrollView>-->
 
 </LinearLayout>

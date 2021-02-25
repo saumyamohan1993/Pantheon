@@ -49,7 +49,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         download_token = intent.getStringExtra("articlepdf_token");
         publication_heading = intent.getStringExtra("publication_heading");
         download_info = intent.getStringExtra("download_info");
-        Log.e("done", "onCreate: " + publication_heading + "\n" + download_token);
 
         wvPdfShow = (WebView) findViewById(R.id.wvPdfShow);
         wvPdfShow.getSettings().setJavaScriptEnabled(true);
@@ -71,7 +70,7 @@ public class PdfViewerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void downloadurl(String url, String article_heading) {
+    public void downloadurl(String url, String article_heading,String articleinfo) {
 
         File direct = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name));
 
@@ -87,11 +86,13 @@ public class PdfViewerActivity extends AppCompatActivity {
                     DownloadManager.Request.NETWORK_MOBILE);
 
             request.setTitle(article_heading);
-            request.setDescription(article_heading);
+            request.setDescription(articleinfo);
 
             request.allowScanningByMediaScanner();
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             String path = direct + "/" + article_heading;
+           // Log.e("123", "downloadurl: "+path );
+            Log.e("abc", "downloadurl: "+ direct + "/" + article_heading );
             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, path);
             request.setMimeType("*/*");
             registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
@@ -137,6 +138,8 @@ public class PdfViewerActivity extends AppCompatActivity {
 
                 Toast.makeText(PdfViewerActivity.this, getResources().getString(R.string.article_alreadysaved), Toast.LENGTH_LONG).show();
             } else {
+              //  Log.e("done", "onOptionsItemSelected: "+download_token );
+             //   downloadurl(download_token, download_info);
                 isServerReachable(download_token, download_info, publication_heading);
             }
         }
@@ -197,7 +200,7 @@ public class PdfViewerActivity extends AppCompatActivity {
                     Log.e("done", "isServerReachable1: " + responseCode);
                     if (responseCode == 200) {
                         mydatabase.insertRecord(publication_heading, download_info);
-                        downloadurl(download_token, download_info);
+                        downloadurl(download_token, download_info,publication_heading);
                     } else {
                     }
 
@@ -214,7 +217,6 @@ public class PdfViewerActivity extends AppCompatActivity {
     }
 
     public void checkstatus(int responseCode) {
-        Log.e("done", "isServerReachable2:check " + responseCode);
 
         if (responseCode == 200) {
             //  downloadurl(download_token, download_info);

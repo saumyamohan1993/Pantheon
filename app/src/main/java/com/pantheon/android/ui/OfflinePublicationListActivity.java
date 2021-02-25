@@ -1,12 +1,11 @@
 /**
  * @Module Name/Class		:	OfflinePublicationListActivity
  * @Author Name            :	Sombir Singh Bisht
- * @Date                    :	July 15, 2015
- * @Purpose                :	This page/functionality is used to provide Offline Publication List.
+ * @Date :	July 15, 2015
+ * @Purpose :	This page/functionality is used to provide Offline Publication List.
  */
 package com.pantheon.android.ui;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,8 +13,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
-
-
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -109,9 +106,12 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+
+
     public void downloadOfflineurl(String info_download) {
-        //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), "http://www.orimi.com/pdf-test" + ".pdf");
-        File file = new File("/storage/emulated/0/Download" + Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download + ".pdf");
+
+      //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
+        File file = new File("/storage/emulated/0/Download" + Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
         Log.e("file1", "downloadOfflineurl file: " + file);
 
         if (file.exists()) {
@@ -121,10 +121,8 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             try {
-
                 startActivity(intent);
             } catch (ActivityNotFoundException e) {
-                Log.e("file1", "exist3: ");
 
                 Toast.makeText(this, "No Application available to view pdf", Toast.LENGTH_LONG).show();
             }
@@ -147,4 +145,5 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
 //        }
     }
 }
+
 

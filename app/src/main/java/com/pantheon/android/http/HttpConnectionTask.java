@@ -47,7 +47,7 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
 		mNameValuePairs = nameValuePairs;
 		this.execute();
 	}
-	
+
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
@@ -62,12 +62,12 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
 		HttpClient httpclient = new DefaultHttpClient();
 
 		HttpPost httppost = new HttpPost(mObject.URL);
+
 		try {
 			if(mNameValuePairs != null){
 				httppost.setEntity(new UrlEncodedFormEntity(mNameValuePairs));
 			}
 		Log.e("response ","url is  " + mNameValuePairs);
-
 			//Log.e("Connectionresponse ","url is  " + mObject.URL);
             HttpResponse response = httpclient.execute(httppost);
 			HttpEntity entity = response.getEntity();

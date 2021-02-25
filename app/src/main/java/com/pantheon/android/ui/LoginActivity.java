@@ -1,12 +1,11 @@
 /**
- @Page/Module Name/Class	:	LoginActivity
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Aug 24,  2015
- @Purpose			:	This page/functionality is used to provide Login Screen.
+ * @Page/Module Name/Class	:	LoginActivity
+ * @Author Name        :	Mr. Sombir Singh Bisht
+ * @Date :	Aug 24,  2015
+ * @Purpose :	This page/functionality is used to provide Login Screen.
  */
 package com.pantheon.android.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -33,16 +32,18 @@ import com.pantheon.android.utility.EmailValidator;
 import com.pantheon.android.utility.SharedPreferenceManager;
 
 
-public class LoginActivity extends AppCompatActivity implements BaseListener{
-    private EditText etEmailAddress,etPassword;
-    private Button btnSignIn,btnRequestTrail;
+public class LoginActivity extends AppCompatActivity implements BaseListener {
+    private EditText etEmailAddress, etPassword;
+    private Button btnSignIn, btnRequestTrail;
     private TextView tvForgotPassword;
     private CheckBox cbRememberCheck;
     private RelativeLayout rlRememberCheck;
+    String responseServer;
 
-    private final String APPTOKEN="J50pjO0d6rH3wzY3";
-    private final String SOURCE="Android";
-    private final boolean DOLOGIN=true;
+    private final String APPTOKEN = "J50pjO0d6rH3wzY3";
+    private final String SOURCE = "Android";
+    private final boolean DOLOGIN = true;
+    String url = "https://www.pantheonmacro.com/cfe/PRO_documents.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +52,13 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
-        etEmailAddress=(EditText)findViewById(R.id.etEmailAddress);
-        etPassword=(EditText)findViewById(R.id.etPassword);
-        btnSignIn=(Button)findViewById(R.id.btnSignIn);
-        btnRequestTrail=(Button)findViewById(R.id.btnRequestTrail);
-        tvForgotPassword=(TextView)findViewById(R.id.tvForgotPassword);
-        cbRememberCheck=(CheckBox)findViewById(R.id.cbRememberCheck);
-        rlRememberCheck=(RelativeLayout)findViewById(R.id.rlRememberCheck);
+        etEmailAddress = (EditText) findViewById(R.id.etEmailAddress);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        btnRequestTrail = (Button) findViewById(R.id.btnRequestTrail);
+        tvForgotPassword = (TextView) findViewById(R.id.tvForgotPassword);
+        cbRememberCheck = (CheckBox) findViewById(R.id.cbRememberCheck);
+        rlRememberCheck = (RelativeLayout) findViewById(R.id.rlRememberCheck);
 
         final SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
         etEmailAddress.setText(preferenceManager.getEmailStatus(this));
@@ -93,6 +94,7 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
@@ -104,12 +106,12 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
             public void onClick(View v) {
                 SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
 
-                if(!SharedPreferenceManager.getRememberStatus(LoginActivity.this)) {
+                if (!SharedPreferenceManager.getRememberStatus(LoginActivity.this)) {
                     cbRememberCheck.setChecked(true);
                     preferenceManager.setRememberStatus(LoginActivity.this, true);
                     saveEmailPassword();
 
-                }else{
+                } else {
                     cbRememberCheck.setChecked(false);
                     preferenceManager.setRememberStatus(LoginActivity.this, false);
                     saveEmailPassword();
@@ -146,15 +148,17 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
     }
 
     /**
-     @Function Name		:	doLogin
-     @Author Name		:	Mr. Sombir Singh Bisht
-     @Date				:	Aug, 24 2015
-     @Param			    :	email, password  | String | User will login by using correct credentials.
-     @Purpose			:   To login the app.
+     * @Function Name        :	doLogin
+     * @Author Name        :	Mr. Sombir Singh Bisht
+     * @Date :	Aug, 24 2015
+     * @Param :	email, password  | String | User will login by using correct credentials.
+     * @Purpose :   To login the app.
      */
-    private void doLogin(String email,String password){
-        Log.e("login", "doLogin: "+HttpConstant.LOGIN_URL );
-        Login loginBean=new Login(HttpConstant.LOGIN_URL);
+
+
+    private void doLogin(String email, String password) {
+        Log.e("loginresponse", "doLogin: " + HttpConstant.LOGIN_URL);
+        Login loginBean = new Login(HttpConstant.LOGIN_URL);
         loginBean.setUname(email);
         loginBean.setUpass(password);
         loginBean.setAppToken(APPTOKEN);
@@ -163,25 +167,25 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
         loginBean.setProgressEnable(true);
         saveEmailPassword();
 
-        HttpConnectionUtil.callWebService(loginBean,this, WebserviceType.LOGIN,onWebServiceCompleteListener);
+        HttpConnectionUtil.callWebService(loginBean, this, WebserviceType.LOGIN, onWebServiceCompleteListener);
     }
 
-    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener=new BaseListener.OnWebServiceCompleteListener() {
+    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener = new BaseListener.OnWebServiceCompleteListener() {
         @Override
         public void onWebServiceComplete(Object baseObject) {
-            Login loginBean=(Login)baseObject;
+            Login loginBean = (Login) baseObject;
 
-            Log.e("login", "loginresult: "+loginBean);
+            Log.e("login", "responseresulttt: " + loginBean);
 
-            if(loginBean.result == true){
-                Intent intent= new Intent(LoginActivity.this,HomeScreenActivity.class);
+            if (loginBean.result == true) {
+                Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
                 startActivity(intent);
                 SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
                 preferenceManager.setRememberStatus(LoginActivity.this, true);
                 preferenceManager.setUserEmail(LoginActivity.this, etEmailAddress.getText().toString());
                 finish();
 
-            }else{
+            } else {
                 SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
                 preferenceManager.setUserEmail(LoginActivity.this, null);
                 preferenceManager.setRememberStatus(LoginActivity.this, false);
@@ -191,22 +195,21 @@ public class LoginActivity extends AppCompatActivity implements BaseListener{
     };
 
     /**
-     @Function Name		:	saveEmailPassword
-     @Author Name		:	Mr. Sombir Singh Bisht
-     @Date				:	Aug, 24 2015
-     @Param			    :	NA
-     @Purpose			:   To save email, password and remember status into local database.
+     * @Function Name        :	saveEmailPassword
+     * @Author Name        :	Mr. Sombir Singh Bisht
+     * @Date :	Aug, 24 2015
+     * @Param :	NA
+     * @Purpose :   To save email, password and remember status into local database.
      */
-    public void saveEmailPassword(){
-        if(cbRememberCheck.isChecked()) {
+    public void saveEmailPassword() {
+        if (cbRememberCheck.isChecked()) {
             SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
             preferenceManager.setEmailStatus(this, etEmailAddress.getText().toString());
             preferenceManager.setPasswordStatus(this, etPassword.getText().toString());
             preferenceManager.setRememberStatus(LoginActivity.this, true);
             cbRememberCheck.setChecked(true);
-        }
-        else{
-            SharedPreferenceManager preferenceManager=SharedPreferenceManager.getInstance();
+        } else {
+            SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
             preferenceManager.setEmailStatus(this, null);
             preferenceManager.setPasswordStatus(this, null);
             preferenceManager.setRememberStatus(LoginActivity.this, false);

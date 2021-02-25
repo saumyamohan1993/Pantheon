@@ -36,7 +36,7 @@ public class PublicationArticleActivity extends AppCompatActivity {
     private Button btnRequest;
     private DataBaseHelper mydatabase;
     private String useremail;
-    private String noAccess = "No Access";
+    private String noAccess = "ACCESS DENIED";
     private LinearLayout llOfflineStatus;
     private String article_downloadtoken, article_heading;
 
@@ -63,16 +63,15 @@ public class PublicationArticleActivity extends AppCompatActivity {
         String article_category = intent.getStringExtra("article_category");
         final String article_downloadinfo = intent.getStringExtra("article_downloadinfo");
         final String article_downloadstatus = intent.getStringExtra("article_downloadstatus");
-        System.out.println("Status check......"+article_downloadstatus);
+      //  System.out.println("Status check......"+article_downloadstatus);
         final String article_downloadtoken = intent.getStringExtra("article_downloadtoken");
 
-        System.out.println("Article Download Token..."+article_downloadtoken);
-        System.out.println("Article Download Status..." + article_downloadstatus);
+//        System.out.println("Article Download Token..."+article_downloadtoken);
+//        System.out.println("Article Download Status..." + article_downloadstatus);
 
 
         getSupportActionBar().setTitle(article_category);
         tvArticleHeading.setText(Html.fromHtml(article_heading));
-        System.out.println("1...." + article_heading);
         tvArticleAuthor.setText(article_author);
         tvArticleBrief.setText(Html.fromHtml(article_preview));
         tvCategory.setText(article_category);
@@ -143,9 +142,9 @@ public class PublicationArticleActivity extends AppCompatActivity {
         viewfullreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(article_downloadtoken.equals(noAccess)) {
+                if(article_downloadstatus.equalsIgnoreCase(noAccess)) {
 
-                    System.out.println("Click download token...." + article_downloadtoken);
+                    System.out.println("Click download token1...." + article_downloadstatus);
 
                     llOfflineStatus.setVisibility(View.VISIBLE);
                     btnRequest.setFocusable(true);

@@ -1,17 +1,13 @@
 /**
- @Page/Module Name/Class	:	OfflinePublicationAdapter
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Sept 16,  2015
- @Purpose			:	This page/functionality is used to provide Offline Publication Adapter.
+ * @Page/Module Name/Class	:	OfflinePublicationAdapter
+ * @Author Name        :	Mr. Sombir Singh Bisht
+ * @Date :	Sept 16,  2015
+ * @Purpose :	This page/functionality is used to provide Offline Publication Adapter.
  */
 package com.pantheon.android.adapter;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Environment;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,16 +19,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.pantheon.android.ui.OfflinePublicationListActivity;
+
 import com.pantheon.android.R;
 import com.pantheon.android.bean.PublicationData;
-import java.io.File;
+import com.pantheon.android.ui.OfflinePublicationListActivity;
+
 import java.util.ArrayList;
 
 /**
  * Created by sombirbisht on 21/9/15.
  */
-public class OfflinePublicationAdapter extends BaseAdapter{
+public class OfflinePublicationAdapter extends BaseAdapter {
     private TextView tvArticleHeading, tvArticleAuthor, tvArticleBrief, tvCategory, tvDownloadInfo;
     private LinearLayout llList;
     private RelativeLayout rlArticleFavourite;
@@ -44,11 +41,11 @@ public class OfflinePublicationAdapter extends BaseAdapter{
 
     Context context;
 
-    public OfflinePublicationAdapter(Context context, ArrayList<PublicationData> publicationList, ListView lvPublication){
+    public OfflinePublicationAdapter(Context context, ArrayList<PublicationData> publicationList, ListView lvPublication) {
         super();
-        this.context=context;
-        this.publicationList=publicationList;
-        this.lvPublication=lvPublication;
+        this.context = context;
+        this.publicationList = publicationList;
+        this.lvPublication = lvPublication;
     }
 
     @Override
@@ -68,40 +65,39 @@ public class OfflinePublicationAdapter extends BaseAdapter{
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        LayoutInflater layoutInflater=(LayoutInflater)context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
         final PublicationData publicationData = publicationList.get(position);
 
-        if(convertView == null){
-            convertView=layoutInflater.inflate(R.layout.inflate_offlinepublicationlayout,null);
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.inflate_offlinepublicationlayout, null);
         }
 
-        tvArticleHeading=(TextView)convertView.findViewById(R.id.tvArticleHeading);
-        tvArticleAuthor=(TextView)convertView.findViewById(R.id.tvArticleAuthor);
-        tvArticleBrief=(TextView)convertView.findViewById(R.id.tvArticleBrief);
-        tvCategory=(TextView)convertView.findViewById(R.id.tvCategory);
-        tvDownloadInfo=(TextView)convertView.findViewById(R.id.tvDownloadInfo);
-        rlArticleFavourite=(RelativeLayout)convertView.findViewById(R.id.rlArticleFavourite);
-        ivFavourite=(ImageView)convertView.findViewById(R.id.ivFavourite);
-        btnDelete=(Button)convertView.findViewById(R.id.btnDelete);
+        tvArticleHeading = (TextView) convertView.findViewById(R.id.tvArticleHeading);
+        tvArticleAuthor = (TextView) convertView.findViewById(R.id.tvArticleAuthor);
+        tvArticleBrief = (TextView) convertView.findViewById(R.id.tvArticleBrief);
+        tvCategory = (TextView) convertView.findViewById(R.id.tvCategory);
+        tvDownloadInfo = (TextView) convertView.findViewById(R.id.tvDownloadInfo);
+        rlArticleFavourite = (RelativeLayout) convertView.findViewById(R.id.rlArticleFavourite);
+        ivFavourite = (ImageView) convertView.findViewById(R.id.ivFavourite);
+        btnDelete = (Button) convertView.findViewById(R.id.btnDelete);
 
         tvArticleHeading.setText(Html.fromHtml(publicationData.getTitle()));
         tvArticleAuthor.setText(publicationData.getAuthor());
         //tvArticleBrief.setText(Html.fromHtml(publicationData.getPreview()));
         tvCategory.setText(publicationData.getCategory());
         tvDownloadInfo.setText(publicationData.getDownloadinfo());
-        downloadstatus=publicationData.getDownloadstatus();
+        downloadstatus = publicationData.getDownloadstatus();
 
 
-        llList=(LinearLayout)convertView.findViewById(R.id.llList);
-        ivNext=(ImageView)convertView.findViewById(R.id.ivNext);
+        llList = (LinearLayout) convertView.findViewById(R.id.llList);
+        ivNext = (ImageView) convertView.findViewById(R.id.ivNext);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                System.out.println("POsition :::;" + publicationData.getId());
-                ((OfflinePublicationListActivity)context).deletePublication(publicationData.getId());
+                ((OfflinePublicationListActivity) context).deletePublication(publicationData.getId());
             }
         });
 
@@ -110,8 +106,7 @@ public class OfflinePublicationAdapter extends BaseAdapter{
         tvArticleHeading.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ((OfflinePublicationListActivity)context).downloadOfflineurl(info_download);
+                ((OfflinePublicationListActivity) context).downloadOfflineurl(info_download);
             }
         });
 

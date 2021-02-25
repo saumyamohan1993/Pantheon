@@ -57,7 +57,10 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     public final String EURO = "1172";
     public final String LATAM = "1170";
     public final String UK = "1561";
-    private final String ASIA_MONITOR="1863";
+    private final String ASIA_MONITOR="18631";
+    private final String EMERGE_ASIA="3604";
+    private final String CHINA="1863";
+    private final String GLOBAL="3379";
 
     private String search;
     private MenuItem mSearch;
@@ -89,8 +92,18 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
                 getSupportActionBar().setTitle("Latin America Publications");
             }else if(CATID.equals(UK)){
                 getSupportActionBar().setTitle("U.K. Publications");
-            }else if(CATID.equals(ASIA_MONITOR)){
+            }
+            else if(CATID.equals(ASIA_MONITOR)){
                 getSupportActionBar().setTitle("Asia Monitor Publications");
+            }
+            else if(CATID.equals(EMERGE_ASIA)){
+                getSupportActionBar().setTitle("Emerging Asia");
+            }
+            else if(CATID.equals(CHINA)){
+                getSupportActionBar().setTitle("China+");
+            }
+            else if(CATID.equals(GLOBAL)){
+                getSupportActionBar().setTitle("Global");
             }
         }catch (NullPointerException e){
         }

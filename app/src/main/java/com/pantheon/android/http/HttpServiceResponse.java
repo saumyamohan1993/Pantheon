@@ -78,8 +78,9 @@ public class HttpServiceResponse {
         try {
             App.showLog(TAG, "LoginResponse .. " + result);
             JSONObject jsonObject = new JSONObject(result);
+            Log.e(TAG, "getResponse:LoginResponse "+jsonObject.toString() +"   donee");
 
-            App.showLog(TAG, "LoginResponse .. " + result);
+          //  App.showLog(TAG, "LoginResponse .. " + result);
             //beanObject.statusMsg = jsonObject.getString("message");
            // beanObject.statusCode = jsonObject.getInt("status");
             beanObject.result = jsonObject.getBoolean("result");
@@ -104,7 +105,9 @@ public class HttpServiceResponse {
 
             }
         } catch (JSONException e) {
-            Log.e(TAG,"exception::::::::::" +beanObject.URL);
+            Log.e(TAG,"exception::::::::::" +e);
+            Log.e(TAG,"exception1::::::::::" +beanObject.statusMsg+"\t\t"+beanObject.statusCode);
+
             e.printStackTrace();
         }
         return beanObject;
@@ -116,7 +119,7 @@ public class HttpServiceResponse {
             JSONObject jsonObject = new JSONObject(result);
 
          //   App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
-//            Log.e(TAG, "getResponse:publicationss2 "+jsonObject.toString() );
+         Log.e(TAG, "getResponse:publicationss2 "+jsonObject.toString() +"   donee         ");
 
             beanObject.result = jsonObject.getBoolean("result");
           //  Log.e(TAG, "getResponse:publicationss3 "+  beanObject.result);

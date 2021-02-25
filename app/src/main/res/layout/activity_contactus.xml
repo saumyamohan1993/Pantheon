@@ -2,835 +2,970 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pantheon.android.ui.ContactusActivity"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    tools:context="com.pantheon.android.ui.ContactusActivity">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight=".7">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/img2"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/img3"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/llIanShepherdson"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#E9F9FE">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".7"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img2" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvIan_text"
-                            android:textSize="@dimen/ian_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal"
-                            android:layout_marginLeft="5dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvIan_subtext"
-                            android:textSize="@dimen/ian_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/ian_marginleft" />
-
-                     </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:id="@+id/rlIanPhoneno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/ian_marginleft">
-
-                        <ImageView
-                            android:id="@+id/ivIanPhoneno"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/tele"
-                            android:layout_centerVertical="true" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ivIanPhoneno"
-                            android:text="@string/tvIan_Phoneno"
-                            android:layout_marginLeft="@dimen/ian_marginleft"/>
-
-                    </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlIanMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ian_marginleft">
-
-                    <ImageView
-                        android:id="@+id/ivIanMessage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/msg"
-                        android:layout_marginTop="@dimen/ian_margintop"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivIanMessage"
-                        android:text="@string/tvIan_mail"
-                        android:layout_marginLeft="@dimen/ian_marginleft" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlIanTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ian_marginleft">
-
-                    <ImageView
-                        android:id="@+id/ivIanTweet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tweet"
-                        android:layout_centerVertical="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivIanTweet"
-                        android:text="@string/tvIan_tweet"
-                        android:layout_marginLeft="@dimen/ian_marginleft"/>
-
-                 </RelativeLayout>
-                 </LinearLayout>
-
-            </LinearLayout>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img3" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llClausVistesen"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#E0E4E5">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/llIanShepherdson"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
+                    android:layout_weight="1"
+                    android:background="#E9F9FE"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvClaus_text"
-                            android:textSize="@dimen/clause_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="@dimen/clause_marginleft" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvClaus_subtext"
-                            android:textSize="@dimen/clause_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/clause_marginleft"
-                            android:layout_marginRight="@dimen/clause_marginright"/>
-
-                     </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:id="@+id/rlClausePhoneno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/clause_marginleft"
-                        android:layout_marginRight="@dimen/clause_marginright">
-
-                        <ImageView
-                            android:id="@+id/ivClausePhoneno"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/tele"
-                            android:layout_centerVertical="true"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ivClausePhoneno"
-                            android:text="@string/tvClaus_Phoneno"
-                            android:layout_marginLeft="@dimen/clause_marginleft"
-                            android:layout_centerVertical="true"/>
-
-                    </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlClauseMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/clause_marginleft"
-                    android:layout_marginRight="@dimen/clause_marginright">
-
-                    <ImageView
-                        android:id="@+id/ivClauseMessage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/msg"
-                        android:layout_marginTop="@dimen/clause_margintop"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivClauseMessage"
-                        android:text="@string/tvClaus_mail"
-                        android:layout_marginLeft="@dimen/clause_marginleft"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlClauseTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ian_marginleft"
-                    android:layout_marginRight="@dimen/ian_marginright">
-
-                    <ImageView
-                        android:id="@+id/ivClauseTweet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tweet"
-                        android:layout_centerVertical="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivClauseTweet"
-                        android:text="@string/tvClaus_tweet"
-                        android:layout_marginLeft="@dimen/clause_marginleft"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight=".7">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/img4"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/samuel"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#E0E4E5">
-
-                <LinearLayout
-                    android:id="@+id/llAndresAbadia"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tvAndres_text"
-                        android:textSize="@dimen/andres_textsize"
-                        android:textColor="@color/text_headingcolor"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="@dimen/andres_marginleft"
-                        android:layout_marginRight="@dimen/andres_marginright"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tvAndres_subtext"
-                        android:textSize="@dimen/andres_subtextsize"
-                        android:textColor="@color/text_headingcolor"
-                        android:layout_marginLeft="@dimen/andres_marginleft" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
-
-                <RelativeLayout
-                    android:id="@+id/rlAndresPhoneno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/andres_marginleft"
-                    android:layout_marginRight="@dimen/andres_marginright">
-
-                    <ImageView
-                        android:id="@+id/ivAndresPhoneno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tele"
-                        android:layout_centerVertical="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivAndresPhoneno"
-                        android:text="@string/tvAndres_Phoneno"
-                        android:layout_marginLeft="@dimen/andres_marginleft"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlClausMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/clause_marginleft"
-                    android:layout_marginRight="@dimen/clause_marginright">
-
-                    <ImageView
-                        android:id="@+id/ivAndresMail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/msg"
-                        android:layout_marginTop="@dimen/andres_margintop"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivAndresMail"
-                        android:text="@string/tvAndres_mail"
-                        android:layout_marginLeft="@dimen/andres_marginleft"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlAndresTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/andres_marginleft"
-                    android:layout_marginRight="@dimen/andres_marginright">
-
-                    <ImageView
-                        android:id="@+id/ivAndresTweet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tweet"
-                        android:layout_centerVertical="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivAndresTweet"
-                        android:text="@string/tvAndres_tweet"
-                        android:layout_marginLeft="@dimen/andres_marginleft"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#E9F9FE">
-
-                <LinearLayout
-                    android:id="@+id/llSamuelTombs"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvSamuel_text"
-                            android:textSize="@dimen/samuel_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="@dimen/samuel_marginleft"
-                            android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvSamuel_subtext"
-                            android:textSize="@dimen/samuel_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/samuel_marginleft"
-                            android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                    </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
-
-                <RelativeLayout
-                    android:id="@+id/rlSamuelPhoneno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/ivSamuelPhoneno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tele"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/samuel_marginleft"
-                        android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivSamuelPhoneno"
-                        android:text="@string/tvSamuel_Phoneno"
-                        android:layout_marginLeft="@dimen/samuel_marginleft"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlSamuelMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/ivSamuelMail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/msg"
-                        android:layout_marginTop="@dimen/samuel_margintop"
-                        android:layout_marginLeft="@dimen/samuel_marginleft"
-                        android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivSamuelMail"
-                        android:text="@string/tvSamuel_mail"
-                        android:layout_marginLeft="@dimen/samuel_marginleft" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlSamuelTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/ivSamuelTweet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tweet"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/samuel_marginleft"
-                        android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/ivSamuelTweet"
-                        android:text="@string/tvSamuel_tweet"
-                        android:layout_marginLeft="@dimen/samuel_marginleft"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight=".7">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/img5"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/samuel"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="#E0E4E5">
-
-                <LinearLayout
-                    android:id="@+id/llFreyaBeamish"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvFreya_text"
-                            android:textSize="@dimen/andres_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="@dimen/andres_marginleft"
-                            android:layout_marginRight="@dimen/andres_marginright"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvFreya_subtext"
-                            android:textSize="@dimen/andres_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/andres_marginleft" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/rlFreyaPhoneno"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/andres_marginleft"
-                            android:layout_marginRight="@dimen/andres_marginright">
-
-                            <ImageView
-                                android:id="@+id/ivFreyaPhoneno"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tele"
-                                android:layout_centerVertical="true"/>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivFreyaPhoneno"
-                                android:text="@string/tvFreya_Phoneno"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/tvIan_text"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/ian_textsize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:text="@string/tvIan_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/ian_subtextsize" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlIanPhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft">
+
+                                <ImageView
+                                    android:id="@+id/ivIanPhoneno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/ian_marginleft"
+                                    android:layout_toRightOf="@+id/ivIanPhoneno"
+                                    android:text="@string/tvIan_Phoneno" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlIanMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft">
+
+                                <ImageView
+                                    android:id="@+id/ivIanMessage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/ian_margintop"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/ian_marginleft"
+                                    android:layout_toRightOf="@+id/ivIanMessage"
+                                    android:text="@string/tvIan_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlIanTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft">
+
+                                <ImageView
+                                    android:id="@+id/ivIanTweet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/ian_marginleft"
+                                    android:layout_toRightOf="@+id/ivIanTweet"
+                                    android:text="@string/tvIan_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llClausVistesen"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E4E5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:text="@string/tvClaus_text"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/clause_textsize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:layout_marginRight="@dimen/clause_marginright"
+                                android:text="@string/tvClaus_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/clause_subtextsize" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlClausePhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:layout_marginRight="@dimen/clause_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivClausePhoneno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/clause_marginleft"
+                                    android:layout_toRightOf="@+id/ivClausePhoneno"
+                                    android:text="@string/tvClaus_Phoneno" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlClauseMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:layout_marginRight="@dimen/clause_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivClauseMessage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/clause_margintop"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/clause_marginleft"
+                                    android:layout_toRightOf="@+id/ivClauseMessage"
+                                    android:text="@string/tvClaus_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlClauseTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_marginRight="@dimen/ian_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivClauseTweet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/clause_marginleft"
+                                    android:layout_toRightOf="@+id/ivClauseTweet"
+                                    android:text="@string/tvClaus_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".7"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img4" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/samuel" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E4E5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llAndresAbadia"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/andres_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlFreyaMail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/clause_marginleft"
-                            android:layout_marginRight="@dimen/clause_marginright">
-
-                            <ImageView
-                                android:id="@+id/ivFreyaMail"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/msg"
-                                android:layout_marginTop="@dimen/andres_margintop"/>
+                                android:layout_marginRight="@dimen/andres_marginright"
+                                android:text="@string/tvAndres_text"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/andres_textsize"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivFreyaMail"
-                                android:text="@string/tvFreya_mail"
-                                android:layout_marginLeft="@dimen/andres_marginleft"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlFreyaTweet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/andres_marginleft"
-                            android:layout_marginRight="@dimen/andres_marginright">
-
-                            <ImageView
-                                android:id="@+id/ivFreyaTweet"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tweet"
-                                android:layout_centerVertical="true"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivFreyaTweet"
-                                android:text="@string/tvFreya_tweet"
                                 android:layout_marginLeft="@dimen/andres_marginleft"
-                                android:layout_centerVertical="true"/>
+                                android:text="@string/tvAndres_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/andres_subtextsize" />
 
-                        </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlAndresPhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:layout_marginRight="@dimen/andres_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivAndresPhoneno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivAndresPhoneno"
+                                    android:text="@string/tvAndres_Phoneno" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlClausMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:layout_marginRight="@dimen/clause_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivAndresMail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/andres_margintop"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivAndresMail"
+                                    android:text="@string/tvAndres_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlAndresTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:layout_marginRight="@dimen/andres_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivAndresTweet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivAndresTweet"
+                                    android:text="@string/tvAndres_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E9F9FE"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llSamuelTombs"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/samuel_marginleft"
+                                android:layout_marginRight="@dimen/samuel_marginright"
+                                android:text="@string/tvSamuel_text"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/samuel_textsize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/samuel_marginleft"
+                                android:layout_marginRight="@dimen/samuel_marginright"
+                                android:text="@string/tvSamuel_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/samuel_subtextsize" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelPhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelPhoneno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelPhoneno"
+                                    android:text="@string/tvSamuel_Phoneno" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelMail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginTop="@dimen/samuel_margintop"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelMail"
+                                    android:text="@string/tvSamuel_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelTweet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelTweet"
+                                    android:text="@string/tvSamuel_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
+
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".7"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img5" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/miguel" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E4E5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llFreyaBeamish"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:layout_marginRight="@dimen/andres_marginright"
+                                android:text="@string/tvFreya_text"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/andres_textsize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:text="@string/tvFreya_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/andres_subtextsize" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlFreyaPhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:layout_marginRight="@dimen/andres_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivFreyaPhoneno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivFreyaPhoneno"
+                                    android:text="@string/tvFreya_Phoneno" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlFreyaMail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/clause_marginleft"
+                                android:layout_marginRight="@dimen/clause_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivFreyaMail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/andres_margintop"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivFreyaMail"
+                                    android:text="@string/tvFreya_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlFreyaTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/andres_marginleft"
+                                android:layout_marginRight="@dimen/andres_marginright">
+
+                                <ImageView
+                                    android:id="@+id/ivFreyaTweet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/andres_marginleft"
+                                    android:layout_toRightOf="@+id/ivFreyaTweet"
+                                    android:text="@string/tvFreya_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llMiguel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".35"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/samuel_marginleft"
+                                android:layout_marginRight="@dimen/samuel_marginright"
+                                android:text="@string/tvMiguel"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/samuel_textsize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/samuel_marginleft"
+                                android:layout_marginRight="@dimen/samuel_marginright"
+                                android:text="@string/tvMiguel_subtext"
+                                android:textColor="@color/text_headingcolor"
+                                android:textSize="@dimen/samuel_subtextsize" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight=".65"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelPhoneno1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelPhoneno1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/tele" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelPhoneno1"
+                                    android:text="@string/tvMiguel_Phoneno" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelMessage2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelMail2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginTop="@dimen/samuel_margintop"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/msg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelMail2"
+                                    android:text="@string/tvMiguel_mail" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlSamuelTweet2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/ivSamuelTweet2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_marginRight="@dimen/samuel_marginright"
+                                    android:src="@drawable/tweet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/samuel_marginleft"
+                                    android:layout_toRightOf="@+id/ivSamuelTweet2"
+                                    android:text="@string/tvMiguel_tweet" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/llGeneralEnquires"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:background="@color/general_color"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="invisible"
-                    android:weightSum="1">
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".35"
-                        android:orientation="vertical">
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright"
+                        android:text="@string/tvGeneral_text"
+                        android:textColor="@color/text_headingcolor"
+                        android:textSize="@dimen/general_textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:textColor="@color/text_headingcolor"
+                        android:textSize="@dimen/general_subtextsize"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralPhoneno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright">
+
+                        <ImageView
+                            android:id="@+id/ivGeneralPhoneno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/tele" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tvSamuel_text"
-                            android:textSize="@dimen/samuel_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="@dimen/samuel_marginleft"
-                            android:layout_marginRight="@dimen/samuel_marginright"/>
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralPhoneno"
+                            android:text="@string/tvGeneral_Phoneno" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright">
+
+                        <ImageView
+                            android:id="@+id/ivGeneralMail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/general_margintop"
+                            android:src="@drawable/msg" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tvSamuel_subtext"
-                            android:textSize="@dimen/samuel_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/samuel_marginleft"
-                            android:layout_marginRight="@dimen/samuel_marginright"/>
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralMail"
+                            android:text="@string/tvGeneral_mail" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight=".65"
-                        android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralTweet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright"
+                        android:layout_marginBottom="@dimen/general_marginbottom">
 
-                        <RelativeLayout
+                        <ImageView
+                            android:id="@+id/ivGeneralTweet"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/general_margintop"
+                            android:src="@drawable/tweet" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tele"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="@dimen/samuel_marginleft"
-                                android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tvSamuel_Phoneno"
-                                android:layout_marginLeft="@dimen/samuel_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlSamuelMessage2"
+                        <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralTweet"
+                            android:text="@string/tvGeneral_tweet" />
 
-                            <ImageView
-                                android:id="@+id/ivSamuelMail2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/msg"
-                                android:layout_marginTop="@dimen/samuel_margintop"
-                                android:layout_marginLeft="@dimen/samuel_marginleft"
-                                android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivSamuelMail2"
-                                android:text="@string/tvSamuel_mail"
-                                android:layout_marginLeft="@dimen/samuel_marginleft" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlSamuelTweet2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/ivSamuelTweet2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tweet"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="@dimen/samuel_marginleft"
-                                android:layout_marginRight="@dimen/samuel_marginright"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivSamuelTweet2"
-                                android:text="@string/tvSamuel_tweet"
-                                android:layout_marginLeft="@dimen/samuel_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -838,136 +973,7 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:background="@android:color/white"/>
 
-                <LinearLayout
-                    android:id="@+id/llGeneralEnquires"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:background="@color/general_color">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".25"
-                        android:orientation="vertical"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvGeneral_text"
-                            android:textSize="@dimen/general_textsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginLeft="@dimen/general_marginleft"
-                            android:layout_marginRight="@dimen/general_marginright"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/general_subtextsize"
-                            android:textColor="@color/text_headingcolor"
-                            android:layout_marginLeft="@dimen/general_marginleft"
-                            android:visibility="gone"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".75"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_horizontal">
-
-                        <RelativeLayout
-                            android:id="@+id/rlGeneralPhoneno"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/general_marginleft"
-                            android:layout_marginRight="@dimen/general_marginright">
-
-                            <ImageView
-                                android:id="@+id/ivGeneralPhoneno"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tele"
-                                android:layout_centerVertical="true"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivGeneralPhoneno"
-                                android:text="@string/tvGeneral_Phoneno"
-                                android:layout_marginLeft="@dimen/general_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlGeneralMessage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/general_marginleft"
-                            android:layout_marginRight="@dimen/general_marginright">
-
-                            <ImageView
-                                android:id="@+id/ivGeneralMail"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/msg"
-                                android:layout_marginTop="@dimen/general_margintop"
-                                android:layout_centerVertical="true"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivGeneralMail"
-                                android:text="@string/tvGeneral_mail"
-                                android:layout_marginLeft="@dimen/general_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/rlGeneralTweet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/general_marginleft"
-                            android:layout_marginRight="@dimen/general_marginright"
-                            android:layout_marginBottom="@dimen/general_marginbottom">
-
-                            <ImageView
-                                android:id="@+id/ivGeneralTweet"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/tweet"
-                                android:layout_centerVertical="true"
-                                android:layout_marginTop="@dimen/general_margintop"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/ivGeneralTweet"
-                                android:text="@string/tvGeneral_tweet"
-                                android:layout_marginLeft="@dimen/general_marginleft"
-                                android:layout_centerVertical="true"/>
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-        </LinearLayout>
-
-
-</ScrollView>
+    </ScrollView>
 
 </LinearLayout>
