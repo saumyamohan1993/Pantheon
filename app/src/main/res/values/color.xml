@@ -20,6 +20,7 @@
     <color name="text_headingcolor">#006A81</color>
 
     <color name="downloadStatus_color">#E9E9E9</color>
-
+    <color name="contactcolor">#E9F9FE</color>
+    <color name="contactcolorr">#E0E4E5</color>
 
 </resources>

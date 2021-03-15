@@ -1,9 +1,3 @@
-/**
- * @Page/Module Name/Class	:	LoginActivity
- * @Author Name        :	Mr. Sombir Singh Bisht
- * @Date :	Aug 24,  2015
- * @Purpose :	This page/functionality is used to provide Login Screen.
- */
 package com.pantheon.android.ui;
 
 import android.content.Intent;
@@ -147,17 +141,10 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
         });
     }
 
-    /**
-     * @Function Name        :	doLogin
-     * @Author Name        :	Mr. Sombir Singh Bisht
-     * @Date :	Aug, 24 2015
-     * @Param :	email, password  | String | User will login by using correct credentials.
-     * @Purpose :   To login the app.
-     */
+
 
 
     private void doLogin(String email, String password) {
-        Log.e("loginresponse", "doLogin: " + HttpConstant.LOGIN_URL);
         Login loginBean = new Login(HttpConstant.LOGIN_URL);
         loginBean.setUname(email);
         loginBean.setUpass(password);
@@ -194,13 +181,7 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
         }
     };
 
-    /**
-     * @Function Name        :	saveEmailPassword
-     * @Author Name        :	Mr. Sombir Singh Bisht
-     * @Date :	Aug, 24 2015
-     * @Param :	NA
-     * @Purpose :   To save email, password and remember status into local database.
-     */
+
     public void saveEmailPassword() {
         if (cbRememberCheck.isChecked()) {
             SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();

@@ -1,14 +1,5 @@
-/**
- @Module Name/Class		:	Reset
- @Author Name			:	Sombir Singh Bisht
- @Date					:   Sept 11, 2015
- @Purpose				:	This class is used to save Forgot Password Data.
- */
 package com.pantheon.android.bean;
 
-/**
- * Created by sombirbisht on 11/9/15.
- */
 public class Reset extends BaseBean{
     String apptoken;
     boolean doreset;

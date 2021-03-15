@@ -1,9 +1,4 @@
-/**
- @Page/Module Name/Class	:	ComplimentaryTrial
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Aug 31,  2015
- @Purpose			:	This page/functionality is used to provide Complimentary Trial Screen.
- */
+
 package com.pantheon.android.ui;
 
 import android.app.Activity;

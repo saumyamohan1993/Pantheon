@@ -1,9 +1,3 @@
-/**
- @Page/Module Name/Class	:	HomeScreenActivity
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Aug 25,  2015
- @Purpose			:	This page/functionality is used to provide Home Screen.
- */
 package com.pantheon.android.ui;
 
 import android.app.Activity;
@@ -25,9 +19,7 @@ import com.pantheon.android.R;
 import com.pantheon.android.fragments.SelectRegionFragment;
 import com.pantheon.android.utility.SharedPreferenceManager;
 
-/**
- * Created by sombirbisht on 25/8/15.
- */
+
 public class HomeScreenActivity extends AppCompatActivity {
     private LinearLayout llContactUs, llLogout, llOfflineMode;
     private FrameLayout frameLayout;
@@ -119,16 +111,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
-    /**
-     @Function Name		:	addFirstFragment
-
-
-
-     @Author Name		:	Mr. Sombir Singh Bisht
-     @Date				:	Aug, 25 2015
-     @Param			    :	N/A
-     @Purpose			:	To add fragment to the Home Screen Activity.
-     */
     private void addFirstFragment() {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         SelectRegionFragment selectRegionFragment = new SelectRegionFragment();

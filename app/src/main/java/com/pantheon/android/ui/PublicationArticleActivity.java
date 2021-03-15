@@ -58,9 +58,9 @@ public class PublicationArticleActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String article_heading = intent.getStringExtra("article_heading");
-        String article_author = intent.getStringExtra("article_author");
-        String article_preview = intent.getStringExtra("article_preview");
-        String article_category = intent.getStringExtra("article_category");
+        final String article_author = intent.getStringExtra("article_author");
+        final String article_preview = intent.getStringExtra("article_preview");
+       final String article_category = intent.getStringExtra("article_category");
         final String article_downloadinfo = intent.getStringExtra("article_downloadinfo");
         final String article_downloadstatus = intent.getStringExtra("article_downloadstatus");
       //  System.out.println("Status check......"+article_downloadstatus);
@@ -158,6 +158,19 @@ public class PublicationArticleActivity extends AppCompatActivity {
                     intent.putExtra("articlepdf_token", article_downloadtoken);
                     intent.putExtra("publication_heading",article_heading);
                     intent.putExtra("download_info",article_downloadinfo);
+                    intent.putExtra("article_author",article_author);
+                    intent.putExtra("article_category",article_category);
+                    intent.putExtra("article_preview",article_preview);
+                    intent.putExtra("article_downloadstatus",article_downloadstatus);
+
+
+
+
+
+
+
+
+
                     startActivity(intent);
                 }
             }

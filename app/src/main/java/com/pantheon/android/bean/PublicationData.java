@@ -1,14 +1,5 @@
-/**
- @Module Name/Class		:	PublicationData
- @Author Name			:	Sombir Singh Bisht
- @Date					:	Aug 27, 2015
- @Purpose				:	This class is used to save Publication List Data.
- */
 package com.pantheon.android.bean;
 
-/**
- * Created by sombirbisht on 4/9/15.
- */
 public class PublicationData {
 
     private int id;

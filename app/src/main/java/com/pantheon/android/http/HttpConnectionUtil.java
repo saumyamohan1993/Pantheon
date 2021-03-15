@@ -39,7 +39,7 @@ public class HttpConnectionUtil {
         } catch (ClassCastException e) {
             Log.e(TAG, e.toString());
             if (App.isDebuggable) {
-               // Toast.makeText(App.getInstance(), "HttpConnectionUtil ClassCastException", Toast.LENGTH_LONG).show();
+                // Toast.makeText(App.getInstance(), "HttpConnectionUtil ClassCastException", Toast.LENGTH_LONG).show();
             }
         }
     }

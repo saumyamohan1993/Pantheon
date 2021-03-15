@@ -16,16 +16,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * NameValue pairs
- */
 public class HttpNameValuePair {
-
 
 	public static List<NameValuePair> getLoginNameValuePair(BaseBean baseBean){
 		Login login = (Login)baseBean;
-
-
 		List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 		pairs.add(new BasicNameValuePair("UNAME", login.getUname()));
 		pairs.add(new BasicNameValuePair("UPASS", login.getUpass()));
@@ -60,8 +54,6 @@ public class HttpNameValuePair {
 
 		return pairs;
 	}
-
-
 
 	public static List<NameValuePair> getResetNameValuePair(BaseBean baseBean){
 		Reset reset = (Reset)baseBean;

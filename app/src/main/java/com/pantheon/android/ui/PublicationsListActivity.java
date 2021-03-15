@@ -1,9 +1,4 @@
-/**
- @Module Name/Class		:	PublicationsListActivity
- @Author Name			:	Sombir Singh Bisht
- @Date					:	Sept 4, 2015
- @Purpose				:	This page/functionality is used to provide Publication List.
- */
+
 
 package com.pantheon.android.ui;
 

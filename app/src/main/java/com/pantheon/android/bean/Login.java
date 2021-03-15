@@ -1,14 +1,5 @@
-/**
- @Module Name/Class		:	Login
- @Author Name			:	Sombir Singh Bisht
- @Date					:	Aug 27, 2015
- @Purpose				:	This class is used to save Login Data.
- */
 package com.pantheon.android.bean;
 
-/**
- * Created by sombirbisht on 27/8/15.
- */
 public class Login extends BaseBean {
     String  appToken;
     boolean doLogin;

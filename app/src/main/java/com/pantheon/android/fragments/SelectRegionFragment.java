@@ -1,9 +1,3 @@
-/**
- @Module Name/Class		:	SelectRegionFragment
- @Author Name			:	Mr. Sombir Singh Bisht
- @Date					:	Aug 26, 2015
- @Purpose				:	This class is used to provide Home Screen.
- */
 package com.pantheon.android.fragments;
 
 import android.app.Fragment;
@@ -103,13 +97,6 @@ public class SelectRegionFragment extends Fragment {
         return view;
     }
 
-    /**
-     @Function Name		:	getPublications
-     @Author Name		:	Mr. Sombir Singh Bisht
-     @Date				:	Aug, 26 2015
-     @Param			    :	catid  | String | Category id for different Publication Zones
-     @Purpose			:	To select Publication zone in which user interested.
-     */
     private void getPublications(String catid){
         Intent intent = new Intent(getActivity(), PublicationsListActivity.class);
         intent.putExtra("catID",catid);
@@ -153,9 +140,7 @@ public class SelectRegionFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    /**
-     * RecyclerView item decoration - give equal margin around grid item
-     */
+
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
@@ -191,9 +176,6 @@ public class SelectRegionFragment extends Fragment {
         }
     }
 
-    /**
-     * Converting dp to pixel
-     */
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));

@@ -1,9 +1,3 @@
-/**
- @Page/Module Name/Class	:	PublicationAdapter
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Sept 6,  2015
- @Purpose			:	This page/functionality is used to provide Online Publication Adapter.
- */
 package com.pantheon.android.adapter;
 
 import android.app.Activity;
@@ -26,9 +20,6 @@ import com.pantheon.android.ui.PublicationsListActivity;
 
 import java.util.ArrayList;
 
-/**
- * Created by sombirbisht on 06/9/15.
- */
 public class PublicationAdapter extends BaseAdapter {
     private TextView tvArticleHeading, tvArticleAuthor, tvArticleBrief, tvCategory, tvDownloadInfo;
     private LinearLayout llList;

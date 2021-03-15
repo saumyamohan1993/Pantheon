@@ -1,16 +1,7 @@
-/**
- @Module Name/Class		:	PublicationRegion
- @Author Name			:	Sombir Singh Bisht
- @Date					:   Sept 01, 2015
- @Purpose				:	This class is used to save Publication Region Data.
- */
 package com.pantheon.android.bean;
 
 import java.util.ArrayList;
 
-/**
- * Created by sombirbisht on 1/9/15.
- */
 public class PublicationRegion extends BaseBean {
 
     String AppToken;

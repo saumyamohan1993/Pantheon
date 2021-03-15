@@ -1,9 +1,4 @@
-/**
- @Page/Module Name/Class	:	ForgotPasswordActivity
- @Author Name		:	Mr. Sombir Singh Bisht
- @Date				:	Aug 29,  2015
- @Purpose			:	This page/functionality is used to provide Forgot Password Screen.
- */
+
 package com.pantheon.android.ui;
 
 import android.app.Activity;
@@ -71,13 +66,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements BaseLis
         });
     }
 
-    /**
-     @Function Name		:	reset
-     @Author Name		:	Mr. Sombir Singh Bisht
-     @Date				:	Aug, 29 2015
-     @Param			    :	email | String | User will reset the password.
-     @Purpose			:	To reset the password.
-     */
+
     private void reset(String email) {
         Reset resetBean = new Reset(HttpConstant.RESET_URL);
         resetBean.setApptoken(APPTOKEN);

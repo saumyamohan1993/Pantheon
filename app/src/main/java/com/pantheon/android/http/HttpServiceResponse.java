@@ -80,7 +80,6 @@ public class HttpServiceResponse {
             JSONObject jsonObject = new JSONObject(result);
             Log.e(TAG, "getResponse:LoginResponse "+jsonObject.toString() +"   donee");
 
-          //  App.showLog(TAG, "LoginResponse .. " + result);
             //beanObject.statusMsg = jsonObject.getString("message");
            // beanObject.statusCode = jsonObject.getInt("status");
             beanObject.result = jsonObject.getBoolean("result");
@@ -105,7 +104,7 @@ public class HttpServiceResponse {
 
             }
         } catch (JSONException e) {
-            Log.e(TAG,"exception::::::::::" +e);
+//            Log.e(TAG,"exception::::::::::" +e);
             Log.e(TAG,"exception1::::::::::" +beanObject.statusMsg+"\t\t"+beanObject.statusCode);
 
             e.printStackTrace();
@@ -115,10 +114,9 @@ public class HttpServiceResponse {
 
     private static BaseBean getResponse(Context context, PublicationRegion beanObject, String result) {
         try {
-         //  App.showLog(TAG, "PublicationResponse .. " + result);
+
             JSONObject jsonObject = new JSONObject(result);
 
-         //   App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
          Log.e(TAG, "getResponse:publicationss2 "+jsonObject.toString() +"   donee         ");
 
             beanObject.result = jsonObject.getBoolean("result");
@@ -127,17 +125,13 @@ public class HttpServiceResponse {
             //beanObject.statusMsg = jsonObject.getString("message");
             //beanObject.statusCode = jsonObject.getInt("status");
 
-            // App.showLog(TAG, "Registration Message is .. " + beanObject.statusMsg);
 
             if (jsonObject.getBoolean("result")==true) {
 
                 JSONArray jsonArray = jsonObject.getJSONArray("CDATA");
 
                 //Saving data after registration
-
-
                 ArrayList<PublicationData> publicationDataArrayList=new ArrayList<PublicationData>();
-
 
                 for(int i=0; i<jsonArray.length(); i++)
                 {
@@ -217,10 +211,7 @@ public class HttpServiceResponse {
                     publicationData.setDownloadstatus(jsonObject1.getString("downloadstatus"));
                     publicationData.setDownloadtoken(jsonObject1.getString("downloadtoken"));
 
-
-
-
-                        publicationDataArrayList.add(publicationData);
+                    publicationDataArrayList.add(publicationData);
 
                 }
 

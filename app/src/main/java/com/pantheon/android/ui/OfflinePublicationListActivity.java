@@ -1,9 +1,4 @@
-/**
- * @Module Name/Class		:	OfflinePublicationListActivity
- * @Author Name            :	Sombir Singh Bisht
- * @Date :	July 15, 2015
- * @Purpose :	This page/functionality is used to provide Offline Publication List.
- */
+
 package com.pantheon.android.ui;
 
 import android.content.ActivityNotFoundException;
@@ -30,9 +25,6 @@ import com.pantheon.android.utility.DataBaseHelper;
 import java.io.File;
 import java.util.ArrayList;
 
-/**
- * Created by sombirbisht on 17/9/15.
- */
 public class OfflinePublicationListActivity extends AppCompatActivity {
     private ListView lvPublication;
     private OfflinePublicationAdapter adapter;

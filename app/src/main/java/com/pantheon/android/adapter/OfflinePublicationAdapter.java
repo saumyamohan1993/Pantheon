@@ -1,9 +1,3 @@
-/**
- * @Page/Module Name/Class	:	OfflinePublicationAdapter
- * @Author Name        :	Mr. Sombir Singh Bisht
- * @Date :	Sept 16,  2015
- * @Purpose :	This page/functionality is used to provide Offline Publication Adapter.
- */
 package com.pantheon.android.adapter;
 
 import android.app.Activity;
@@ -26,9 +20,7 @@ import com.pantheon.android.ui.OfflinePublicationListActivity;
 
 import java.util.ArrayList;
 
-/**
- * Created by sombirbisht on 21/9/15.
- */
+
 public class OfflinePublicationAdapter extends BaseAdapter {
     private TextView tvArticleHeading, tvArticleAuthor, tvArticleBrief, tvCategory, tvDownloadInfo;
     private LinearLayout llList;

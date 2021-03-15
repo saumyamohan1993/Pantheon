@@ -1,9 +1,4 @@
-/**
- @Module Name/Class		:	BaseBean
- @Author Name			:	Sombir Singh Bisht
- @Date					:	Aug 26, 2015
- @Purpose				:	This class is used to save Base Bean data.
- */
+
 package com.pantheon.android.bean;
 
 import java.io.Serializable;
