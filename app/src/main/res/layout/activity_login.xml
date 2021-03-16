@@ -1,6 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -28,49 +26,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/ivloginlogo_top_margin"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo" />
 
             <LinearLayout
                 android:id="@+id/llFields"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/llfields_top_margin"
                 android:layout_marginLeft="@dimen/llfields_left_margin"
-                android:layout_marginRight="@dimen/llfields_right_margin">
+                android:layout_marginTop="@dimen/llfields_top_margin"
+                android:layout_marginRight="@dimen/llfields_right_margin"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvLoginEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="@dimen/tvloginemail_textsize"
-                    android:text="@string/email" />
+                    android:text="@string/email"
+                    android:textSize="@dimen/tvloginemail_textsize" />
 
                 <EditText
                     android:id="@+id/etEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:gravity="center_horizontal"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvLoginPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="@dimen/tvloginpassword_textsize"
-                    android:text="@string/password" />
+                    android:text="@string/password"
+                    android:textSize="@dimen/tvloginpassword_textsize" />
 
                 <EditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:gravity="center_horizontal"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -78,92 +76,92 @@
                 android:id="@+id/btnSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/btnsignin_left_margin"
+                android:layout_marginTop="@dimen/btnsignin_top_margin"
+                android:layout_marginRight="@dimen/btnsignin_right_margin"
                 android:background="@drawable/btn_blue"
                 android:text="@string/sign_in"
-                android:layout_marginTop="@dimen/btnsignin_top_margin"
-                android:layout_marginLeft="@dimen/btnsignin_left_margin"
-                android:layout_marginRight="@dimen/btnsignin_right_margin"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="@dimen/btnsignin_textsize"/>
+                android:textSize="@dimen/btnsignin_textsize"
+                android:textStyle="bold" />
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/rlOtherFields"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/rlotherfields_top_margin"
-                android:layout_marginLeft="@dimen/rlotherfields_left_margin"
-                android:layout_marginRight="@dimen/rlotherfields_right_margin"
-                android:weightSum="2">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/rlOtherFields"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical">
+                    android:layout_marginLeft="@dimen/rlotherfields_left_margin"
+                    android:layout_marginTop="@dimen/rlotherfields_top_margin"
+                    android:layout_marginRight="@dimen/rlotherfields_right_margin"
+                    android:weightSum="2">
 
-                    <TextView
-                        android:id="@+id/tvForgotPassword"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/forgot_password" />
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1">
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/tvForgotPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/forgot_password" />
 
-                <RelativeLayout
-                    android:id="@+id/rlRememberCheck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_alignParentRight="true">
+                    </RelativeLayout>
 
-                    <CheckBox
-                        android:id="@+id/cbRememberCheck"
+                    <RelativeLayout
+                        android:id="@+id/rlRememberCheck"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true" />
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="1">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/remember_me"
-                        android:layout_toRightOf="@+id/cbRememberCheck"
-                        android:layout_centerVertical="true" />
+                        <CheckBox
+                            android:id="@+id/cbRememberCheck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true" />
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/cbRememberCheck"
+                            android:text="@string/remember_me" />
 
-            </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
             </RelativeLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image"
+                android:layout_marginLeft="@dimen/ivor_left_margin"
+                android:layout_marginTop="@dimen/ivor_top_margin"
+                android:layout_marginRight="@dimen/ivor_right_margin"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:layout_marginTop="@dimen/ivor_top_margin"
-                android:layout_marginLeft="@dimen/ivor_left_margin"
-                android:layout_marginRight="@dimen/ivor_right_margin"/>
+                android:src="@drawable/image" />
 
             <Button
                 android:id="@+id/btnRequestTrail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/btnrequesttrail_left_margin"
+                android:layout_marginTop="@dimen/btnrequesttrail_top_margin"
+                android:layout_marginRight="@dimen/btnrequesttrail_right_margin"
+                android:layout_marginBottom="@dimen/btnrequesttrail_bottom_margin"
                 android:background="@drawable/btn_blue"
                 android:text="@string/request_trial"
-                android:layout_marginTop="@dimen/btnrequesttrail_top_margin"
-                android:layout_marginBottom="@dimen/btnrequesttrail_bottom_margin"
-                android:layout_marginLeft="@dimen/btnrequesttrail_left_margin"
-                android:layout_marginRight="@dimen/btnrequesttrail_right_margin"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="@dimen/btnrequesttrail_textsize"/>
+                android:textSize="@dimen/btnrequesttrail_textsize"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

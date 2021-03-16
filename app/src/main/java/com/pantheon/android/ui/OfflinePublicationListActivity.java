@@ -1,4 +1,3 @@
-
 package com.pantheon.android.ui;
 
 import android.content.ActivityNotFoundException;
@@ -49,7 +48,6 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.home) {
             NavUtils.navigateUpFromSameTask(this);
         }
@@ -98,11 +96,9 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-
-
     public void downloadOfflineurl(String info_download) {
 
-      //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
+        //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
         File file = new File("/storage/emulated/0/Download" + Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
         Log.e("file1", "downloadOfflineurl file: " + file);
 
@@ -120,21 +116,7 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
             }
         } else {
             Toast.makeText(this, "No Application available to view pdf", Toast.LENGTH_LONG).show();
-
         }
-
-
-//
-//        Intent target = new Intent(Intent.ACTION_VIEW);
-//        target.setDataAndType(Uri.fromFile(file),"application/pdf");
-//        target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-//
-//        Intent intent = Intent.createChooser(target, "Open File");
-//        try {
-//            startActivity(intent);
-//        } catch (ActivityNotFoundException e) {
-//            // Instruct the user to install a PDF reader here, or something
-//        }
     }
 }
 

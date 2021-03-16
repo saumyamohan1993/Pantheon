@@ -1,18 +1,18 @@
 package com.pantheon.android.bean;
 
 public class Login extends BaseBean {
-    String  appToken;
+    String appToken;
     boolean doLogin;
-    String  source;
-    String  uname=null;
-    String  upass=null;
+    String source;
+    String uname = null;
+    String upass = null;
+    String uid = null;
+    String uToken = null;
+    String ufname = null;
+    String ulname = null;
+    boolean isProgressEnabled = true;
 
-    String  uid=null;
-    String  uToken=null;
-    String  ufname=null;
-    String  ulname=null;
-
-    public Login(String url){
+    public Login(String url) {
         this.URL = url;
     }
 
@@ -95,7 +95,4 @@ public class Login extends BaseBean {
     public void setIsProgressEnabled(boolean isProgressEnabled) {
         this.isProgressEnabled = isProgressEnabled;
     }
-
-    boolean isProgressEnabled=true;
-
 }

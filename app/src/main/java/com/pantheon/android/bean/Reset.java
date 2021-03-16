@@ -1,12 +1,12 @@
 package com.pantheon.android.bean;
 
-public class Reset extends BaseBean{
+public class Reset extends BaseBean {
     String apptoken;
     boolean doreset;
     String source;
-    String  uname=null;
+    String uname = null;
 
-    public Reset(String url){
+    public Reset(String url) {
         this.URL = url;
     }
 

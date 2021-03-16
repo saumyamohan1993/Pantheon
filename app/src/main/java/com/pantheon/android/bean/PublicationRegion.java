@@ -15,12 +15,10 @@ public class PublicationRegion extends BaseBean {
     String Srch;
     String Tags;
     String Custom1;
+    boolean isProgressEnabled = true;
+    private ArrayList<PublicationData> publicationDataArrayList = null;
 
-
-
-    private ArrayList<PublicationData> publicationDataArrayList=null;
-
-    public PublicationRegion(String url){
+    public PublicationRegion(String url) {
         this.URL = url;
     }
 
@@ -120,8 +118,6 @@ public class PublicationRegion extends BaseBean {
         this.isProgressEnabled = isProgressEnabled;
     }
 
-    boolean isProgressEnabled=true;
-
     public ArrayList<PublicationData> getPublicationDataArrayList() {
         return publicationDataArrayList;
     }
@@ -129,6 +125,4 @@ public class PublicationRegion extends BaseBean {
     public void setPublicationDataArrayList(ArrayList<PublicationData> publicationDataArrayList) {
         this.publicationDataArrayList = publicationDataArrayList;
     }
-
-
 }

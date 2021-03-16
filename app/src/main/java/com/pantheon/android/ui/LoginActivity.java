@@ -3,7 +3,6 @@ package com.pantheon.android.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,19 +24,38 @@ import com.pantheon.android.utility.AppUtility;
 import com.pantheon.android.utility.EmailValidator;
 import com.pantheon.android.utility.SharedPreferenceManager;
 
-
 public class LoginActivity extends AppCompatActivity implements BaseListener {
+    private final String APPTOKEN = "J50pjO0d6rH3wzY3";
+    private final String SOURCE = "Android";
+    private final boolean DOLOGIN = true;
+    String responseServer;
+    String url = "https://www.pantheonmacro.com/cfe/PRO_documents.php";
     private EditText etEmailAddress, etPassword;
+    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener = new BaseListener.OnWebServiceCompleteListener() {
+        @Override
+        public void onWebServiceComplete(Object baseObject) {
+            Login loginBean = (Login) baseObject;
+
+            if (loginBean.result == true) {
+                Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                startActivity(intent);
+                SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
+                preferenceManager.setRememberStatus(LoginActivity.this, true);
+                preferenceManager.setUserEmail(LoginActivity.this, etEmailAddress.getText().toString());
+                finish();
+
+            } else {
+                SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
+                preferenceManager.setUserEmail(LoginActivity.this, null);
+                preferenceManager.setRememberStatus(LoginActivity.this, false);
+                AppUtility.showAlertDialog(LoginActivity.this, "Login Status", "Please check your credentials.");
+            }
+        }
+    };
     private Button btnSignIn, btnRequestTrail;
     private TextView tvForgotPassword;
     private CheckBox cbRememberCheck;
     private RelativeLayout rlRememberCheck;
-    String responseServer;
-
-    private final String APPTOKEN = "J50pjO0d6rH3wzY3";
-    private final String SOURCE = "Android";
-    private final boolean DOLOGIN = true;
-    String url = "https://www.pantheonmacro.com/cfe/PRO_documents.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +88,11 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
                     etEmailAddress.setError(getString(R.string.eemail_required));
                     etEmailAddress.requestFocus();
                 } else if (!new EmailValidator().validate(email)) {
-                    // To check invalid email
                     etEmailAddress.setError(getString(R.string.einvalid_email));
                     etEmailAddress.requestFocus();
                 } else if (TextUtils.isEmpty(password)) {
                     etPassword.setError(getString(R.string.epassword_required));
                 } else if (password.length() < 6) {
-                    // if password contains less than 6 characters
                     etPassword.setError(getString(R.string.epassword_short));
                     etPassword.requestFocus();
                 } else {
@@ -93,7 +109,6 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
                 startActivity(intent);
             }
         });
-
 
         rlRememberCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,9 +156,6 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
         });
     }
 
-
-
-
     private void doLogin(String email, String password) {
         Login loginBean = new Login(HttpConstant.LOGIN_URL);
         loginBean.setUname(email);
@@ -156,31 +168,6 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
 
         HttpConnectionUtil.callWebService(loginBean, this, WebserviceType.LOGIN, onWebServiceCompleteListener);
     }
-
-    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener = new BaseListener.OnWebServiceCompleteListener() {
-        @Override
-        public void onWebServiceComplete(Object baseObject) {
-            Login loginBean = (Login) baseObject;
-
-            Log.e("login", "responseresulttt: " + loginBean);
-
-            if (loginBean.result == true) {
-                Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
-                startActivity(intent);
-                SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
-                preferenceManager.setRememberStatus(LoginActivity.this, true);
-                preferenceManager.setUserEmail(LoginActivity.this, etEmailAddress.getText().toString());
-                finish();
-
-            } else {
-                SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
-                preferenceManager.setUserEmail(LoginActivity.this, null);
-                preferenceManager.setRememberStatus(LoginActivity.this, false);
-                AppUtility.showAlertDialog(LoginActivity.this, "Login Status", "Please check your credentials.");
-            }
-        }
-    };
-
 
     public void saveEmailPassword() {
         if (cbRememberCheck.isChecked()) {

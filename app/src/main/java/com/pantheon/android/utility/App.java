@@ -4,8 +4,6 @@ import android.app.Application;
 import android.graphics.Bitmap;
 import android.util.Log;
 
-
-
 public class App extends Application {
 public static Bitmap imageEditingBitmap;
     public static final boolean APP_TAG=true;
@@ -36,5 +34,4 @@ public static Bitmap imageEditingBitmap;
     public static App getInstance(){
 		return mInstance;
 	}
-
 }

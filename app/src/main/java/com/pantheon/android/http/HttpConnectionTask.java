@@ -42,6 +42,18 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
     private BaseListener.OnWebServiceCompleteListener<BaseBean> mListener;
     private List<NameValuePair> mNameValuePairs;
 
+    public static HttpClient createHttpClient() {
+        HttpParams params = new BasicHttpParams();
+        HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+        HttpProtocolParams.setContentCharset(params, HTTP.DEFAULT_CONTENT_CHARSET);
+        HttpProtocolParams.setUseExpectContinue(params, true);
+
+        SchemeRegistry schReg = new SchemeRegistry();
+        schReg.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
+        ClientConnectionManager conMgr = new ThreadSafeClientConnManager(params, schReg);
+        return new DefaultHttpClient(conMgr, params);
+    }
+
     public void callWebService(BaseBean bean, Context context, WebserviceType type, BaseListener.OnWebServiceCompleteListener<BaseBean> listener, List<NameValuePair> nameValuePairs) {
         mObject = bean;
         mContext = context;
@@ -63,7 +75,6 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
     @Override
     protected BaseBean doInBackground(Void... params) {
         HttpClient httpclient = new DefaultHttpClient();
-
         HttpPost httppost = new HttpPost(mObject.URL);
 
         try {
@@ -71,7 +82,6 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
                 httppost.setEntity(new UrlEncodedFormEntity(mNameValuePairs));
             }
             Log.e("response ", "url is  " + mNameValuePairs);
-            //Log.e("Connectionresponse ","url is  " + mObject.URL);
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             if (entity != null) {
@@ -80,18 +90,7 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
 
                 mObject = HttpServiceResponse.getResponse(mContext, mObject, mType, result);
             }
-			
-/*		//	 HttpClient httpclient = createHttpClient();
-		//        HttpPost httppost = new HttpPost("https://10.0.2.2/insert222.php");
-		        httppost.setEntity(new UrlEncodedFormEntity(mNameValuePairs));
-		        HttpResponse response = httpclient.execute(httppost);
-		        HttpEntity entity = response.getEntity();
-				if (entity != null) {
-					InputStream instream = entity.getContent();
-					String result = convertStreamToString(instream);
-					mObject = HttpServiceResponse.getResponse(mContext, mObject, mType, result);
-				}
-*/
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -112,28 +111,13 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
         if (mObject == null) {
             return;
         }
-
         if (App.isDebuggable && mObject.statusCode == -100) {
-            //	Toast.makeText(mContext, mObject.URL + "\n Response is not coming in JSON format.", Toast.LENGTH_SHORT).show();
         }
 
 
         if (mListener != null) {
             mListener.onWebServiceComplete(result);
         }
-    }
-
-    public static HttpClient createHttpClient() {
-        HttpParams params = new BasicHttpParams();
-        HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
-        HttpProtocolParams.setContentCharset(params, HTTP.DEFAULT_CONTENT_CHARSET);
-        HttpProtocolParams.setUseExpectContinue(params, true);
-
-        SchemeRegistry schReg = new SchemeRegistry();
-        // schReg.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-        schReg.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
-        ClientConnectionManager conMgr = new ThreadSafeClientConnManager(params, schReg);
-        return new DefaultHttpClient(conMgr, params);
     }
 
     private String convertStreamToString(InputStream inputStream) throws IOException {
@@ -151,5 +135,4 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
         }
         return sb.toString();
     }
-
 }

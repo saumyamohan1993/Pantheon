@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/white"
-        android:orientation="vertical">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,102 +14,102 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvArticleHeading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_margin="@dimen/articleheading_margin"
-            android:textSize="@dimen/tvarticleheading_textsize"/>
+            <TextView
+                android:id="@+id/tvArticleHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/articleheading_margin"
+                android:textSize="@dimen/tvarticleheading_textsize"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1sp"
-            android:background="@color/menu_color"
-            android:layout_marginTop="@dimen/underline_margintop"
-            android:layout_marginLeft="@dimen/underline_marginleft"
-            android:layout_marginRight="@dimen/underline_marginright"/>
-
-        <RelativeLayout
-            android:id="@+id/rltext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/addto_offline_margin">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1sp"
+                android:layout_marginLeft="@dimen/underline_marginleft"
+                android:layout_marginTop="@dimen/underline_margintop"
+                android:layout_marginRight="@dimen/underline_marginright"
+                android:background="@color/menu_color" />
 
             <RelativeLayout
-                android:id="@+id/viewfullreport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/ivOffline"
-                    android:layout_width="@dimen/ivoffline_width"
-                    android:layout_height="@dimen/ivoffline_height"
-                    android:src="@drawable/offline"
-                    android:layout_centerVertical="true"/>
-
-                <TextView
-                    android:id="@+id/tvOffline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvOffline_text"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/tvoffline_marginleft"
-                    android:textColor="@color/menu_color"
-                    android:layout_toRightOf="@+id/ivOffline" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+                android:id="@+id/rltext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true">
+                android:layout_margin="@dimen/addto_offline_margin">
 
-                <ImageView
-                    android:id="@+id/ivIconDoc"
+                <RelativeLayout
+                    android:id="@+id/viewfullreport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivOffline"
+                        android:layout_width="@dimen/ivoffline_width"
+                        android:layout_height="@dimen/ivoffline_height"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/offline" />
+
+                    <TextView
+                        android:id="@+id/tvOffline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/tvoffline_marginleft"
+                        android:layout_toRightOf="@+id/ivOffline"
+                        android:text="@string/tvOffline_text"
+                        android:textColor="@color/menu_color" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icondoc"
-                    android:layout_centerVertical="true" />
+                    android:layout_alignParentRight="true">
 
-                <TextView
-                    android:id="@+id/tvArticleAuthor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/ivIconDoc"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/tvarticle_marginleft"
-                    android:layout_marginRight="@dimen/tvarticle_marginright"
-                    android:textColor="@color/menu_color"/>
+                    <ImageView
+                        android:id="@+id/ivIconDoc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icondoc" />
+
+                    <TextView
+                        android:id="@+id/tvArticleAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/tvarticle_marginleft"
+                        android:layout_marginRight="@dimen/tvarticle_marginright"
+                        android:layout_toRightOf="@+id/ivIconDoc"
+                        android:textColor="@color/menu_color" />
+
+                </RelativeLayout>
 
             </RelativeLayout>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tvArticleBrief"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/tvarticlebrief_margin"
+                android:layout_marginTop="@dimen/tvarticlebrief_margintop"
+                android:lineSpacingExtra="@dimen/tvarticlebrief_linespacing"
+                android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/tvArticleBrief"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/tvarticlebrief_margintop"
-            android:textAlignment="center"
-            android:layout_margin="@dimen/tvarticlebrief_margin"
-            android:lineSpacingExtra="@dimen/tvarticlebrief_linespacing"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tvCategory_text"
-            android:textColor="@color/menu_color"
-            android:layout_marginTop="@dimen/article_category_margintop"
-            android:layout_marginLeft="@dimen/category_marginleft"
-            android:layout_marginRight="@dimen/category_marginright"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/category_marginleft"
+                android:layout_marginTop="@dimen/article_category_margintop"
+                android:layout_marginRight="@dimen/category_marginright"
+                android:text="@string/tvCategory_text"
+                android:textColor="@color/menu_color" />
 
             <LinearLayout
                 android:id="@+id/llcategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="@dimen/llcategory_marginleft">
+                android:layout_marginLeft="@dimen/llcategory_marginleft"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvCategory"
@@ -121,66 +120,66 @@
                     android:id="@+id/tvDownloadInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/tvDownloadInfo_marginleft"/>
+                    android:layout_marginLeft="@dimen/tvDownloadInfo_marginleft" />
 
             </LinearLayout>
 
-<LinearLayout
-    android:id="@+id/llOfflineStatus"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:visibility="gone">
-
-    <LinearLayout
-        android:id="@+id/llDownloadstatus"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/downloadStatus_color"
-        android:layout_marginTop="@dimen/llDownloadstatus_margintop">
-
-        <RelativeLayout
-            android:id="@+id/rlDownloadstatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/title"
-            android:layout_marginLeft="@dimen/rlDownloadstatus_marginleft"
-            android:layout_marginRight="@dimen/rlDownloadstatus_marginright"
-            android:layout_marginTop="@dimen/rlDownloadstatus_margintop"
-            android:layout_marginBottom="@dimen/rlDownloadstatus_marginbottom">
-
-            <TextView
-                android:id="@+id/tvDownloadStatus"
+            <LinearLayout
+                android:id="@+id/llOfflineStatus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:layout_margin="@dimen/tvDownloadstatus_margin"/>
+                android:orientation="vertical"
+                android:visibility="gone">
 
-        </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/llDownloadstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/llDownloadstatus_margintop"
+                    android:background="@color/downloadStatus_color"
+                    android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnRequest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_blue"
-            android:layout_marginLeft="@dimen/btnRequest_marginleft"
-            android:layout_marginRight="@dimen/btnRequest_marginright"
-            android:layout_marginBottom="@dimen/btnRequest_bottom"
-            android:text="@string/btnrequest_text"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/btnRequest_textsize"
-            android:textAllCaps="false" />
+                    <RelativeLayout
+                        android:id="@+id/rlDownloadstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/rlDownloadstatus_marginleft"
+                        android:layout_marginTop="@dimen/rlDownloadstatus_margintop"
+                        android:layout_marginRight="@dimen/rlDownloadstatus_marginright"
+                        android:layout_marginBottom="@dimen/rlDownloadstatus_marginbottom"
+                        android:background="@drawable/title">
 
-    </LinearLayout>
-</LinearLayout>
+                        <TextView
+                            android:id="@+id/tvDownloadStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/tvDownloadstatus_margin"
+                            android:gravity="center_horizontal"
+                            android:textStyle="bold" />
 
-  </LinearLayout>
+                    </RelativeLayout>
 
-</ScrollView>
+                    <Button
+                        android:id="@+id/btnRequest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/btnRequest_marginleft"
+                        android:layout_marginRight="@dimen/btnRequest_marginright"
+                        android:layout_marginBottom="@dimen/btnRequest_bottom"
+                        android:background="@drawable/btn_blue"
+                        android:text="@string/btnrequest_text"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/btnRequest_textsize"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

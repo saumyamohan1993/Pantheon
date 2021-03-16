@@ -64,7 +64,6 @@ public class AppUtility {
         }
     }
 
-
     /**
      * Hide keyboard method
      *
@@ -102,6 +101,7 @@ public class AppUtility {
 
     /**
      * Get IMEI of device
+     *
      * @param activity
      * @return
      */
@@ -114,31 +114,9 @@ public class AppUtility {
             if (imeiStr == null) {
                 imeiStr = "";
             }
-        }catch (Exception ex){}
+        } catch (Exception ex) {
+        }
         return imeiStr;
     }
-
-    /*public static void plateFilter(EditText editTextName) {
-        InputFilter[] filters = new InputFilter[1];
-        filters[0] = new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                if (end > start) {
-
-                    char[] acceptedChars = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-                            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-
-                    for (int index = start; index < end; index++) {
-                        if (!new String(acceptedChars).contains(String.valueOf(source.charAt(index)))) {
-                            return "";
-                        }
-                    }
-                }
-                return null;
-            }
-
-        };
-        editTextName.setFilters(filters);
-    }*/
 
 }

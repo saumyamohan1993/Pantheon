@@ -22,12 +22,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pantheon.android.R;
 import com.pantheon.android.adapter.ContactusAdapter;
-import com.pantheon.android.fragments.SelectRegionFragment;
 import com.pantheon.android.model.Region;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class ContactusActivity extends AppCompatActivity {
     private LinearLayout llGeneralEnquires, llIanShepherdson, llClausVistesen, llAndresAbadia, llSamuelTombs, llFreyaBemish, llMiguel;
@@ -44,29 +42,15 @@ public class ContactusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contactus);
 
         llGeneralEnquires = (LinearLayout) findViewById(R.id.llGeneralEnquires);
-//        llIanShepherdson = (LinearLayout) findViewById(R.id.llIanShepherdson);
-//        llClausVistesen = (LinearLayout) findViewById(R.id.llClausVistesen);
-//        llAndresAbadia = (LinearLayout) findViewById(R.id.llAndresAbadia);
-//        llSamuelTombs = (LinearLayout) findViewById(R.id.llSamuelTombs);
-//        llFreyaBemish = (LinearLayout) findViewById(R.id.llFreyaBeamish);
-//        llMiguel = (LinearLayout) findViewById(R.id.llMiguel);
-
-
         recyclerView = findViewById(R.id.contactusrecycle);
         regionList = new ArrayList<>();
         adapter = new ContactusAdapter(ContactusActivity.this, regionList);
-//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(ContactusActivity.this, 2);
-//        recyclerView.setLayoutManager(mLayoutManager);
-//        recyclerView.setAdapter(adapter);
-
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(ContactusActivity.this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new ContactusActivity.GridSpacingItemDecoration(2, dpToPx(8), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-
         prepareImages();
-
 
         llGeneralEnquires.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,52 +59,6 @@ public class ContactusActivity extends AppCompatActivity {
                 generalEnquires();
             }
         });
-
-//        llIanShepherdson.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                ianShepherdson();
-//            }
-//        });
-//
-//
-//        llClausVistesen.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                clausVistesen();
-//            }
-//        });
-//
-//        llAndresAbadia.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                andresAbadia();
-//            }
-//        });
-//
-//        llSamuelTombs.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                samuelTombs();
-//            }
-//        });
-//
-//        llFreyaBemish.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                freyaBemish();
-//            }
-//        });
-//        llMiguel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                MiguelChanco();
-//            }
-//        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -192,7 +130,6 @@ public class ContactusActivity extends AppCompatActivity {
 
         final Dialog dialog = new Dialog(ContactusActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         dialog.setContentView(R.layout.contactus_custom_dialog);
         dialog.setTitle(null);
 
@@ -297,7 +234,6 @@ public class ContactusActivity extends AppCompatActivity {
         rlTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = null;
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/clausVistesen")));
@@ -311,7 +247,6 @@ public class ContactusActivity extends AppCompatActivity {
 
         dialog.show();
     }
-
 
     public void andresAbadia() {
 
@@ -572,55 +507,74 @@ public class ContactusActivity extends AppCompatActivity {
                 getString(R.string.tvIan_text),
                 getString(R.string.tvIan_subtext),
                 getString(R.string.tvIan_Phoneno),
-                getString(R.string. tvIan_mail),
+                getString(R.string.tvIan_mail),
                 getString(R.string.tvIan_tweet), covers[0],
                 "#E9F9FE");
         regionList.add(a);
 
-      a = new Region(
+        a = new Region(
                 getString(R.string.tvClaus_text),
                 getString(R.string.tvClaus_subtext),
                 getString(R.string.tvClaus_Phoneno),
-                getString(R.string. tvClaus_mail),
+                getString(R.string.tvClaus_mail),
                 getString(R.string.tvClaus_tweet), covers[1],
-             "#E0E4E5");
+                "#E0E4E5");
         regionList.add(a);
 
-         a = new Region(
+        a = new Region(
                 getString(R.string.tvAndres_text),
                 getString(R.string.tvAndres_subtext),
                 getString(R.string.tvAndres_Phoneno),
-                getString(R.string. tvAndres_mail),
-                getString(R.string.tvAndres_tweet), covers[2],"#E0E4E5");
+                getString(R.string.tvAndres_mail),
+                getString(R.string.tvAndres_tweet), covers[2], "#E0E4E5");
         regionList.add(a);
         a = new Region(
                 getString(R.string.tvSamuel_text),
                 getString(R.string.tvSamuel_subtext),
                 getString(R.string.tvSamuel_Phoneno),
-                getString(R.string. tvSamuel_mail),
-                getString(R.string.tvSamuel_tweet), covers[3],"#E9F9FE");
+                getString(R.string.tvSamuel_mail),
+                getString(R.string.tvSamuel_tweet), covers[3], "#E9F9FE");
         regionList.add(a);
 
-         a = new Region(
+        a = new Region(
                 getString(R.string.tvFreya_text),
                 getString(R.string.tvFreya_subtext),
                 getString(R.string.tvFreya_Phoneno),
-                getString(R.string. tvFreya_mail),
-                getString(R.string.tvFreya_tweet), covers[4],"#E9F9FE");
+                getString(R.string.tvFreya_mail),
+                getString(R.string.tvFreya_tweet), covers[4], "#E9F9FE");
         regionList.add(a);
 
 
-         a = new Region(
+        a = new Region(
                 getString(R.string.tvMiguel),
                 getString(R.string.tvMiguel_subtext),
                 getString(R.string.tvMiguel_Phoneno),
-                getString(R.string. tvMiguel_mail),
-                getString(R.string.tvMiguel_tweet), covers[5],"#E0E4E5");
+                getString(R.string.tvMiguel_mail),
+                getString(R.string.tvMiguel_tweet), covers[5], "#E0E4E5");
         regionList.add(a);
 
         adapter.notifyDataSetChanged();
     }
 
+    private int dpToPx(int dp) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_contactus, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
@@ -636,50 +590,24 @@ public class ContactusActivity extends AppCompatActivity {
 
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int position = parent.getChildAdapterPosition(view); // item position
-            int column = position % spanCount; // item column
+            int position = parent.getChildAdapterPosition(view);
+            int column = position % spanCount;
 
             if (includeEdge) {
-                outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
-                outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
+                outRect.left = spacing - column * spacing / spanCount;
+                outRect.right = (column + 1) * spacing / spanCount;
 
-                if (position < spanCount) { // top edge
+                if (position < spanCount) {
                     outRect.top = spacing;
                 }
-                outRect.bottom = spacing; // item bottom
+                outRect.bottom = spacing;
             } else {
-                outRect.left = column * spacing / spanCount; // column * ((1f / spanCount) * spacing)
-                outRect.right = spacing - (column + 1) * spacing / spanCount; // spacing - (column + 1) * ((1f /    spanCount) * spacing)
+                outRect.left = column * spacing / spanCount;
+                outRect.right = spacing - (column + 1) * spacing / spanCount;
                 if (position >= spanCount) {
                     outRect.top = spacing; // item top
                 }
             }
         }
-    }
-
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_contactus, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == android.R.id.home) {
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

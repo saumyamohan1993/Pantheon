@@ -1,12 +1,11 @@
 /**
- @Module Name/Class		:	SplashScreeenActivity
- @Author Name			:	Sombir Singh Bisht
- @Date					:	Sept 2, 2015
- @Purpose				:	This page/functionality is used to provide Login Splash Screen.
+ * @Module Name/Class		:	SplashScreeenActivity
+ * @Author Name            :	Sombir Singh Bisht
+ * @Date :	Sept 2, 2015
+ * @Purpose :	This page/functionality is used to provide Login Splash Screen.
  */
 package com.pantheon.android.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -16,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.pantheon.android.R;
 import com.pantheon.android.utility.SharedPreferenceManager;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,7 +35,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
 
-                if (preferenceManager.getUserToken(SplashScreenActivity.this)==null ) {
+                if (preferenceManager.getUserToken(SplashScreenActivity.this) == null) {
                     Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
                     preferenceManager.setLoginCheck(SplashScreenActivity.this, true);
                     startActivity(intent);

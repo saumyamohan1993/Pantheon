@@ -24,31 +24,10 @@ public class ContactusAdapter extends RecyclerView.Adapter<ContactusAdapter.MyVi
     private Context mContext;
     private List<Region> albumList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, contactpost, contactno, contactemail, contacttweet;
-        public ImageView thumbnail, overflow;
-        LinearLayout backgroundView;
-
-        public MyViewHolder(View view) {
-            super(view);
-            title = view.findViewById(R.id.contacttitle);
-            thumbnail = view.findViewById(R.id.thumbnail);
-            contactpost = view.findViewById(R.id.subtext);
-            contactno = view.findViewById(R.id.contactno);
-            contactemail = view.findViewById(R.id.contactemail);
-            contacttweet = view.findViewById(R.id.contacttweet);
-            backgroundView = view.findViewById(R.id.llView);
-
-
-        }
-    }
-
-
     public ContactusAdapter(Context mContext, List<Region> albumList) {
         this.mContext = mContext;
         this.albumList = albumList;
     }
-
 
     @NonNull
     @Override
@@ -67,7 +46,6 @@ public class ContactusAdapter extends RecyclerView.Adapter<ContactusAdapter.MyVi
         holder.contactemail.setText(album.getContactemail());
         holder.contactno.setText(album.getContactno());
         holder.contacttweet.setText(album.getContacttweet());
-//        holder.thumbnail.setAdjustViewBounds(true);
         Glide.with(mContext).load(album.getContactimg()).into(holder.thumbnail);
         holder.backgroundView.setBackgroundColor(Color.parseColor(album.getBgcolor()));
         holder.backgroundView.setOnClickListener(new View.OnClickListener() {
@@ -88,13 +66,27 @@ public class ContactusAdapter extends RecyclerView.Adapter<ContactusAdapter.MyVi
                 }
             }
         });
-
-
     }
-
 
     @Override
     public int getItemCount() {
         return albumList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView title, contactpost, contactno, contactemail, contacttweet;
+        public ImageView thumbnail, overflow;
+        LinearLayout backgroundView;
+
+        public MyViewHolder(View view) {
+            super(view);
+            title = view.findViewById(R.id.contacttitle);
+            thumbnail = view.findViewById(R.id.thumbnail);
+            contactpost = view.findViewById(R.id.subtext);
+            contactno = view.findViewById(R.id.contactno);
+            contactemail = view.findViewById(R.id.contactemail);
+            contacttweet = view.findViewById(R.id.contacttweet);
+            backgroundView = view.findViewById(R.id.llView);
+        }
     }
 }

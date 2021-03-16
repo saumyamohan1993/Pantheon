@@ -2,6 +2,7 @@ package com.pantheon.android.bean;
 
 public class PublicationData {
 
+    private static PublicationData rd;
     private int id;
     private String title;
     private String author;
@@ -11,6 +12,16 @@ public class PublicationData {
     private String downloadstatus;
     private String downloadtoken;
 
+    public PublicationData() {
+    }
+
+    public static synchronized PublicationData getInstance() {
+        if (rd == null) {
+            rd = new PublicationData();
+        }
+        return rd;
+    }
+
     public int getId() {
         return id;
     }
@@ -19,6 +30,8 @@ public class PublicationData {
         this.id = id;
     }
 
+    ;
+
     public String getDownloadstatus() {
         return downloadstatus;
     }
@@ -26,8 +39,6 @@ public class PublicationData {
     public void setDownloadstatus(String downloadstatus) {
         this.downloadstatus = downloadstatus;
     }
-
-    public PublicationData(){}  ;
 
     public String getAuthor() {
         return author;
@@ -75,14 +86,5 @@ public class PublicationData {
 
     public void setDownloadtoken(String downloadtoken) {
         this.downloadtoken = downloadtoken;
-    }
-
-
-    private static PublicationData rd;
-    public static synchronized PublicationData getInstance(){
-        if(rd==null){
-            rd=new PublicationData();
-        }
-        return rd;
     }
 }

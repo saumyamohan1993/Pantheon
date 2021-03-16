@@ -23,13 +23,13 @@ import java.util.ArrayList;
  */
 public class HttpServiceResponse {
     private static final String TAG = "HttpServiceResponse";
+    private static final String US = "1174";
+    private static final String EURO = "1172";
+    private static final String LATAM = "1170";
+    private static final String UK = "1561";
+    private static final String ASIA_MONITOR = "1863";
 
     public static BaseBean getResponse(Context context, BaseBean beanObject, WebserviceType type, String result) {
-       /* if (isJSONValid(result) == false) {
-            beanObject.statusCode = -100;
-            return beanObject;
-        }*/
-        Log.e(TAG, "getResponse: "+type );
         try {
             switch (type) {
 
@@ -62,10 +62,6 @@ public class HttpServiceResponse {
         return true;
     }
 
-
-    //LoginResponse .. {"message":"You have login successfully !","status":"1","data":{"email_id":"e@a.com","nick_name":"ankit",
-    // "user_state":null,"user_id":"8","token":"14307210898"}}
-
     /**
      * Login Response
      *
@@ -76,19 +72,13 @@ public class HttpServiceResponse {
      */
     private static BaseBean getResponse(Context context, Login beanObject, String result) {
         try {
-            App.showLog(TAG, "LoginResponse .. " + result);
             JSONObject jsonObject = new JSONObject(result);
-            Log.e(TAG, "getResponse:LoginResponse "+jsonObject.toString() +"   donee");
-
-            //beanObject.statusMsg = jsonObject.getString("message");
-           // beanObject.statusCode = jsonObject.getInt("status");
+            Log.e(TAG, "getResponse:LoginResponse " + jsonObject.toString());
             beanObject.result = jsonObject.getBoolean("result");
-
             App.showLog(TAG, "Result:::" + jsonObject.getBoolean("result"));
 
-            if (jsonObject.getBoolean("result")==true) {
+            if (jsonObject.getBoolean("result") == true) {
                 JSONObject object = jsonObject.getJSONObject("UDATA");
-
                 String userId = object.getString("UID");
                 System.out.println(userId);
                 String userName = object.getString("UNAME");
@@ -96,17 +86,14 @@ public class HttpServiceResponse {
                 String userToken = object.getString("UTOKEN");
                 System.out.println(userToken);
 
-
                 SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
-                    preferenceManager.setUserId(context, userId);
-                    preferenceManager.setUserName(context, userName);
-                    preferenceManager.setUserToken(context, userToken);
-
+                preferenceManager.setUserId(context, userId);
+                preferenceManager.setUserName(context, userName);
+                preferenceManager.setUserToken(context, userToken);
             }
         } catch (JSONException e) {
-//            Log.e(TAG,"exception::::::::::" +e);
-            Log.e(TAG,"exception1::::::::::" +beanObject.statusMsg+"\t\t"+beanObject.statusCode);
 
+            Log.e(TAG, "exception1::::::::::" + beanObject.statusMsg + "\t\t" + beanObject.statusCode);
             e.printStackTrace();
         }
         return beanObject;
@@ -116,26 +103,14 @@ public class HttpServiceResponse {
         try {
 
             JSONObject jsonObject = new JSONObject(result);
-
-         Log.e(TAG, "getResponse:publicationss2 "+jsonObject.toString() +"   donee         ");
-
             beanObject.result = jsonObject.getBoolean("result");
-          //  Log.e(TAG, "getResponse:publicationss3 "+  beanObject.result);
-
-            //beanObject.statusMsg = jsonObject.getString("message");
-            //beanObject.statusCode = jsonObject.getInt("status");
-
-
-            if (jsonObject.getBoolean("result")==true) {
+            if (jsonObject.getBoolean("result") == true) {
 
                 JSONArray jsonArray = jsonObject.getJSONArray("CDATA");
+                ArrayList<PublicationData> publicationDataArrayList = new ArrayList<PublicationData>();
 
-                //Saving data after registration
-                ArrayList<PublicationData> publicationDataArrayList=new ArrayList<PublicationData>();
-
-                for(int i=0; i<jsonArray.length(); i++)
-                {
-                    PublicationData publicationData=new PublicationData();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    PublicationData publicationData = new PublicationData();
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     publicationData.setTitle(Html.fromHtml(jsonObject1.getString("title")).toString());
@@ -145,22 +120,7 @@ public class HttpServiceResponse {
                     publicationData.setDownloadinfo(jsonObject1.getString("downloadinfo"));
                     publicationData.setDownloadstatus(jsonObject1.getString("downloadstatus"));
                     publicationData.setDownloadtoken(jsonObject1.getString("downloadtoken"));
-
-
                     publicationDataArrayList.add(publicationData);
-
-                /*       if (beanObject.getCatID().equals(US) && publicationData.getCategory().equalsIgnoreCase("U.S. Documents")) {
-                           publicationDataArrayList.add(publicationData);
-                       } else if (beanObject.getCatID().equals(EURO) && publicationData.getCategory().equalsIgnoreCase("Eurozone Documents")) {
-                           publicationDataArrayList.add(publicationData);
-                       } else if (beanObject.getCatID().equals(LATAM) && publicationData.getCategory().equalsIgnoreCase("Latin America Documents")) {
-                           publicationDataArrayList.add(publicationData);
-                       } else if (beanObject.getCatID().equals(UK) && publicationData.getCategory().equalsIgnoreCase("UK Documents")) {
-                           publicationDataArrayList.add(publicationData);
-                       }else if (beanObject.getCatID().equals(ASIA_MONITOR) && publicationData.getCategory().equalsIgnoreCase("Asia Documents")) {
-                           publicationDataArrayList.add(publicationData);
-                       }*/
-
                 }
 
                 beanObject.setPublicationDataArrayList(publicationDataArrayList);
@@ -176,31 +136,18 @@ public class HttpServiceResponse {
     private static BaseBean getSearchResponse(Context context, PublicationRegion beanObject, String result) {
         try {
             App.showLog(TAG, "PublicationResponse .. " + result);
-
             JSONObject jsonObject = new JSONObject(result);
-           Log.e(TAG, "getResponse:searchresult "+jsonObject.toString() );
+            Log.e(TAG, "getResponse:searchresult " + jsonObject.toString());
             App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
 
             beanObject.result = jsonObject.getBoolean("result");
-
-            //beanObject.statusMsg = jsonObject.getString("message");
-            //beanObject.statusCode = jsonObject.getInt("status");
-
-            // App.showLog(TAG, "Registration Message is .. " + beanObject.statusMsg);
-
-            if (jsonObject.getBoolean("result")==true) {
+            if (jsonObject.getBoolean("result") == true) {
 
                 JSONArray jsonArray = jsonObject.getJSONArray("CDATA");
+                ArrayList<PublicationData> publicationDataArrayList = new ArrayList<PublicationData>();
 
-                //Saving data after registration
-
-
-                ArrayList<PublicationData> publicationDataArrayList=new ArrayList<PublicationData>();
-
-
-                for(int i=0; i<jsonArray.length(); i++)
-                {
-                    PublicationData publicationData=new PublicationData();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    PublicationData publicationData = new PublicationData();
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     publicationData.setTitle(Html.fromHtml(jsonObject1.getString("title")).toString());
@@ -210,7 +157,6 @@ public class HttpServiceResponse {
                     publicationData.setDownloadinfo(jsonObject1.getString("downloadinfo"));
                     publicationData.setDownloadstatus(jsonObject1.getString("downloadstatus"));
                     publicationData.setDownloadtoken(jsonObject1.getString("downloadtoken"));
-
                     publicationDataArrayList.add(publicationData);
 
                 }
@@ -225,34 +171,18 @@ public class HttpServiceResponse {
         return beanObject;
     }
 
-
-    private static final String US = "1174";
-    private static final String EURO = "1172";
-    private static final String LATAM = "1170";
-    private static final String UK = "1561";
-    private static final String ASIA_MONITOR="1863";
-
-
     private static BaseBean getResponse(Context context, Reset beanObject, String result) {
         try {
 
             System.out.println("Forgot....." + result);
-
             JSONObject jsonObject = new JSONObject(result);
-
             System.out.println("Forgot Result...." + result);
-
             App.showLog(TAG, "reset  .. " + result);
-            //beanObject.statusMsg = jsonObject.getString("message");
-            // beanObject.statusCode = jsonObject.getInt("status");
             beanObject.result = jsonObject.getBoolean("result");
-
             App.showLog(TAG, "Result:::" + jsonObject.getBoolean("result"));
 
-            if (jsonObject.getBoolean("result")==true) {
+            if (jsonObject.getBoolean("result") == true) {
 
-                //JSONObject object = jsonObject.getJSONObject("result");
-                //JSONObject object1 = jsonObject.getJSONObject("message");
             }
 
         } catch (JSONException e) {

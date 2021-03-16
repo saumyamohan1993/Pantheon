@@ -1,6 +1,5 @@
 package com.pantheon.android.ui;
 
-
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -16,6 +15,7 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import com.pantheon.android.R;
@@ -28,44 +28,47 @@ import com.pantheon.android.http.HttpConnectionUtil;
 import com.pantheon.android.http.HttpConstant;
 import com.pantheon.android.http.WebserviceType;
 import com.pantheon.android.utility.SharedPreferenceManager;
-import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SearchActivity extends AppCompatActivity implements BaseListener {
+    public final String US = "1174";
+    public final String EURO = "1172";
+    public final String LATAM = "1170";
+    public final String UK = "1561";
+    private final String APPTOKEN = "J50pjO0d6rH3wzY3";
+    private final boolean MODPUBLIST = true;
+    private final String SOURCE = "Android";
+    private final String DATE = null;
+    private final String SRCH = null;
+    private final String TAGS = null;
+    private final String CUSTOM1 = null;
     private SearchView mSearchView;
     private View filter;
     private MenuItem searchMenuItem;
     private ListView lvPublication;
     private PublicationAdapter adapter;
     private ArrayList<PublicationData> publicationList;
+    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener = new BaseListener.OnWebServiceCompleteListener() {
+        @Override
+        public void onWebServiceComplete(Object baseObject) {
 
-    private final String APPTOKEN = "J50pjO0d6rH3wzY3";
-    private final boolean MODPUBLIST = true;
-    private final String SOURCE = "Android";
+            refreshAdapter((BaseBean) baseObject);
+        }
+    };
     private String UNAME = null;
     private String UID = null;
     private String UTOKEN = null;
-    private final String DATE = null;
-    private final String SRCH = null;
-    private final String TAGS = null;
-    private final String CUSTOM1 = null;
-
-    public final String US = "1174";
-    public final String EURO = "1172";
-    public final String LATAM = "1170";
-    public final String UK = "1561";
-
     private String search;
     private SearchView mSearch;
     private String searchText;
-
     private String filterType = "Tag";
     private String TAG_FILTER = "Tag";
     private String TITLE_FILTER = "Title";
     private String AUTHOR_FILTER = "custom1";
     private String DATE1_FILTER = "DATE(YYYY)";
-    private String AUTHOR_ID="";
+    private String AUTHOR_ID = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +77,13 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-
         SharedPreferenceManager preferenceManager = SharedPreferenceManager.getInstance();
         UNAME = preferenceManager.getUserName(this);
         UID = preferenceManager.getUserId(this);
         UTOKEN = preferenceManager.getUserToken(this);
 
         lvPublication = (ListView) findViewById(R.id.lvPublications);
-
         lvPublication.setTextFilterEnabled(true);
-
         lvPublication.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -95,7 +95,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_search_screen, menu);
         filter = menu.findItem(R.id.search).getActionView();
         searchMenuItem = menu.findItem(R.id.search);
@@ -103,8 +102,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         searchMenuItem.expandActionView();
         mSearchView.setQueryHint("Search by " + filterType);
         initializeSearchView();
-
-
         return true;
     }
 
@@ -117,7 +114,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
 
             finish();
@@ -128,7 +124,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
     private void initializeSearchView() {
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -151,12 +146,7 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
                 return false;
             }
         });
-
-
-
     }
-
-
 
     private void popUp() {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(SearchActivity.this);
@@ -172,9 +162,7 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         arrayAdapter.add(getString(R.string.date2));
         arrayAdapter.add(getString(R.string.date3));
 
-        builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener()
-
-                {
+        builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -183,19 +171,17 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
 
         );
 
-        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener()
-
-                {
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         searchText = arrayAdapter.getItem(which);
                         if (searchText.equals(getString(R.string.title))) {
                             filterType = TITLE_FILTER;
-                            mSearchView.setQueryHint("Search by "+filterType);
+                            mSearchView.setQueryHint("Search by " + filterType);
                         }
                         if (searchText.equals(getString(R.string.tag))) {
                             filterType = TAG_FILTER;
-                            mSearchView.setQueryHint("Search by "+filterType);
+                            mSearchView.setQueryHint("Search by " + filterType);
                         }
                         if (searchText.equals(getString(R.string.author))) {
                             authorPop();
@@ -216,10 +202,7 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
 
     }
 
-
     private void showYearPicker() {
-
-
         final Dialog d = new Dialog(SearchActivity.this);
         d.setTitle(R.string.date1);
         d.setContentView(R.layout.number_dialog);
@@ -230,7 +213,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         np.setMinValue(1900);
         np.setValue(2016);
         np.setWrapSelectorWheel(false);
-        //  np.setOnValueChangedListener(SearchActivity.this);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,12 +229,9 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
             }
         });
         d.show();
-
-
     }
 
     private void showMonthYear() {
-
 
         final Dialog d = new Dialog(SearchActivity.this);
         d.setTitle(R.string.date2);
@@ -263,17 +242,14 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         np1.setMaxValue(31);
         np1.setMinValue(1);
         np1.setWrapSelectorWheel(false);
-
         final NumberPicker np2 = (NumberPicker) d.findViewById(R.id.numberPicker2);
         np2.setMaxValue(12);
         np2.setMinValue(1);
         np2.setWrapSelectorWheel(false);
 
-
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // tv.setText(String.valueOf(np.getValue()));
                 d.dismiss();
                 filterType = DATE1_FILTER;
                 String text = (np1.getValue() < 10 ? "0" : "") + np1.getValue();
@@ -289,19 +265,13 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
             }
         });
         d.show();
-
-
     }
-
 
     private void showDayMonthYear() {
         Calendar now = Calendar.getInstance();
-        //
         System.out.println("Current Year is : " + now.get(Calendar.YEAR));
-        // month start from 0 to 11
         System.out.println("Current Month is : " + (now.get(Calendar.MONTH) + 1));
         System.out.println("Current Date is : " + now.get(Calendar.DATE));
-
         final Dialog d = new Dialog(SearchActivity.this);
         d.setTitle(R.string.date3);
         d.setContentView(R.layout.day_year_month);
@@ -345,7 +315,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
 
     }
 
-
     private void authorPop() {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(SearchActivity.this);
         builderSingle.setTitle(getString(R.string.author));
@@ -356,41 +325,35 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         arrayAdapter.add("Andres");
         arrayAdapter.add("Claus");
         arrayAdapter.add("Samuel");
-        builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener()
-
-                {
+        builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 }
         );
-        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener()
-
-                {
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int index) {
                         filterType = AUTHOR_FILTER;
                         if (index == 0) {
-                            AUTHOR_ID="7";
+                            AUTHOR_ID = "7";
                         }
                         if (index == 1) {
-                            AUTHOR_ID="368";
+                            AUTHOR_ID = "368";
                         }
                         if (index == 2) {
-                            AUTHOR_ID="373";
+                            AUTHOR_ID = "373";
                         }
                         if (index == 3) {
-                            AUTHOR_ID="244590";
+                            AUTHOR_ID = "244590";
                         }
 
                         setSearchBar(arrayAdapter.getItem(index));
                     }
                 }
-
-        );
+                );
         builderSingle.show();
-
     }
 
     private void setSearchBar(String query) {
@@ -407,14 +370,6 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         mSearchView.setFocusableInTouchMode(true);
     }
 
-
-    /**
-     * @Function Name        :	getPublicationList
-     * @Author Name        :	Mr. Sombir Singh Bisht
-     * @Date                :	Sept, 04 2015
-     * @Param             :	NA
-     * @Purpose            :	To see publication list of selected category.
-     */
     private void getPublicationList() {
         PublicationRegion USbean = new PublicationRegion(HttpConstant.USMONITOR_URL);
         USbean.setAppToken(APPTOKEN);
@@ -440,32 +395,20 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
         HttpConnectionUtil.callWebService(USbean, this, WebserviceType.SEARCH, onWebServiceCompleteListener);
     }
 
-    BaseListener.OnWebServiceCompleteListener onWebServiceCompleteListener = new BaseListener.OnWebServiceCompleteListener() {
-        @Override
-        public void onWebServiceComplete(Object baseObject) {
-
-            refreshAdapter((BaseBean) baseObject);
-        }
-    };
-
     private void refreshAdapter(final BaseBean baseObject) {
 
         PublicationRegion USbean = (PublicationRegion) baseObject;
         publicationList = ((PublicationRegion) baseObject).getPublicationDataArrayList();
         System.out.println("result Publication..." + USbean.result);
 
-        if (publicationList != null)
-        {
-            if (USbean.result == true)
-            {
+        if (publicationList != null) {
+            if (USbean.result == true) {
                 adapter = new PublicationAdapter(this, publicationList);
                 lvPublication.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
-        }
-        else
-        {
-       AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SearchActivity.this);
+        } else {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SearchActivity.this);
             alertDialogBuilder.setMessage("No publication found based on search criteria.");
             alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -473,17 +416,13 @@ public class SearchActivity extends AppCompatActivity implements BaseListener {
                 public void onClick(DialogInterface arg0, int arg1) {
 
                     arg0.dismiss();
-
                 }
             });
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
-
         }
     }
-
-
 }
 
 

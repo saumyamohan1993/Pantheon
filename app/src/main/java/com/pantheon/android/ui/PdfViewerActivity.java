@@ -40,14 +40,19 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class PdfViewerActivity extends AppCompatActivity {
+    private static ProgressDialog progressDialog;
+    int responseCode;
+    PDFView pdfView;
+    int flag = 0;
+    BroadcastReceiver onComplete = new BroadcastReceiver() {
+        public void onReceive(Context ctxt, Intent intent) {
+            Toast.makeText(PdfViewerActivity.this, getResources().getString(R.string.article_sucessfully_saved), Toast.LENGTH_LONG).show();
+        }
+    };
     private WebView wvPdfShow, wvPdfShow1;
     private String download_token, publication_heading, download_info, article_heading, article_author, article_preview, article_category, article_downloadinfo, article_downloadstatus,
             article_downloadtoken;
     private DataBaseHelper mydatabase;
-    int responseCode;
-    PDFView pdfView;
-    private static ProgressDialog progressDialog;
-    int flag = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
@@ -68,9 +73,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         article_downloadstatus = intent.getStringExtra("article_downloadstatus");
         article_downloadtoken = intent.getStringExtra("article_downloadtoken");
 
-        ;
-
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading");
@@ -79,7 +81,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         progressDialog.show();
 
         isStoragePermissionGranted();
-
         String urlEncoded = null;
 
         try {
@@ -88,7 +89,6 @@ public class PdfViewerActivity extends AppCompatActivity {
             e.printStackTrace();
 
         }
-
 
         wvPdfShow1 = (WebView) findViewById(R.id.wvPdfShow1);
         wvPdfShow1.clearCache(true);
@@ -99,12 +99,9 @@ public class PdfViewerActivity extends AppCompatActivity {
         wvPdfShow1.loadUrl("https://docs.google.com/viewer?embedded=false&url=" + urlEncoded);
         settings.setLoadWithOverviewMode(true);
         wvPdfShow1.getSettings().setDomStorageEnabled(true);
-        Log.e("123", "onCreate: "+wvPdfShow1 );
-
-
+        Log.e("123", "onCreate: " + wvPdfShow1);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 
     public void downloadurl(String url, String article_heading, String articleinfo) {
 
@@ -123,7 +120,6 @@ public class PdfViewerActivity extends AppCompatActivity {
 
             request.setTitle(article_heading);
             request.setDescription(articleinfo);
-
             request.allowScanningByMediaScanner();
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             String path = direct + "/" + article_heading;
@@ -136,12 +132,6 @@ public class PdfViewerActivity extends AppCompatActivity {
             isStoragePermissionGranted();
         }
     }
-
-    BroadcastReceiver onComplete = new BroadcastReceiver() {
-        public void onReceive(Context ctxt, Intent intent) {
-            Toast.makeText(PdfViewerActivity.this, getResources().getString(R.string.article_sucessfully_saved), Toast.LENGTH_LONG).show();
-        }
-    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -163,27 +153,15 @@ public class PdfViewerActivity extends AppCompatActivity {
         if (id == R.id.download) {
             mydatabase = new DataBaseHelper(PdfViewerActivity.this);
 
-            //if (mydatabase.unique(article_heading).equalsIgnoreCase(article_heading))
             if (mydatabase.unique(publication_heading) > 0) {
 
                 Toast.makeText(PdfViewerActivity.this, getResources().getString(R.string.article_alreadysaved), Toast.LENGTH_LONG).show();
             } else {
-                //  Log.e("done", "onOptionsItemSelected: "+download_token );
-                //   downloadurl(download_token, download_info);
                 isServerReachable(download_token, download_info, publication_heading);
             }
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    private class Callback extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            return (false);
-        }
-
     }
 
     public boolean isStoragePermissionGranted() {
@@ -193,17 +171,15 @@ public class PdfViewerActivity extends AppCompatActivity {
                 Log.v("permission", "Permission is granted");
                 return true;
             } else {
-
                 Log.v("permission", "Permission is revoked");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 return false;
             }
-        } else { //permission is automatically granted on sdk<23 upon installation
+        } else {
             Log.v("permission", "Permission is granted");
             return true;
         }
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -211,7 +187,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
         }
     }
-
 
     public void isServerReachable(final String download_token, final String download_info, final String publication_heading) {
 
@@ -223,7 +198,6 @@ public class PdfViewerActivity extends AppCompatActivity {
                     URL url1 = new URL(download_token);
                     HttpURLConnection huc = (HttpURLConnection) url1.openConnection();
                     huc.setRequestMethod("HEAD");
-
                     responseCode = huc.getResponseCode();
                     Log.e("done", "isServerReachable1: " + responseCode);
                     if (responseCode == 200) {
@@ -231,7 +205,6 @@ public class PdfViewerActivity extends AppCompatActivity {
                         downloadurl(download_token, download_info, publication_heading);
                     } else {
                     }
-
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -241,14 +214,12 @@ public class PdfViewerActivity extends AppCompatActivity {
             }
         };
         thread.start();
-
     }
 
     public void checkstatus(int responseCode) {
 
         if (responseCode == 200) {
             //  downloadurl(download_token, download_info);
-
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PdfViewerActivity.this);
             alertDialogBuilder.setMessage(getString(R.string.filenotfound));
@@ -268,7 +239,6 @@ public class PdfViewerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-      //  Log.e("123", "onBackPressed: ");
         Intent intent = new Intent(PdfViewerActivity.this, PublicationArticleActivity.class);
         intent.putExtra("articlepdf_token", article_downloadtoken);
         intent.putExtra("publication_heading", article_heading);
@@ -280,12 +250,26 @@ public class PdfViewerActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && this.wvPdfShow1.canGoBack()) {
+            this.wvPdfShow1.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private class Callback extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            return (false);
+        }
+    }
+
     public class AppWebViewClients extends WebViewClient {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-
             view.loadUrl(url);
             return true;
-
         }
 
         @Override
@@ -298,33 +282,17 @@ public class PdfViewerActivity extends AppCompatActivity {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            // TODO Auto-generated method stub
             super.onPageFinished(view, url);
             if (flag == 1) {
                 Log.e("123", "onPageFinished: finish 1" + flag);
-
                 wvPdfShow1.loadUrl("javascript:(function() { " +
                         "document.querySelector('[role=\"toolbar\"]').remove();})()");
-
                 progressDialog.dismiss();
 
             } else {
                 wvPdfShow1.loadUrl(url);
             }
-
-
         }
     }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && this.wvPdfShow1.canGoBack()) {
-            this.wvPdfShow1.goBack();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-
 }
 

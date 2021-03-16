@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,48 +13,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/layout_marginleft"
-            android:layout_marginRight="@dimen/layout_marginright"
             android:layout_marginTop="@dimen/layout_margintop"
+            android:layout_marginRight="@dimen/layout_marginright"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/firstpara_text"
-                android:textSize="@dimen/firstpara_textsize"
                 android:layout_marginBottom="@dimen/firstpara_marginbottom"
-                android:lineSpacingExtra="@dimen/firstpara_linespacing"/>
+                android:lineSpacingExtra="@dimen/firstpara_linespacing"
+                android:text="@string/firstpara_text"
+                android:textSize="@dimen/firstpara_textsize" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/secondpara_marginbottom"
                 android:text="@string/secondpara_text"
-                android:textSize="@dimen/secondpara_textsize"
                 android:textColor="@color/menu_color"
-                android:layout_marginBottom="@dimen/secondpara_marginbottom"/>
+                android:textSize="@dimen/secondpara_textsize" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/thirdpara_marginbottom"
                 android:text="@string/thirdpara_text"
-                android:textSize="@dimen/thirdpara_textsize"
-                android:textStyle="italic"
                 android:textColor="@color/menu_color"
-                android:layout_marginBottom="@dimen/thirdpara_marginbottom"/>
+                android:textSize="@dimen/thirdpara_textsize"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="@dimen/form_marginleft"
-                android:layout_marginRight="@dimen/form_marginright">
+                android:layout_marginRight="@dimen/form_marginright"
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:hint="@string/etName"/>
+                    android:hint="@string/etName" />
 
                 <EditText
                     android:id="@+id/etCompany"
@@ -70,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:hint="@string/etEmailAddress"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" />
 
             </LinearLayout>
 
@@ -78,55 +77,55 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginTop="@dimen/checkbox_margintop"
                 android:layout_marginLeft="@dimen/checkbox_marginleft"
-                android:layout_marginRight="@dimen/checkbox_marginright">
+                android:layout_marginTop="@dimen/checkbox_margintop"
+                android:layout_marginRight="@dimen/checkbox_marginright"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <CheckBox
                         android:id="@+id/cbUsEconomy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cbUsEconomy_text"/>
+                        android:text="@string/cbUsEconomy_text" />
 
                     <CheckBox
                         android:id="@+id/cbLatAmEconomy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cbLatAmEconomy_text"/>
+                        android:text="@string/cbLatAmEconomy_text" />
 
                     <CheckBox
                         android:id="@+id/cbAll"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cbAll_text"/>
+                        android:text="@string/cbAll_text" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <CheckBox
                         android:id="@+id/cbEuroEconomy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cbEuroEconomy_text"/>
+                        android:text="@string/cbEuroEconomy_text" />
 
                     <CheckBox
                         android:id="@+id/cbUkEconomy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cbUk_text"/>
+                        android:text="@string/cbUk_text" />
 
                 </LinearLayout>
 
@@ -136,12 +135,12 @@
                 android:id="@+id/btnActivateFreeTrail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Activate Free Trail"
-                android:background="@drawable/btn_blue"
                 android:layout_margin="@dimen/btn_margin"
+                android:background="@drawable/btn_blue"
+                android:text="Activate Free Trail"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_textsize"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

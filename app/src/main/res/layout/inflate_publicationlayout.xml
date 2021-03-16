@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/publicationlayout_margin"
@@ -16,17 +15,17 @@
             android:id="@+id/tvArticleHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginRight="@dimen/articleheading_marginright"
             android:layout_marginTop="@dimen/articleheading_margintop"
+            android:layout_marginRight="@dimen/articleheading_marginright"
             android:layout_marginBottom="@dimen/articleheading_marginbottom"
-            android:textSize="@dimen/articleheading_textsize"/>
+            android:textSize="@dimen/articleheading_textsize"
+            android:textStyle="bold" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.1sp"
-            android:background="@color/menu_color"
-            android:layout_marginBottom="@dimen/line_marginbottom"/>
+            android:layout_marginBottom="@dimen/line_marginbottom"
+            android:background="@color/menu_color" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -42,18 +41,18 @@
                     android:id="@+id/ivIconDoc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icondoc"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icondoc" />
 
                 <TextView
                     android:id="@+id/tvArticleAuthor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/ivIconDoc"
                     android:layout_marginLeft="@dimen/articleauthor_marginleft"
                     android:layout_marginRight="@dimen/articleauthor_marginright"
-                    android:textColor="@color/menu_color"/>
+                    android:layout_toRightOf="@+id/ivIconDoc"
+                    android:textColor="@color/menu_color" />
 
             </RelativeLayout>
 
@@ -66,26 +65,26 @@
             android:layout_marginTop="@dimen/articlebrief_margintop"
             android:layout_marginRight="@dimen/articlebrief_marginright"
             android:lineSpacingExtra="@dimen/articlebrief_linespacing"
-            android:lines="3"/>
+            android:lines="3" />
 
         <ImageView
             android:id="@+id/ivNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end"
+            android:src="@drawable/next" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/category_text"
-            android:textColor="@color/menu_color"/>
+            android:textColor="@color/menu_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/category_margintop">
+            android:layout_marginBottom="@dimen/category_margintop"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvCategory"
@@ -96,7 +95,7 @@
                 android:id="@+id/tvDownloadInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/downloadinfo_marginleft"/>
+                android:layout_marginLeft="@dimen/downloadinfo_marginleft" />
 
         </LinearLayout>
 
@@ -111,21 +110,20 @@
                 android:id="@+id/ivFavourite"
                 android:layout_width="@dimen/ivfavourite_width"
                 android:layout_height="@dimen/ivfavourite_height"
-                android:src="@drawable/fav"
                 android:layout_centerVertical="true"
-                android:visibility="gone"/>
+                android:src="@drawable/fav"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvMarkasFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/favourite_text"
-                android:layout_toRightOf="@+id/ivFavourite"
-                android:layout_marginLeft="@dimen/markasfavourite_marginleft"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/markasfavourite_marginleft"
+                android:layout_toRightOf="@+id/ivFavourite"
+                android:text="@string/favourite_text"
                 android:textColor="@color/menu_color"
-                android:visibility="gone"/>
-
+                android:visibility="gone" />
 
 
         </RelativeLayout>

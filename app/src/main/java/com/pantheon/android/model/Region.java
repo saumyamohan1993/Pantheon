@@ -1,10 +1,10 @@
 package com.pantheon.android.model;
 
 public class Region {
+    public String contactname, contactpost, contactno, contactemail, contacttweet, bgcolor;
     private String name;
     private String type;
     private int thumbnail, contactimg;
-    public String contactname, contactpost, contactno, contactemail, contacttweet, bgcolor;
 
     public Region(String name, int thumbnail, String type) {
         this.name = name;

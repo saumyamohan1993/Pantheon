@@ -24,85 +24,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SelectRegionFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private RegionAdapter adapter;
-    private List<Region> regionList;
-    private LinearLayout llUsMonitor, llEurozone, llLatinAmerica, llUk,llAsiaMonitor;
     private final String US = "1174";
     private final String EURO = "1172";
     private final String LATAM = "1170";
     private final String UK = "1561";
-    private final String ASIA_MONITOR="1863";
-    private final String EMERGE_ASIA="3604";
-    private final String CHINA="1863";
-    private final String GLOBAL="3379";
+    private final String ASIA_MONITOR = "1863";
+    private final String EMERGE_ASIA = "3604";
+    private final String CHINA = "1863";
+    private final String GLOBAL = "3379";
+    private RecyclerView recyclerView;
+    private RegionAdapter adapter;
+    private List<Region> regionList;
+    private LinearLayout llUsMonitor, llEurozone, llLatinAmerica, llUk, llAsiaMonitor;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_select_region, container, false);
 
-//        llUsMonitor = (LinearLayout) view.findViewById(R.id.llUsMonitor);
-//        llEurozone = (LinearLayout) view.findViewById(R.id.llEurozone);
-//        llLatinAmerica = (LinearLayout) view.findViewById(R.id.llLatinAmerica);
-//        llUk = (LinearLayout) view.findViewById(R.id.llUk);
-//        llAsiaMonitor=(LinearLayout)view.findViewById(R.id.llAsiaMonitor);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-
         regionList = new ArrayList<>();
         adapter = new RegionAdapter(getContext(), regionList);
-
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
-       recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(18), true));
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(18), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-
         prepareImages();
-
-
-//        llUsMonitor.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getPublications(US);
-//            }
-//        });
-//
-//        llEurozone.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getPublications(EURO);
-//            }
-//        });
-//
-//        llLatinAmerica.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getPublications(LATAM);
-//            }
-//        });
-//
-//        llUk.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getPublications(UK);
-//            }
-//        });
-//
-//        llAsiaMonitor.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getPublications(ASIA_MONITOR);
-//            }
-//        });
 
         return view;
     }
 
-    private void getPublications(String catid){
+    private void getPublications(String catid) {
         Intent intent = new Intent(getActivity(), PublicationsListActivity.class);
-        intent.putExtra("catID",catid);
+        intent.putExtra("catID", catid);
         startActivity(intent);
     }
-
 
     private void prepareImages() {
         int[] covers = new int[]{
@@ -114,25 +70,25 @@ public class SelectRegionFragment extends Fragment {
                 R.drawable.emergeasia,//5
                 R.drawable.global};
 
-        Region a = new Region("UNITED STATES", covers[0],US);
+        Region a = new Region("UNITED STATES", covers[0], US);
         regionList.add(a);
 
-        a = new Region("EUROZONE", covers[1],EURO);
+        a = new Region("EUROZONE", covers[1], EURO);
         regionList.add(a);
 
-        a = new Region("LATIN AMERICA", covers[2],LATAM);
+        a = new Region("LATIN AMERICA", covers[2], LATAM);
         regionList.add(a);
 
-        a = new Region("UNITED KINGDOM", covers[3],UK);
+        a = new Region("UNITED KINGDOM", covers[3], UK);
         regionList.add(a);
 
-        a = new Region("CHINA+", covers[4],CHINA);
+        a = new Region("CHINA+", covers[4], CHINA);
         regionList.add(a);
 
-        a = new Region("EMERGING ASIA", covers[5],EMERGE_ASIA);
+        a = new Region("EMERGING ASIA", covers[5], EMERGE_ASIA);
         regionList.add(a);
 
-        a = new Region("GLOBAL", covers[6],GLOBAL);
+        a = new Region("GLOBAL", covers[6], GLOBAL);
         regionList.add(a);
 
 //        a = new Album("ECONOMIC MONITOR", covers[4],ASIA_MONITOR);
@@ -140,6 +96,10 @@ public class SelectRegionFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
+    private int dpToPx(int dp) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
@@ -174,11 +134,6 @@ public class SelectRegionFragment extends Fragment {
                 }
             }
         }
-    }
-
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
 }

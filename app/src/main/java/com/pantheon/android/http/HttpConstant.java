@@ -1,6 +1,5 @@
 package com.pantheon.android.http;
 
-
 import com.pantheon.android.utility.App;
 public abstract class HttpConstant {
     //Development server
@@ -17,8 +16,6 @@ public abstract class HttpConstant {
     		BASE_URL = DEVELOPMENT_SERVER;
     	}
     }
-
-
     public static final String LOGIN_URL = BASE_URL ;
     public static final String USMONITOR_URL = BASE_URL;
     public static final String RESET_URL = BASE_URL;

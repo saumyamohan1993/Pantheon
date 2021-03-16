@@ -24,25 +24,10 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionAdapter.MyViewHold
     private Context mContext;
     private List<Region> albumList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, count;
-        public ImageView thumbnail, overflow;
-        LinearLayout selectregioncardView;
-
-        public MyViewHolder(View view) {
-            super(view);
-            title = (TextView) view.findViewById(R.id.title);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
-            selectregioncardView = (LinearLayout) view.findViewById(R.id.relative);
-        }
-    }
-
-
     public RegionAdapter(Context mContext, List<Region> albumList) {
         this.mContext = mContext;
         this.albumList = albumList;
     }
-
 
     @NonNull
     @Override
@@ -68,12 +53,23 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionAdapter.MyViewHold
             }
         });
 
-
     }
-
 
     @Override
     public int getItemCount() {
         return albumList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView title, count;
+        public ImageView thumbnail, overflow;
+        LinearLayout selectregioncardView;
+
+        public MyViewHolder(View view) {
+            super(view);
+            title = (TextView) view.findViewById(R.id.title);
+            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            selectregioncardView = (LinearLayout) view.findViewById(R.id.relative);
+        }
     }
 }

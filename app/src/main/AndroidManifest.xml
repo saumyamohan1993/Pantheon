@@ -77,9 +77,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.PdfViewerActivity"
+            android:hardwareAccelerated="false"
             android:label="@string/title_activity_pdf_viewer"
-            android:screenOrientation="portrait"
-            android:hardwareAccelerated="false"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SearchActivity"
             android:label="@string/search_hint"

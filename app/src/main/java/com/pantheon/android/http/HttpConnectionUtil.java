@@ -7,7 +7,6 @@ import com.pantheon.android.bean.BaseBean;
 import com.pantheon.android.utility.App;
 import com.pantheon.android.utility.AppUtility;
 
-
 public class HttpConnectionUtil {
     private static final String TAG = "HttpConnectionUtil";
 
@@ -39,7 +38,6 @@ public class HttpConnectionUtil {
         } catch (ClassCastException e) {
             Log.e(TAG, e.toString());
             if (App.isDebuggable) {
-                // Toast.makeText(App.getInstance(), "HttpConnectionUtil ClassCastException", Toast.LENGTH_LONG).show();
             }
         }
     }

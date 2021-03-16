@@ -1,6 +1,5 @@
 package com.pantheon.android.ui;
 
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -18,7 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.pantheon.android.R;
 import com.pantheon.android.fragments.SelectRegionFragment;
 import com.pantheon.android.utility.SharedPreferenceManager;
-
 
 public class HomeScreenActivity extends AppCompatActivity {
     private LinearLayout llContactUs, llLogout, llOfflineMode;
@@ -69,7 +67,7 @@ public class HomeScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreenActivity.this, OfflinePublicationListActivity.class);
-                intent.putExtra("offline",true);
+                intent.putExtra("offline", true);
                 startActivity(intent);
             }
         });
@@ -97,17 +95,15 @@ public class HomeScreenActivity extends AppCompatActivity {
         addFirstFragment();
     }
 
-        @Override
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
         drawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
@@ -118,12 +114,9 @@ public class HomeScreenActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home_screen, menu);
         mSearchView = menu.findItem(R.id.search).getActionView();
-
         return true;
     }
 
@@ -132,15 +125,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Pass the event to ActionBarDrawerToggle, if it returns
-        // true, then it has handled the app icon touch event
 
         switch (item.getItemId()) {
             case R.id.search:
-                //do your work here
                 Intent intent = new Intent(HomeScreenActivity.this, SearchActivity.class);
                 startActivity(intent);
                 return true;
@@ -148,14 +137,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        // Handle your other action bar items...
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
-
-
 }

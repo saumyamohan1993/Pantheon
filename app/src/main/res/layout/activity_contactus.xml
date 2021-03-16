@@ -5,147 +5,147 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.pantheon.android.ui.ContactusActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contactusrecycle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:scrollbars="vertical" />
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="@android:color/white" />
-
-    <LinearLayout
-        android:id="@+id/llGeneralEnquires"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/general_color"
-        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/contactusrecycle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/general_marginleft"
-                android:layout_marginRight="@dimen/general_marginright"
-                android:text="@string/tvGeneral_text"
-                android:textColor="@color/text_headingcolor"
-                android:textSize="@dimen/general_textsize" />
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
 
-            <TextView
+            <View
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/general_marginleft"
-                android:textColor="@color/text_headingcolor"
-                android:textSize="@dimen/general_subtextsize"
-                android:visibility="gone" />
+                android:layout_height="5dp"
+                android:background="@android:color/white" />
 
+            <LinearLayout
+                android:id="@+id/llGeneralEnquires"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/general_color"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright"
+                        android:text="@string/tvGeneral_text"
+                        android:textColor="@color/text_headingcolor"
+                        android:textSize="@dimen/general_textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:textColor="@color/text_headingcolor"
+                        android:textSize="@dimen/general_subtextsize"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralPhoneno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright">
+
+                        <ImageView
+                            android:id="@+id/ivGeneralPhoneno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/tele" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralPhoneno"
+                            android:text="@string/tvGeneral_Phoneno" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright">
+
+                        <ImageView
+                            android:id="@+id/ivGeneralMail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/general_margintop"
+                            android:src="@drawable/msg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralMail"
+                            android:text="@string/tvGeneral_mail" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlGeneralTweet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/general_marginleft"
+                        android:layout_marginRight="@dimen/general_marginright"
+                        android:layout_marginBottom="@dimen/general_marginbottom">
+
+                        <ImageView
+                            android:id="@+id/ivGeneralTweet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/general_margintop"
+                            android:src="@drawable/tweet" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/general_marginleft"
+                            android:layout_toRightOf="@+id/ivGeneralTweet"
+                            android:text="@string/tvGeneral_tweet" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:id="@+id/rlGeneralPhoneno"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/general_marginleft"
-                android:layout_marginRight="@dimen/general_marginright">
-
-                <ImageView
-                    android:id="@+id/ivGeneralPhoneno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/tele" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/general_marginleft"
-                    android:layout_toRightOf="@+id/ivGeneralPhoneno"
-                    android:text="@string/tvGeneral_Phoneno" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlGeneralMessage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/general_marginleft"
-                android:layout_marginRight="@dimen/general_marginright">
-
-                <ImageView
-                    android:id="@+id/ivGeneralMail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="@dimen/general_margintop"
-                    android:src="@drawable/msg" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/general_marginleft"
-                    android:layout_toRightOf="@+id/ivGeneralMail"
-                    android:text="@string/tvGeneral_mail" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlGeneralTweet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/general_marginleft"
-                android:layout_marginRight="@dimen/general_marginright"
-                android:layout_marginBottom="@dimen/general_marginbottom">
-
-                <ImageView
-                    android:id="@+id/ivGeneralTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="@dimen/general_margintop"
-                    android:src="@drawable/tweet" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/general_marginleft"
-                    android:layout_toRightOf="@+id/ivGeneralTweet"
-                    android:text="@string/tvGeneral_tweet" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-        </LinearLayout>
-
-
-
-</ScrollView>
+    </ScrollView>
 </LinearLayout>

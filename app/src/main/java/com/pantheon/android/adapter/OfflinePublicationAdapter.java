@@ -20,8 +20,8 @@ import com.pantheon.android.ui.OfflinePublicationListActivity;
 
 import java.util.ArrayList;
 
-
 public class OfflinePublicationAdapter extends BaseAdapter {
+    Context context;
     private TextView tvArticleHeading, tvArticleAuthor, tvArticleBrief, tvCategory, tvDownloadInfo;
     private LinearLayout llList;
     private RelativeLayout rlArticleFavourite;
@@ -30,8 +30,6 @@ public class OfflinePublicationAdapter extends BaseAdapter {
     private ArrayList<PublicationData> publicationList;
     private String downloadstatus;
     private ListView lvPublication;
-
-    Context context;
 
     public OfflinePublicationAdapter(Context context, ArrayList<PublicationData> publicationList, ListView lvPublication) {
         super();
@@ -58,7 +56,6 @@ public class OfflinePublicationAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-
         final PublicationData publicationData = publicationList.get(position);
 
         if (convertView == null) {
@@ -73,14 +70,12 @@ public class OfflinePublicationAdapter extends BaseAdapter {
         rlArticleFavourite = (RelativeLayout) convertView.findViewById(R.id.rlArticleFavourite);
         ivFavourite = (ImageView) convertView.findViewById(R.id.ivFavourite);
         btnDelete = (Button) convertView.findViewById(R.id.btnDelete);
-
         tvArticleHeading.setText(Html.fromHtml(publicationData.getTitle()));
         tvArticleAuthor.setText(publicationData.getAuthor());
         //tvArticleBrief.setText(Html.fromHtml(publicationData.getPreview()));
         tvCategory.setText(publicationData.getCategory());
         tvDownloadInfo.setText(publicationData.getDownloadinfo());
         downloadstatus = publicationData.getDownloadstatus();
-
 
         llList = (LinearLayout) convertView.findViewById(R.id.llList);
         ivNext = (ImageView) convertView.findViewById(R.id.ivNext);
