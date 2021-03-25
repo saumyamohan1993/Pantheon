@@ -68,6 +68,13 @@ public class PublicationArticleActivity extends AppCompatActivity {
         tvCategory.setText(article_category);
         tvDownloadInfo.setText(article_downloadinfo);
         tvDownloadStatus.setText(article_downloadstatus);
+        tvArticleAuthor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent contactus=new Intent(PublicationArticleActivity.this,ContactusActivity.class);
+                startActivity(contactus);
+            }
+        });
 
         viewfullreport.setOnClickListener(new View.OnClickListener() {
             @Override
