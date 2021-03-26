@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.pantheon.android.ui.ContactusActivity">
+    tools:context="com.pantheon.macroandroid.ui.ContactusActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.pantheon.android.ui.ComplimentaryTrial">
+    tools:context="com.pantheon.macroandroid.ui.ComplimentaryTrial">
 
     <ScrollView
         android:layout_width="match_parent"
