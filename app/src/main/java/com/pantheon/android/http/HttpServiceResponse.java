@@ -2,7 +2,6 @@ package com.pantheon.android.http;
 
 import android.content.Context;
 import android.text.Html;
-import android.util.Log;
 
 import com.pantheon.android.bean.BaseBean;
 import com.pantheon.android.bean.Login;
@@ -44,7 +43,7 @@ public class HttpServiceResponse {
             }
         } catch (ClassCastException e) {
             System.out.println("Exception  " + e.getMessage());
-            Log.e(TAG, e.toString());
+
         }
         return null;
     }
@@ -73,7 +72,7 @@ public class HttpServiceResponse {
     private static BaseBean getResponse(Context context, Login beanObject, String result) {
         try {
             JSONObject jsonObject = new JSONObject(result);
-            Log.e(TAG, "getResponse:LoginResponse " + jsonObject.toString());
+
             beanObject.result = jsonObject.getBoolean("result");
             App.showLog(TAG, "Result:::" + jsonObject.getBoolean("result"));
 
@@ -93,7 +92,6 @@ public class HttpServiceResponse {
             }
         } catch (JSONException e) {
 
-            Log.e(TAG, "exception1::::::::::" + beanObject.statusMsg + "\t\t" + beanObject.statusCode);
             e.printStackTrace();
         }
         return beanObject;
@@ -127,7 +125,7 @@ public class HttpServiceResponse {
 
             }
         } catch (JSONException e) {
-            Log.e(TAG, beanObject.URL);
+
             e.printStackTrace();
         }
         return beanObject;
@@ -137,7 +135,7 @@ public class HttpServiceResponse {
         try {
             App.showLog(TAG, "PublicationResponse .. " + result);
             JSONObject jsonObject = new JSONObject(result);
-            Log.e(TAG, "getResponse:searchresult " + jsonObject.toString());
+
             App.showLog(TAG, "PublicationNOW " + jsonObject.toString());
 
             beanObject.result = jsonObject.getBoolean("result");
@@ -165,7 +163,7 @@ public class HttpServiceResponse {
 
             }
         } catch (JSONException e) {
-            Log.e(TAG, beanObject.URL);
+
             e.printStackTrace();
         }
         return beanObject;

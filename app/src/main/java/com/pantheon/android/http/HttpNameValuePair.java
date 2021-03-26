@@ -1,7 +1,5 @@
 package com.pantheon.android.http;
 
-import android.util.Log;
-
 import com.pantheon.android.bean.BaseBean;
 import com.pantheon.android.bean.Login;
 import com.pantheon.android.bean.PublicationRegion;
@@ -23,7 +21,7 @@ public class HttpNameValuePair {
         pairs.add(new BasicNameValuePair("AppToken", login.getAppToken()));
         pairs.add(new BasicNameValuePair("DoLogin", "true"));
         pairs.add(new BasicNameValuePair("source", login.getSource()));
-        Log.e("", "Login values " + pairs.toString());
+
         return pairs;
     }
 

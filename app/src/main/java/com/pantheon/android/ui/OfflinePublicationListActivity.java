@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -100,7 +99,6 @@ public class OfflinePublicationListActivity extends AppCompatActivity {
 
         //  File file = new File(Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
         File file = new File("/storage/emulated/0/Download" + Environment.getExternalStorageDirectory() + "/" + getString(R.string.app_name), info_download);
-        Log.e("file1", "downloadOfflineurl file: " + file);
 
         if (file.exists()) {
             Intent intent = new Intent(Intent.ACTION_VIEW);

@@ -3,7 +3,6 @@ package com.pantheon.android.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -146,7 +145,7 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     private void getPublicationList() {
 
         PublicationRegion USbean = new PublicationRegion(HttpConstant.USMONITOR_URL);
-        Log.e("login", "publication url: " + HttpConstant.USMONITOR_URL);
+
         USbean.setAppToken(APPTOKEN);
         USbean.setModPubList(MODPUBLIST);
         USbean.setSource(SOURCE);

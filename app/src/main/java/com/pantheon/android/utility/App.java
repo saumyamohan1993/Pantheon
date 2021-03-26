@@ -27,7 +27,6 @@ public static Bitmap imageEditingBitmap;
         if(APP_TAG){
             if (message==null)
                 message="null";
-            Log.i(TAG, message);
         }
     }
 

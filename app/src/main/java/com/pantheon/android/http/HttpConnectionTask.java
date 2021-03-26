@@ -3,7 +3,6 @@ package com.pantheon.android.http;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.pantheon.android.bean.BaseBean;
 import com.pantheon.android.utility.App;
@@ -81,7 +80,6 @@ public class HttpConnectionTask extends AsyncTask<Void, Void, BaseBean> {
             if (mNameValuePairs != null) {
                 httppost.setEntity(new UrlEncodedFormEntity(mNameValuePairs));
             }
-            Log.e("response ", "url is  " + mNameValuePairs);
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             if (entity != null) {

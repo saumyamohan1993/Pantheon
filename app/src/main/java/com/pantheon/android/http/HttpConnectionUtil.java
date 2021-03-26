@@ -1,7 +1,6 @@
 package com.pantheon.android.http;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.pantheon.android.bean.BaseBean;
 import com.pantheon.android.utility.App;
@@ -36,7 +35,7 @@ public class HttpConnectionUtil {
 
             }
         } catch (ClassCastException e) {
-            Log.e(TAG, e.toString());
+
             if (App.isDebuggable) {
             }
         }

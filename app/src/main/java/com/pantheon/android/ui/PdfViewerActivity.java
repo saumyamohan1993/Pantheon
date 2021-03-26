@@ -15,7 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -99,7 +98,7 @@ public class PdfViewerActivity extends AppCompatActivity {
         wvPdfShow1.loadUrl("https://docs.google.com/viewer?embedded=false&url=" + urlEncoded);
         settings.setLoadWithOverviewMode(true);
         wvPdfShow1.getSettings().setDomStorageEnabled(true);
-        Log.e("123", "onCreate: " + wvPdfShow1);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -123,7 +122,7 @@ public class PdfViewerActivity extends AppCompatActivity {
             request.allowScanningByMediaScanner();
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             String path = direct + "/" + article_heading;
-            Log.e("abc", "downloadurl: " + direct + "/" + article_heading);
+
             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, path);
             request.setMimeType("*/*");
             registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
@@ -168,15 +167,15 @@ public class PdfViewerActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v("permission", "Permission is granted");
+
                 return true;
             } else {
-                Log.v("permission", "Permission is revoked");
+
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 return false;
             }
         } else {
-            Log.v("permission", "Permission is granted");
+
             return true;
         }
     }
@@ -199,7 +198,7 @@ public class PdfViewerActivity extends AppCompatActivity {
                     HttpURLConnection huc = (HttpURLConnection) url1.openConnection();
                     huc.setRequestMethod("HEAD");
                     responseCode = huc.getResponseCode();
-                    Log.e("done", "isServerReachable1: " + responseCode);
+
                     if (responseCode == 200) {
                         mydatabase.insertRecord(publication_heading, download_info);
                         downloadurl(download_token, download_info, publication_heading);
@@ -284,7 +283,7 @@ public class PdfViewerActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             if (flag == 1) {
-                Log.e("123", "onPageFinished: finish 1" + flag);
+
                 wvPdfShow1.loadUrl("javascript:(function() { " +
                         "document.querySelector('[role=\"toolbar\"]').remove();})()");
                 progressDialog.dismiss();

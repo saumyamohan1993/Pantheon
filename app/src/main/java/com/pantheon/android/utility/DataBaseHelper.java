@@ -1,8 +1,8 @@
 /**
  * @Page/Module Name/Class	:	DataBaseHelper
  * @Author Name        :	Mr. Sombir Singh Bisht
- * @Date                :	Sept 10,  2015
- * @Purpose            :	This page/functionality is used to provide Database.
+ * @Date :	Sept 10,  2015
+ * @Purpose :	This page/functionality is used to provide Database.
  */
 package com.pantheon.android.utility;
 
@@ -11,7 +11,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.pantheon.android.bean.PublicationData;
 
@@ -32,7 +31,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.e("DB created", "yes");
         db.execSQL("create table " + TABLE_NAME + " (id INTEGER PRIMARY KEY AUTOINCREMENT, " + ARTICLE_HEADING + " text, " + DOWNLOAD_INFO + " text) ");
         System.out.println("Database created");
     }
@@ -52,7 +50,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             String[] coloums = {"id"};
             Cursor res = db.query(TABLE_NAME, coloums, "heading=?", new String[]{ARTICLE_HEADING}, null, null, null);
             i = res.getCount();
-            Log.v("count....", "" + i);
 
         } catch (Exception e) {
             e.printStackTrace();
