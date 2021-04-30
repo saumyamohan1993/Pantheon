@@ -50,6 +50,7 @@ public class PublicationAdapter extends BaseAdapter {
         return publicationList.indexOf(getItem(position));
     }
 
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
