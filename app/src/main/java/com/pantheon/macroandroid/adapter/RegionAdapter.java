@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.pantheon.macroandroid.R;
 import com.pantheon.macroandroid.model.Region;
-import com.pantheon.macroandroid.ui.PublicationsListActivity;
+import com.pantheon.macroandroid.ui.SubRegionActivity;
 
 import java.util.List;
 
@@ -47,9 +47,13 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionAdapter.MyViewHold
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, PublicationsListActivity.class);
+
+                Intent intent = new Intent(mContext, SubRegionActivity.class);
                 intent.putExtra("catID", album.getType());
                 mContext.startActivity(intent);
+//                Intent intent = new Intent(mContext, PublicationsListActivity.class);
+//                intent.putExtra("catID", album.getType());
+//                mContext.startActivity(intent);
             }
         });
 

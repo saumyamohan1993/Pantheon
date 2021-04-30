@@ -32,6 +32,7 @@ public class SelectRegionFragment extends Fragment {
     private final String EMERGE_ASIA = "3604";
     private final String CHINA = "1863";
     private final String GLOBAL = "3379";
+
     private RecyclerView recyclerView;
     private RegionAdapter adapter;
     private List<Region> regionList;
@@ -135,5 +136,6 @@ public class SelectRegionFragment extends Fragment {
             }
         }
     }
+
 
 }

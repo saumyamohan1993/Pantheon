@@ -70,6 +70,7 @@ public class PublicationAdapter extends BaseAdapter {
         tvArticleHeading.setText(Html.fromHtml(publicationData.getTitle()));
         tvArticleAuthor.setText(publicationData.getAuthor());
         tvArticleBrief.setText(Html.fromHtml(publicationData.getPreview()));
+
         tvCategory.setText(publicationData.getCategory());
         tvDownloadInfo.setText(publicationData.getDownloadinfo());
         downloadstatus = publicationData.getDownloadstatus();
@@ -118,3 +119,7 @@ public class PublicationAdapter extends BaseAdapter {
         return convertView;
     }
 }
+
+
+
+

@@ -175,6 +175,9 @@
     <string name="tag">Tag</string>
     <string name="date2">Date(DD/MM)</string>
     <string name="date3">Date(DD/MM/YYYY)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="viewall">View all</string>
 
 
 </resources>

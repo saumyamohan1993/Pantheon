@@ -3,6 +3,7 @@ package com.pantheon.macroandroid.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +43,12 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     private final String EMERGE_ASIA = "3604";
     private final String CHINA = "1863";
     private final String GLOBAL = "3379";
+
+    private final String Monitor = "3482";
+    private final String datanotes ="3488";
+    private final String weekly ="237";
+    private final String chartbook = "3483";
+
     public String CATID, mQuery;
     private ListView lvPublication;
     private PublicationAdapter adapter;
@@ -59,7 +66,7 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     private String search;
     private MenuItem mSearch;
     private String filterText;
-
+    String catid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,25 +78,30 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
         UTOKEN = preferenceManager.getUserToken(this);
 
         CATID = getIntent().getStringExtra("catID");
+
+        if(CATID.contains(";")){
+            catid= CATID.substring(0, CATID.indexOf(";"));
+
+        }
         mQuery = getIntent().getStringExtra("query");
         filterText = getIntent().getStringExtra("filter");
 
         try {
-            if (CATID.equals(US)) {
+            if (catid.equals(US)) {
                 getSupportActionBar().setTitle("U.S. Publications");
-            } else if (CATID.equals(EURO)) {
+            } else if (catid.equals(EURO)) {
                 getSupportActionBar().setTitle("EuroZone Publications");
-            } else if (CATID.equals(LATAM)) {
+            } else if (catid.equals(LATAM)) {
                 getSupportActionBar().setTitle("Latin America Publications");
-            } else if (CATID.equals(UK)) {
+            } else if (catid.equals(UK)) {
                 getSupportActionBar().setTitle("U.K. Publications");
-            } else if (CATID.equals(ASIA_MONITOR)) {
+            } else if (catid.equals(ASIA_MONITOR)) {
                 getSupportActionBar().setTitle("Asia Monitor Publications");
-            } else if (CATID.equals(EMERGE_ASIA)) {
+            } else if (catid.equals(EMERGE_ASIA)) {
                 getSupportActionBar().setTitle("Emerging Asia");
-            } else if (CATID.equals(CHINA)) {
+            } else if (catid.equals(CHINA)) {
                 getSupportActionBar().setTitle("China+");
-            } else if (CATID.equals(GLOBAL)) {
+            } else if (catid.equals(GLOBAL)) {
                 getSupportActionBar().setTitle("Global");
             }
         } catch (NullPointerException e) {
