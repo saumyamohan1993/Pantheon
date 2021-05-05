@@ -1,11 +1,16 @@
 package com.pantheon.macroandroid.ui;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +42,7 @@ public class SubRegionActivity extends AppCompatActivity {
 
     public String CATID, mQuery;
     TextView viewall;
+    RelativeLayout rlIanshe, rlclaus, rlsamuel, rlandres, rlfreya, rlmiguel;
     private RecyclerView recyclerView;
     private SubRegionAdapter adapter;
     private MenuItem mSearch;
@@ -53,6 +59,14 @@ public class SubRegionActivity extends AppCompatActivity {
         filterText = getIntent().getStringExtra("filter");
         viewall = findViewById(R.id.viewalltxt);
         viewall.setPaintFlags(viewall.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        rlIanshe = findViewById(R.id.ianlayout);
+        rlsamuel = findViewById(R.id.samuellayout);
+        rlclaus = findViewById(R.id.clauslayout);
+        rlandres = findViewById(R.id.andreslayout);
+        rlfreya= findViewById(R.id.freyalayout);
+        rlmiguel= findViewById(R.id.miguellayout);
+
+
         recyclerView = findViewById(R.id.recycler_view);
         regionList = new ArrayList<>();
         adapter = new SubRegionAdapter(SubRegionActivity.this, regionList);
@@ -86,7 +100,18 @@ public class SubRegionActivity extends AppCompatActivity {
             regionList.add(a);
 
             adapter.notifyDataSetChanged();
-
+            rlIanshe.setVisibility(View.VISIBLE);
+            rlsamuel.setVisibility(View.GONE);
+            rlandres.setVisibility(View.GONE);
+            rlclaus.setVisibility(View.GONE);
+            rlmiguel.setVisibility(View.GONE);
+            rlfreya.setVisibility(View.GONE);
+            rlIanshe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ianShepherdson();
+                }
+            });
         }
 
         if (CATID.equalsIgnoreCase(EURO)) {
@@ -103,17 +128,41 @@ public class SubRegionActivity extends AppCompatActivity {
             regionList.add(a);
 
             adapter.notifyDataSetChanged();
+            rlIanshe.setVisibility(View.GONE);
+            rlsamuel.setVisibility(View.GONE);
+            rlandres.setVisibility(View.GONE);
+            rlclaus.setVisibility(View.VISIBLE);
+            rlmiguel.setVisibility(View.GONE);
+            rlfreya.setVisibility(View.GONE);
+            rlclaus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clausVistesen();
+                }
+            });
         }
         if (CATID.equalsIgnoreCase(LATAM)) {
-            Region a = new Region("LatAm Monitor", covers[0], LATAM + ";" + Monitor);
+            Region a = new Region("LatAm Monitor", covers[0], LATAM + ";" + Monitor+";"+weekly);
             regionList.add(a);
 
-            a = new Region("LatAm Datanotes", covers[1], LATAM + ";" + datanotes);
+            a = new Region("LatAm Datanotes", covers[1], LATAM + ";" + datanotes+";"+weekly);
             regionList.add(a);
 
-            a = new Region("LatAm Chartbook", covers[2], LATAM + ";" + chartbook);
+            a = new Region("LatAm Chartbook", covers[2], LATAM + ";" + chartbook+";"+weekly);
             regionList.add(a);
             adapter.notifyDataSetChanged();
+            rlIanshe.setVisibility(View.GONE);
+            rlsamuel.setVisibility(View.GONE);
+            rlandres.setVisibility(View.VISIBLE);
+            rlclaus.setVisibility(View.GONE);
+            rlmiguel.setVisibility(View.GONE);
+            rlfreya.setVisibility(View.GONE);
+            rlandres.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    andresAbadia();
+                }
+            });
         }
         if (CATID.equalsIgnoreCase(UK)) {
             Region a = new Region("U.K. Monitor", covers[0], UK + ";" + Monitor);
@@ -128,6 +177,18 @@ public class SubRegionActivity extends AppCompatActivity {
             a = new Region("U.K. Chartbook", covers[2], UK + ";" + chartbook);
             regionList.add(a);
             adapter.notifyDataSetChanged();
+            rlIanshe.setVisibility(View.GONE);
+            rlsamuel.setVisibility(View.VISIBLE);
+            rlandres.setVisibility(View.GONE);
+            rlclaus.setVisibility(View.GONE);
+            rlmiguel.setVisibility(View.GONE);
+            rlfreya.setVisibility(View.GONE);
+            rlsamuel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    samuelTombs();
+                }
+            });
 
         }
         if (CATID.equalsIgnoreCase(CHINA)) {
@@ -144,7 +205,18 @@ public class SubRegionActivity extends AppCompatActivity {
             regionList.add(a);
 
             adapter.notifyDataSetChanged();
-
+            rlIanshe.setVisibility(View.GONE);
+            rlsamuel.setVisibility(View.GONE);
+            rlandres.setVisibility(View.GONE);
+            rlclaus.setVisibility(View.GONE);
+            rlmiguel.setVisibility(View.GONE);
+            rlfreya.setVisibility(View.VISIBLE);
+            rlfreya.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    freyaBemish();
+                }
+            });
         }
         if (CATID.equalsIgnoreCase(EMERGE_ASIA)) {
             Region a = new Region("Emerging Asia Monitor", covers[0], EMERGE_ASIA + ";" + Monitor);
@@ -160,7 +232,18 @@ public class SubRegionActivity extends AppCompatActivity {
             regionList.add(a);
 
             adapter.notifyDataSetChanged();
-
+            rlIanshe.setVisibility(View.GONE);
+            rlsamuel.setVisibility(View.GONE);
+            rlandres.setVisibility(View.GONE);
+            rlclaus.setVisibility(View.GONE);
+            rlmiguel.setVisibility(View.VISIBLE);
+            rlfreya.setVisibility(View.GONE);
+            rlmiguel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MiguelChanco();
+                }
+            });
         }
         if (CATID.equalsIgnoreCase(GLOBAL)) {
             Region a = new Region("Global Monitor", covers[0], GLOBAL + ";" + Monitor);
@@ -196,5 +279,372 @@ public class SubRegionActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void ianShepherdson() {
+
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("IAN SHEPHERDSON");
+        tvSubHeading.setText("(Chief U.S. Economist)");
+        tvPhoneno.setText("+19146103835");
+        tvMailid.setText("ian@pantheonmacro.com");
+        tvTweet.setText("@IanShepherdson");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+19146103835"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvIan_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/ianShepherdson")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/ianShepherdson")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+
+    public void clausVistesen() {
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("CLAUS VISTESEN");
+        tvSubHeading.setText("(Chief Eurozone Economist)");
+        tvPhoneno.setText("+441912600308");
+        tvMailid.setText("claus@pantheonmacro.com");
+        tvTweet.setText("@ClausVistesen");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+441912600308"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvClaus_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/clausVistesen")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/clausVistesen")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void andresAbadia() {
+
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("ANDRES ABADIA");
+        tvSubHeading.setText("(Senior International Economist)");
+        tvPhoneno.setText("+441912600309");
+        tvMailid.setText("andres@pantheonmacro.com");
+        tvTweet.setText("@Andres__Abadia");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+441912600309"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvAndres_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/andres__abadia")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/andres__abadia")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void samuelTombs() {
+
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("Samuel Tombs");
+        tvSubHeading.setText("(Senior U.K. Economist)");
+        tvPhoneno.setText("+442037447430");
+        tvMailid.setText("samuel@pantheonmacro.com");
+        tvTweet.setText("@SamuelTombs");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+442037447430"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvSamuel_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/samueltombs")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/samueltombs")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+
+    public void freyaBemish() {
+
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("Freya Beamish");
+        tvSubHeading.setText("(Chief Asia Economist)");
+        tvPhoneno.setText("+441912499209");
+        tvMailid.setText("freya@pantheonmacro.com");
+        tvTweet.setText("@freyabeamish");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+441912499209"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvFreya_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/freyabeamish")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/freyabeamish")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void MiguelChanco() {
+
+        final Dialog dialog = new Dialog(SubRegionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.contactus_custom_dialog);
+        dialog.setTitle(null);
+
+        TextView tvHeading = (TextView) dialog.findViewById(R.id.tvHeading);
+        TextView tvSubHeading = (TextView) dialog.findViewById(R.id.tvSubHeading);
+        TextView tvPhoneno = (TextView) dialog.findViewById(R.id.tvPhoneno);
+        TextView tvMailid = (TextView) dialog.findViewById(R.id.tvMailid);
+        TextView tvTweet = (TextView) dialog.findViewById(R.id.tvTweet);
+
+        tvHeading.setText("Miguel Chanco");
+        tvSubHeading.setText("(Senior Asia Economist)");
+        tvPhoneno.setText("+441912499274");
+        tvMailid.setText("miguel@pantheonmacro.com");
+        tvTweet.setText("@mc_economist");
+
+        RelativeLayout rlPhoneno = (RelativeLayout) dialog.findViewById(R.id.rlPhoneno);
+        RelativeLayout rlMessage = (RelativeLayout) dialog.findViewById(R.id.rlMessage);
+        RelativeLayout rlTweet = (RelativeLayout) dialog.findViewById(R.id.rlTweet);
+
+        rlPhoneno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+441912499274"));
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.tvMiguel_mail)});
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        rlTweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/miguelchanco")));
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com" + "/miguelchanco")));
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
     }
 }

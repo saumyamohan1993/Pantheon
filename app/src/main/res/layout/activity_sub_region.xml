@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/contactcolorr">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -19,12 +21,906 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/recycler_view"
+            android:layout_margin="@dimen/checkbox_margintop"
             android:gravity="center"
             android:text="@string/viewall"
-            android:visibility="gone"
-            android:layout_margin="@dimen/checkbox_margintop"
             android:textColor="@color/text_headingcolor"
-            android:textSize="@dimen/album_title" />
+            android:textSize="@dimen/album_title"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/ianlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/img2"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvIan_text"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvIan_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno"
+                                android:text="@string/tvIan_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage"
+                                android:text="@string/tvIan_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet"
+                                android:text="@string/tvIan_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/samuellayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/samuel"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvSamuel_text"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvSamuel_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno1"
+                                android:text="@string/tvSamuel_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage1"
+                                android:text="@string/tvSamuel_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet1"
+                                android:text="@string/tvSamuel_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/clauslayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/img3"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail2"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvClaus_text"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvClaus_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno2"
+                                android:text="@string/tvClaus_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage2"
+                                android:text="@string/tvClaus_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet2"
+                                android:text="@string/tvClaus_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/andreslayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/img4"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail3"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvAndres_text"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvAndres_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno3"
+                                android:text="@string/tvAndres_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage3"
+                                android:text="@string/tvAndres_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet3"
+                                android:text="@string/tvAndres_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/freyalayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:visibility="gone"
+                android:src="@drawable/img5" />
+
+            <LinearLayout
+                android:id="@+id/llView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail4"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvFreya_text"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvFreya_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno4"
+                                android:text="@string/tvFreya_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage4"
+                                android:text="@string/tvFreya_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet4"
+                                android:text="@string/tvFreya_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/miguellayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewalltxt"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnail5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:visibility="gone"
+                android:src="@drawable/miguel" />
+
+            <LinearLayout
+                android:id="@+id/llView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumbnail5"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contacttitle5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/tvMiguel"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtext5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:text="@string/tvMiguel_subtext"
+                            android:textColor="@color/text_headingcolor"
+                            android:textSize="@dimen/ian_subtextsize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanPhoneno5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanPhoneno5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tele" />
+
+                            <TextView
+                                android:id="@+id/contactno5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanPhoneno5"
+                                android:text="@string/tvMiguel_Phoneno" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanMessage5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanMessage5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/ian_margintop"
+                                android:src="@drawable/msg" />
+
+                            <TextView
+                                android:id="@+id/contactemail5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanMessage5"
+                                android:text="@string/tvMiguel_mail" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIanTweet5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ian_marginleft"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivIanTweet5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/tweet" />
+
+                            <TextView
+                                android:id="@+id/contacttweet5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ian_marginleft"
+                                android:layout_toRightOf="@+id/ivIanTweet5"
+                                android:text="@string/tvMiguel_tweet" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
