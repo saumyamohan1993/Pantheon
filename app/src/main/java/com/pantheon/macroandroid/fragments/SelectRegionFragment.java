@@ -1,20 +1,15 @@
 package com.pantheon.macroandroid.fragments;
 
-import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -23,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.pantheon.macroandroid.R;
 import com.pantheon.macroandroid.adapter.RegionAdapter;
 import com.pantheon.macroandroid.model.Region;
-import com.pantheon.macroandroid.ui.ContactusActivity;
 import com.pantheon.macroandroid.ui.PublicationsListActivity;
 
 import java.util.ArrayList;
@@ -72,7 +66,7 @@ public class SelectRegionFragment extends Fragment {
                 R.drawable.us,//0
                 R.drawable.euro,//1
                 R.drawable.lad,//2
-                R.drawable.ukeconomic,//3
+                R.drawable.uk,//3
                 R.drawable.china,//4
                 R.drawable.emergeasia,//5
                 R.drawable.global};

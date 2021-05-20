@@ -1,6 +1,7 @@
 package com.pantheon.macroandroid.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -149,9 +150,14 @@ public class LoginActivity extends AppCompatActivity implements BaseListener {
         btnRequestTrail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pantheonmacro.com/free-trial/")));
 
-                Intent intent = new Intent(LoginActivity.this, ComplimentaryTrial.class);
-                startActivity(intent);
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pantheonmacro.com/free-trial/")));
+
+                }
+
             }
         });
     }

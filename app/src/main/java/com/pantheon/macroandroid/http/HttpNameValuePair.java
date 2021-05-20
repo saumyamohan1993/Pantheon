@@ -41,8 +41,8 @@ public class HttpNameValuePair {
         pairs.add(new BasicNameValuePair("srch", publicationRegion.getSrch()));
         pairs.add(new BasicNameValuePair("tags", publicationRegion.getTags()));
         pairs.add(new BasicNameValuePair("custom1", publicationRegion.getCustom1()));
-
-        System.out.println("PublicationRegion value ....... " + pairs.toString());
+        pairs.add(new BasicNameValuePair("group", publicationRegion.getGroup()));
+        System.out.println("PublicationRegion value done ....... " + pairs.toString());
 
         return pairs;
     }

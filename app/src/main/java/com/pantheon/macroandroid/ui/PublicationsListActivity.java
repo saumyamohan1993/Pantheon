@@ -45,11 +45,18 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     private final String GLOBAL = "3379";
 
     private final String Monitor = "3482";
-    private final String datanotes ="3488";
-    private final String weekly ="237";
-    private final String chartbook = "3483";
+    private final String datanotes = "3488";
+    private final String weekly = "237";
+    private final String chartbook = "3484";
+    private final String Euroweekly = "238";
+    private final String ukeekly = "281";
+    private final String asiaweekly = "546";
+    private final String chinaweekly = "478";
+    private final String latamweekly = "624";
+    private final String globalmon = "514";
 
     public String CATID, mQuery;
+    String catid;
     private ListView lvPublication;
     private PublicationAdapter adapter;
     private ArrayList<PublicationData> publicationList;
@@ -63,10 +70,11 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
     private String UNAME = null;
     private String UID = null;
     private String UTOKEN = null;
+    private String GROUP = null;
     private String search;
     private MenuItem mSearch;
     private String filterText;
-    String catid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +87,11 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
 
         CATID = getIntent().getStringExtra("catID");
 
-        if(CATID.contains(";")){
-            catid= CATID.substring(0, CATID.indexOf(";"));
+        if (CATID.contains(";")) {
+            catid = CATID.substring(0, CATID.indexOf(";"));
+            String[] terms = CATID.split("[;]+");
+            GROUP = terms[1];
+            Log.e("done", "onCreate: " + GROUP);
 
         }
         mQuery = getIntent().getStringExtra("query");
@@ -164,9 +175,31 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
         USbean.setUName(UNAME);
         USbean.setUId(UID);
         USbean.setUToken(UTOKEN);
-        if (CATID != null) {
+        if (GROUP != null) {
+
+            if (GROUP.equalsIgnoreCase(weekly) ||
+                    GROUP.equalsIgnoreCase(Euroweekly) ||
+                    GROUP.equalsIgnoreCase(ukeekly) ||
+                    GROUP.equalsIgnoreCase(asiaweekly) ||
+                    GROUP.equalsIgnoreCase(latamweekly) ||
+                    GROUP.equalsIgnoreCase(globalmon) ||
+                    GROUP.equalsIgnoreCase(chinaweekly)) {
+                USbean.setGroup(GROUP);
+                USbean.setCatID(catid);
+            } else {
+                USbean.setGroup("");
+                USbean.setCatID(CATID);
+            }
+
+        } else {
+            USbean.setGroup("");
             USbean.setCatID(CATID);
         }
+
+
+//        if (CATID != null) {
+//            USbean.setCatID(CATID);
+//        }
         USbean.setDate(DATE);
         System.out.println("mQuery" + mQuery);
         if (mQuery != null) {

@@ -38,7 +38,12 @@ public class SubRegionActivity extends AppCompatActivity {
     private final String Monitor = "3482";
     private final String datanotes = "3488";
     private final String weekly = "237";
-    private final String chartbook = "3483";
+    private final String chartbook = "3484";
+    private final String Euroweekly = "238";
+    private final String ukeekly = "281";
+    private final String asiaweekly = "546";
+    private final String chinaweekly = "478";
+    private final String latamweekly = "624";
 
     public String CATID, mQuery;
     TextView viewall;
@@ -63,8 +68,8 @@ public class SubRegionActivity extends AppCompatActivity {
         rlsamuel = findViewById(R.id.samuellayout);
         rlclaus = findViewById(R.id.clauslayout);
         rlandres = findViewById(R.id.andreslayout);
-        rlfreya= findViewById(R.id.freyalayout);
-        rlmiguel= findViewById(R.id.miguellayout);
+        rlfreya = findViewById(R.id.freyalayout);
+        rlmiguel = findViewById(R.id.miguellayout);
 
 
         recyclerView = findViewById(R.id.recycler_view);
@@ -118,7 +123,7 @@ public class SubRegionActivity extends AppCompatActivity {
             Region a = new Region("Eurozone Monitor", covers[0], EURO + ";" + Monitor);
             regionList.add(a);
 
-            a = new Region("Eurozone Weekly Monitor", covers[3], EURO + ";" + weekly);
+            a = new Region("Eurozone Weekly Monitor", covers[3], EURO + ";" + Euroweekly);
             regionList.add(a);
 
             a = new Region("Eurozone Datanotes", covers[1], EURO + ";" + datanotes);
@@ -142,13 +147,15 @@ public class SubRegionActivity extends AppCompatActivity {
             });
         }
         if (CATID.equalsIgnoreCase(LATAM)) {
-            Region a = new Region("LatAm Monitor", covers[0], LATAM + ";" + Monitor+";"+weekly);
+            Region a = new Region("LatAm Monitor", covers[0], LATAM + ";" + Monitor);
+            regionList.add(a);
+            a = new Region("LatAm Weekly Monitor", covers[3], LATAM + ";" + latamweekly);
             regionList.add(a);
 
-            a = new Region("LatAm Datanotes", covers[1], LATAM + ";" + datanotes+";"+weekly);
+            a = new Region("LatAm Datanotes", covers[1], LATAM + ";" + datanotes);
             regionList.add(a);
 
-            a = new Region("LatAm Chartbook", covers[2], LATAM + ";" + chartbook+";"+weekly);
+            a = new Region("LatAm Chartbook", covers[2], LATAM + ";" + chartbook);
             regionList.add(a);
             adapter.notifyDataSetChanged();
             rlIanshe.setVisibility(View.GONE);
@@ -168,7 +175,7 @@ public class SubRegionActivity extends AppCompatActivity {
             Region a = new Region("U.K. Monitor", covers[0], UK + ";" + Monitor);
             regionList.add(a);
 
-            a = new Region("U.K. Weekly Monitor", covers[3], UK + ";" + weekly);
+            a = new Region("U.K. Weekly Monitor", covers[3], UK + ";" + ukeekly);
             regionList.add(a);
 
             a = new Region("U.K. Datanotes", covers[1], UK + ";" + datanotes);
@@ -195,7 +202,7 @@ public class SubRegionActivity extends AppCompatActivity {
             Region a = new Region("China+  Monitor", covers[0], CHINA + ";" + Monitor);
             regionList.add(a);
 
-            a = new Region("China+  Weekly Monitor", covers[3], CHINA + ";" + weekly);
+            a = new Region("China+  Weekly Monitor", covers[3], CHINA + ";" + chinaweekly);
             regionList.add(a);
 
             a = new Region("China+  Datanotes", covers[1], CHINA + ";" + datanotes);
@@ -222,7 +229,7 @@ public class SubRegionActivity extends AppCompatActivity {
             Region a = new Region("Emerging Asia Monitor", covers[0], EMERGE_ASIA + ";" + Monitor);
             regionList.add(a);
 
-            a = new Region("Emerging Asia Weekly Monitor", covers[3], EMERGE_ASIA + ";" + weekly);
+            a = new Region("Emerging Asia Weekly Monitor", covers[3], EMERGE_ASIA + ";" + asiaweekly);
             regionList.add(a);
 
             a = new Region("Emerging Asia Datanotes", covers[1], EMERGE_ASIA + ";" + datanotes);
@@ -246,7 +253,7 @@ public class SubRegionActivity extends AppCompatActivity {
             });
         }
         if (CATID.equalsIgnoreCase(GLOBAL)) {
-            Region a = new Region("Global Monitor", covers[0], GLOBAL + ";" + Monitor);
+            Region a = new Region("Global Monitor", covers[0], GLOBAL + ";" + "514");
             regionList.add(a);
 
             a = new Region("Global  Datanotes", covers[1], GLOBAL + ";" + datanotes);

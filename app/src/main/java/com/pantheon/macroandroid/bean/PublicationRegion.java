@@ -15,6 +15,7 @@ public class PublicationRegion extends BaseBean {
     String Srch;
     String Tags;
     String Custom1;
+    String group;
     boolean isProgressEnabled = true;
     private ArrayList<PublicationData> publicationDataArrayList = null;
 
@@ -124,5 +125,13 @@ public class PublicationRegion extends BaseBean {
 
     public void setPublicationDataArrayList(ArrayList<PublicationData> publicationDataArrayList) {
         this.publicationDataArrayList = publicationDataArrayList;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 }

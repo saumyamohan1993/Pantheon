@@ -3,6 +3,7 @@ package com.pantheon.macroandroid.http;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.pantheon.macroandroid.bean.BaseBean;
 import com.pantheon.macroandroid.utility.App;
