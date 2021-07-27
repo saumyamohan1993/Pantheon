@@ -22,7 +22,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.SubRegionActivity"></activity>
+        <activity android:name=".ui.AlertSettingsActivity"></activity>
+        <activity android:name=".ui.SettingsActivity" />
+        <activity android:name=".ui.NotificationTest"></activity>
+        <activity android:name=".ui.SubRegionActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"

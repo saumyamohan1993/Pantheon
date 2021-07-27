@@ -19,7 +19,7 @@ import com.pantheon.macroandroid.fragments.SelectRegionFragment;
 import com.pantheon.macroandroid.utility.SharedPreferenceManager;
 
 public class HomeScreenActivity extends AppCompatActivity {
-    private LinearLayout llContactUs, llLogout, llOfflineMode;
+    private LinearLayout llContactUs, llLogout, llOfflineMode, Settingslayout;
     private FrameLayout frameLayout;
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
@@ -36,7 +36,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         llLogout = (LinearLayout) findViewById(R.id.llLogout);
         left_drawer = (LinearLayout) findViewById(R.id.left_drawer);
         llOfflineMode = (LinearLayout) findViewById(R.id.llOfflineMode);
-
+        Settingslayout = (LinearLayout) findViewById(R.id.Settingslayout);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -79,7 +79,13 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Settingslayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreenActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
         llLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +139,11 @@ public class HomeScreenActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeScreenActivity.this, SearchActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.bell:
+
+                Intent intent1 = new Intent(HomeScreenActivity.this, AlertSettingsActivity.class);
+                startActivity(intent1);
+
         }
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;

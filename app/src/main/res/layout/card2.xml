@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/album_title_padding"
+        android:layout_weight="1"
+        android:minLines="1"
+        android:textColor="@color/text_headingcolor"
+        android:textSize="@dimen/album_title" />
+
+    <Switch
+        android:id="@+id/mySwitchId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/album_title_padding"
+        android:theme="@style/SCBSwitch"
+        android:checked="true" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="10dp"
+        android:background="@color/text_headingcolor">
+
+    </View>
+    <!--    </androidx.cardview.widget.CardView>-->
+
+</LinearLayout>

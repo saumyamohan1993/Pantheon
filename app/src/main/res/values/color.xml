@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#ffffff</color>
-
+    <color name="black">#100101</color>
     <color name="rlus_color">#D5E7E6</color>
     <color name="rleurozone_color">#EAEAEA</color>
     <color name="rluk_color">#EAEAEA</color>
     <color name="rllatinamerica_color">#D5E7E6</color>
+    <color name="gray">#dadada</color>
+    <color name="toggle">#146883</color>
 
     <color name="general_color">#E0E4E5</color>
 

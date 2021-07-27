@@ -31,6 +31,7 @@
     <string name="region_search">search</string>
     <string name="title_activity_uspublications">U.S. Publications</string>
     <string name="title_activity_forgot_password">Forgot Password</string>
+    <string name="settingtitle">Set an Alert Notification</string>
 
     <!-- Forgot Password Activity entries -->
     <string name="forgot"><![CDATA[Forgot your password? Enter the <font color="#006A81"> email address </font>of your account to reset your password,]]></string>
@@ -51,6 +52,7 @@
     <string name="tvContactUs_text">Contact Us</string>
     <string name="tvMyAccount_text">My Account</string>
     <string name="tvLogout_text">Logout</string>
+    <string name="settingtext">Setting</string>
 
     <string name="menu">menu item</string>
 
@@ -178,6 +180,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="viewall">View all</string>
+    <string name="country_prompt">Choose a country</string>
+
+    <string-array name="country_arrays">
+        <item>U.S</item>
+        <item>Eurozone</item>
+        <item>LatAm</item>
+        <item>Emerging Asia</item>
+        <item>Global</item>
+    </string-array>
+    <string name="all">All</string>
+    <string name="dailymon">Daily Monitor</string>
+    <string name="Datanotes">Datanotes</string>
+    <string name="weekly">Weekly Monitor</string>
+    <string name="Chartbook">Chartbook</string>
 
 
 </resources>

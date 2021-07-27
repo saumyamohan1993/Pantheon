@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.pantheon.macroandroid.ui.PublicationsListActivity">
+<item
+
+    android:id="@+id/bell"
+    android:icon="@drawable/ic_baseline_notifications_24"
+    android:title="@string/region_search"
+    android:orderInCategory="100"
+    android:iconTint="@color/white"
+    app:showAsAction="ifRoom|collapseActionView" />
 
     <item
         android:id="@+id/search"

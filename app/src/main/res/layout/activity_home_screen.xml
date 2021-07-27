@@ -141,6 +141,31 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/Settingslayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:tint="@color/tvtext_color"
+                android:layout_marginBottom="@dimen/ivmargin_bottom"
+                android:src="@drawable/settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/settingtext"
+                android:textColor="@color/tvtext_color"
+                android:textSize="@dimen/tvtext_size" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

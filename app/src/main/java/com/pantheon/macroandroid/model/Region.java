@@ -5,13 +5,23 @@ public class Region {
     private String name;
     private String type;
     private int thumbnail, contactimg;
+    public String title,desc;
 
     public Region(String name, int thumbnail, String type) {
         this.name = name;
         this.type = type;
         this.thumbnail = thumbnail;
     }
+    public Region(String name) {
+        this.name = name;
 
+    }
+    public Region(String title,String desc) {
+        this.title = title;
+        this.desc=desc;
+
+
+    }
     public Region(String contactname, String contactpost, String contactno, String contactemail, String contacttweet, int contactimg, String bgcolor) {
         this.contactname = contactname;
         this.contactpost = contactpost;
@@ -20,6 +30,18 @@ public class Region {
         this.contacttweet = contacttweet;
         this.contactimg = contactimg;
         this.bgcolor = bgcolor;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public String getBgcolor() {

@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pantheon.macroandroid.ui.SettingsActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/settingtitle"
+        android:textColor="@color/tvtext_color"
+        android:textSize="@dimen/tvtext_size"
+        android:gravity="center"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Select Region"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+      ></TextView>
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/country_arrays"
+        android:layout_margin="10dp"
+        android:textColor="@color/tvtext_color"
+        android:background="@drawable/spinner_bg"
+        />
+    <LinearLayout
+
+        android:id="@+id/USrelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/all"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/dailymon"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/weekly"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+              android:text="@string/Datanotes"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Chartbook"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switch5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/Eurorelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleeu1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/all"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switcheu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleeu2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/dailymon"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switcheu2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleeu3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/weekly"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switcheu3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleeu4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Datanotes"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switcheu4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleeu5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Chartbook"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switcheu5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/Latamrelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlela1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/all"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchla1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlela2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/dailymon"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchla2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlela3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/weekly"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchla3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlela4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Datanotes"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchla4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlela5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Chartbook"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchla5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/Emergerelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleem1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/all"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleem2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/dailymon"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleem3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/weekly"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleem4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Datanotes"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleem5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Chartbook"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/Globalrelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlego1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/dailymon"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchgo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlego2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:layout_weight="1"
+                android:minLines="1"
+                android:text="@string/Datanotes"
+                android:textColor="@color/text_headingcolor"
+                android:textSize="@dimen/album_title" />
+
+            <Switch
+                android:id="@+id/switchgo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/album_title_padding"
+                android:theme="@style/SCBSwitch"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/text_headingcolor">
+
+        </View>
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+
+        android:scrollbars="vertical" />
+
+
+
+</LinearLayout>

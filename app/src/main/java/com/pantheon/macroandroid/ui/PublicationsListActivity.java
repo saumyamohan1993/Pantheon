@@ -155,6 +155,11 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
             Intent intent = new Intent(PublicationsListActivity.this, SearchActivity.class);
             startActivity(intent);
         }
+        if (id == R.id.bell) {
+
+            Intent intent = new Intent(PublicationsListActivity.this, AlertSettingsActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -175,6 +180,8 @@ public class PublicationsListActivity extends AppCompatActivity implements BaseL
         USbean.setUName(UNAME);
         USbean.setUId(UID);
         USbean.setUToken(UTOKEN);
+        Log.e("data", "getPublicationList: "+MODPUBLIST+"\n"+UNAME
+        +"\n"+UID+"\n"+UTOKEN);
         if (GROUP != null) {
 
             if (GROUP.equalsIgnoreCase(weekly) ||
